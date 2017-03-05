@@ -1,0 +1,3 @@
+rootProject.name = 'CoachellaQueen'
+
+include ':app'
