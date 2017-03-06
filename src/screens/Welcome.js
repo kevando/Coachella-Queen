@@ -17,7 +17,7 @@ export default class Welcome extends Component {
 
               <Content style={{paddingHorizontal: 20}}>
 
-                <Title style={{marginTop:60,fontSize:50,textAlign:'center'}}>COACHELLA</Title>
+                <Title style={{marginTop:60,fontSize:40,textAlign:'center'}}>COACHELLA</Title>
                 <Title style={{marginBottom:60,fontSize:50,letterSpacing:20,textAlign:'center'}}>QUEEN</Title>
 
                 <Text style={{marginBottom:30}}>Festivals bring us closer together</Text>

@@ -40,7 +40,15 @@ export default class Preview extends Component {
 
               <Image ref="imageContainer" source={require('../images/bg1.png')} style={styles.container} >
                 <View style={styles.setlistContainer} >
-                    <Text>Dude?</Text>
+                    <Text>My Schedule</Text>
+                    {
+                      _.map(this.props.schedule,function(event,i) {
+
+                        return (
+                          <Text key={i} >{event.name}</Text>
+                        );
+                      })
+                    }
                     </View>
                   </Image>
                   <Button onPress={this.onExportPress.bind(this)}><Text>export</Text></Button>
@@ -64,5 +72,6 @@ var styles = StyleSheet.create({
     borderWidth:1,
     borderColor: '#fff',
     marginTop: 25,
+    marginLeft: 15,
   }
 });

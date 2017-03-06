@@ -23,8 +23,8 @@ export const scenes = Actions.create(
 
     <Scene key="root" hideNavBar={true}>
 
-      <Scene key="welcome" component={Welcome} title="Welcome" hideNavBar={true} />
-      <Scene key="preview" component={Preview} title="Preview" hideNavBar={false} initial={true} />
+      <Scene key="welcome" component={Welcome} title="Welcome" hideNavBar={true} initial={true} />
+      <Scene key="preview" component={Preview} title="Preview" hideNavBar={false}  />
 
         <Scene key="home" tabs={true}   >
             <Scene key="friday" component={Selection} title="April 14th, 2017" tabTitle="Friday" icon={TabIcon} />
