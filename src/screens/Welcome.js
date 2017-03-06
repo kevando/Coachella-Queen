@@ -13,19 +13,27 @@ export default class Welcome extends Component {
 
         return (
             <Container>
-              <Header />
 
-              <Content>
-                <Title>Welcome to coachella queen</Title>
 
-                  <Button onPress={() => this.onWeekendPress(1) } >
-                      <Text>Weekend 1</Text>
-                  </Button>
+              <Content style={{paddingHorizontal: 20}}>
 
-                  <Button onPress={() => this.onWeekendPress(2) } >
-                      <Text>Weekend 2</Text>
-                  </Button>
+                <Title style={{marginTop:60,fontSize:50,textAlign:'center'}}>COACHELLA</Title>
+                <Title style={{marginBottom:60,fontSize:50,letterSpacing:20,textAlign:'center'}}>QUEEN</Title>
 
+                <Text style={{marginBottom:30}}>Festivals bring us closer together</Text>
+
+                <Text style={{marginBottom:30}}>
+                  Ironically, it is easy to get lost admist the chaos of the fun
+                  supplements. People lose cell service and become worrisome.
+                </Text>
+
+                <Text style={{marginBottom:30}}>
+                  Use this app to create a "critical path" schedule for you and
+                  your crew. It doesnt need to be exact the schedule, but instead
+                  use it to provide a north star on you screen saver
+                </Text>
+
+                <Button onPress={Actions.home}><Text>Get Started</Text></Button>
               </Content>
 
             </Container>
