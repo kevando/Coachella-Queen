@@ -1,31 +1,34 @@
+
 import React, { Component } from 'react';
-import {View,Text} from 'react-native';
-import { Router } from 'react-native-router-flux';
 
-import { scenes } from './screens';
-import { routerStyles, colors } from './config/styles';
+import { Provider } from 'react-redux';
+import configureStore from './config/store';
 
-const getSceneStyle = (/* NavigationSceneRendererProps */ props, computedProps) => {
-  const style = {
-    // flex: 1,
-    backgroundColor: colors.blue,
-    // shadowColor: null,
-    // shadowOffset: null,
-    // shadowOpacity: null,
-    // shadowRadius: null,
-  };
-  return style;
-};
+import Onboard from './layouts/Onboard';
+import Weekend from './layouts/Weekend';
 
-
-export default class App extends Component {
-
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: true,
+      store: configureStore(() => this.setState({ isLoading: false })),
+    };
+  }
 
   render() {
-    return <Router {...this.state} scenes={scenes} {...routerStyles} getSceneStyle={getSceneStyle} />
-  }
+   if (this.state.isLoading) return null; // Do nothing until store is loaded
 
-  renderr() {
-    return <View><Text>dude</Text></View>
+   const reduxStore = this.state.store.getState();
+
+   const Layout = reduxStore.app.onboarded ? <Weekend /> : <Onboard />
+
+   return (
+     <Provider store={this.state.store}>
+       {Layout}
+     </Provider>
+   );
   }
 }
+
+export default App;
