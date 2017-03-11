@@ -4,11 +4,13 @@
 // ---------------------------------------
 export const colors = {
 
-  orange: 'orange',
-  blue: '#10a6ed',
+  orange: '#ff6800',
+  blue: '#0e9eed',
   white: '#ffffff',
   yellow: '#ffe60c',
   green: '#24bd3a',
+  navy: '#081130',
+
 }
 
 // ---------------------------------------
@@ -16,9 +18,22 @@ export const colors = {
 // ---------------------------------------
 export const routerStyles = {
 
+  navigationBarStyle: {
+    borderBottomColor:'#fff',
+
+    borderBottomWidth:1,
+    backgroundColor: colors.blue,
+
+  },
+  titleStyle: {
+    fontSize: 25,
+    color: colors.white,
+    fontFamily: 'Baskerville',
+  },
+
   tabBarStyle: {
     borderTopColor:'#ccc',
     borderTopWidth:1,
-    backgroundColor:'white'
+    backgroundColor: colors.green
   }
 }

@@ -8,7 +8,9 @@ import{
   Animated,
   Dimensions,
   Easing,
-} from 'react-native';import { Container, Header, Title, Content, Button } from 'native-base';
+  StatusBar
+} from 'react-native';
+import { Container, Header, Title, Content, Button, Icon } from 'native-base';
 import * as Animatable from 'react-native-animatable';
 import { Actions } from 'react-native-router-flux';
 
@@ -35,7 +37,7 @@ export default class Welcome extends Component {
   riseSun() {
     Animated.timing(  // Uses easing functions
     this.state.sunPosition,  // The value to drive
-    {toValue: 20, delay: 300, duration: 6000}  // Configuration
+    {toValue: 20, delay: 300, duration: 1000}  // Configuration
     ).start();  // Don't forget start!
   }
 
@@ -51,15 +53,19 @@ export default class Welcome extends Component {
 
     return (
       <View style={styles.container} >
-
+      <StatusBar barStyle="light-content" />
         <View style={styles.skyContainer} >
 
           <Animated.View style={[styles.sun,{top: this.state.sunPosition}]} />
 
-          <Animatable.View animation="fadeIn" delay={7000} style={styles.textContainer} >
+          <Animatable.View animation="fadeIn" delay={700} style={styles.textContainer} >
             <Text style={styles.text} >As human beings, we crave togetherness</Text>
             <Text style={styles.text} >Festivals bring us closer together.</Text>
             <Text style={styles.text} >Together we can enourage more togetherness.</Text>
+            <Button iconLeft outline light onPress={this.onWeekendPress}>
+                        <Icon name='home' />
+                        <Text>Home</Text>
+                    </Button>
           </Animatable.View>
         </View>
 
@@ -69,6 +75,9 @@ export default class Welcome extends Component {
     );
     }
 }
+
+// var blueCode = ((14 * 299) + (158 * 587) + (237 * 114)) / 1000;
+//  If it is below 125, use white text. If it is 125 or above, use black text.
 
 const SUN_RADIUS = 100; //@todo change this based on screen size
 
