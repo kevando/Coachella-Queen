@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, Tab, Tabs, Footer, Text, Button } from 'native-base';
+import { StatusBar } from 'react-native';
+import { Container, Header, Content, Tab, Tabs, TabHeading, Icon, Footer, Text, Button } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 // import _ from 'lodash'; // not sure why i dont have to call this here
 import moment from 'moment';
@@ -50,21 +51,31 @@ export default class Home extends Component {
     Actions.preview({schedule: newArr})
   }
 
+// <Button style={{marginVertical:10,marginHorizontal: 25}} block info onPress={this.onPreviewPress.bind(this)}><Text>Preview Schedule</Text></Button>
+
+render() {
+
+    return (
+      <Container style={{paddingHorizontal:20}}>
+      <Header />
+
+            <Artists {...this.state } toggleArtist={this.toggleArtist.bind(this)} />
 
 
-  render() {
 
+      </Container>
+      );
+  }
+  renderr() {
 
       return (
-        <Container>
-          <Header />
-          <Button style={{marginVertical:10,marginHorizontal: 25}} block info onPress={this.onPreviewPress.bind(this)}><Text>Preview Schedule</Text></Button>
+        <Container style={{paddingHorizontal:20}}>
 
-          <Tabs>
-            <Tab heading="Artists">
+          <Tabs style={{marginTop:70,}}>
+            <Tab  heading={ <TabHeading style={{backgroundColor:'transparent'}}><Text style={{color:'white'}}>Artists</Text></TabHeading>}>
               <Artists {...this.state } toggleArtist={this.toggleArtist.bind(this)} />
             </Tab>
-            <Tab heading="Stages">
+            <Tab  heading={ <TabHeading style={{backgroundColor:'transparent'}}><Text style={{color:'white'}}>Stages</Text></TabHeading>}>
               <Stages />
             </Tab>
           </Tabs>

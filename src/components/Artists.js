@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Container, Content, ListItem, Text, Thumbnail, Right, Body, Left } from 'native-base';
+import { StatusBar } from 'react-native';
+import { Container, Content, ListItem, Text, Thumbnail, Right, Body, Left, Header } from 'native-base';
 import _ from 'lodash';
 import moment from 'moment';
 
@@ -11,12 +12,14 @@ export default class Artists extends Component {
 
     return (
       <Container>
-        <Content>
+      <StatusBar barStyle="light-content" />
+
+        <Content style={{marginTop: 50,}}>
           {
             _.map(schedule,function(event,i) {
               var date = moment(event.start);
               return (
-                <ListItem key={i} button onPress={() => toggleArtist(event) }>
+                <ListItem key={i} button onPress={() => toggleArtist(event) } style={{backgroundColor:'#fff',marginBottom:5}}>
 
 
                         <Body>
