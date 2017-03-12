@@ -13,19 +13,26 @@ class App extends Component {
     this.state = {
       isLoading: true,
       store: configureStore(() => this.setState({ isLoading: false })),
+      onboarded: false,
     };
+  }
+
+  handleChange() {
+    // soley to redirect user, this is tmp @todo
+     const reduxStore = this.state.store.getState();
+
+    if(this.state.onboarded == false && reduxStore.app.onboarded == true)
+      this.setState({onboarded: true});
   }
 
   render() {
    if (this.state.isLoading) return null; // Do nothing until store is loaded
 
-   const reduxStore = this.state.store.getState();
-
-   const Layout = reduxStore.app.onboarded ? <Weekend /> : <Onboard />
+   let unsubscribe = this.state.store.subscribe(this.handleChange.bind(this))
 
    return (
      <Provider store={this.state.store}>
-       {Layout}
+       {this.state.onboarded ? <Weekend /> : <Onboard />}
      </Provider>
    );
   }
