@@ -9,7 +9,7 @@ const Onboard = (props) => {
   const sceneStyle = [];
   // sceneStyle.push({ paddingTop: 64 });
 
-  // const initialRoute = Routes.getDashboardRoute();
+  // const initialRoute = Routes.getPreviewRoute();
   const initialRoute = Routes.getHelloRoute();
 
   return (

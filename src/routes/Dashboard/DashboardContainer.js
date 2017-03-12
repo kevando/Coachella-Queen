@@ -6,19 +6,39 @@ import _ from 'lodash';
 import Dashboard from './Dashboard';
 import Routes from '../../config/routes';
 
+const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+
 class DashboardContainer extends Component {
 
-  constructor() {
-    super();
-  }
+  // constructor() {
+  //   super();
+  // }
 
   componentWillMount() {
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    const { schedule, day } = this.props;
-    const daySchedule = _.filter(schedule,({start}) => { return moment(start).format('dddd') == day})
+    this._prepareList(this.props);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    // @todo by updating the listview from redux, this saves alot of render code
+    // BUT it does seem to slow things down when user taps an event
+    this._prepareList(nextProps);
+  }
+
+  _prepareList(props) {
+    const { schedule, day, mySchedule } = props;
+    var daySchedule = _.filter(schedule,({start}) => { return moment(start).format('dddd') == day})
+
+    // find all the events already part of the user's mySchedule array
+    var combinedSchedules = _.map(daySchedule,function(event){
+      event.selected = _.some(mySchedule, event);
+      return event;
+    });
+
+    // Now set the array
     this.setState({
-      dataSource: ds.cloneWithRows(daySchedule)
-    })
+      dataSource: ds.cloneWithRows(combinedSchedules)
+    });
+
   }
 
   render() {
@@ -29,7 +49,6 @@ class DashboardContainer extends Component {
       <Dashboard
         {...this.props}
         {...this.state}
-        onNewRecPress={() => navigator.push(Routes.getHelloRoute())}
       />
       )
 

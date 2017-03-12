@@ -9,13 +9,13 @@ import styles from './styles';
 
 const Dashboard = (props) => {
 
-  const { dataSource } = props;
+  const { dataSource, toggleEvent } = props;
 
   return (
     <View style={styles.container}>
       <ListView
         dataSource={dataSource}
-        renderRow={(rowData) => <EventListItem event={rowData} />}
+        renderRow={(rowData) => <EventListItem event={rowData} onPress={toggleEvent} />}
       />
     </View>
   );

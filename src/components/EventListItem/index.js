@@ -1,18 +1,21 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import moment from 'moment';
 
 import styles from './styles';
 
 const EventListItem = (props) => {
 
-  const { event } = props;
+  const { event, onPress } = props;
 
   return (
-    <View style={styles.container}>
-      <Text>{event.name}</Text>
-      <Text>{moment(event.start).format('dddd')}</Text>
-    </View>
+    <TouchableOpacity onPress={onPress.bind(this,event)}>
+      <View style={[styles.container,{backgroundColor: event.selected ? '#ddd' : '#fff',borderColor: event.selected ? '#333' : '#ccc'}]}>
+        <Text style={styles.band}>{event.name}</Text>
+        <Text style={styles.stage}>{event.stage}</Text>
+        <Text style={styles.time}>{moment(event.start).format('h:mm')}</Text>
+      </View>
+    </TouchableOpacity>
   );
 }
 

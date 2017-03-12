@@ -3,7 +3,8 @@ import _ from 'lodash';
 
 import {
   ADD_EVENT,
-  REMOVE_EVENT
+  REMOVE_EVENT,
+  TOGGLE_EVENT,
 } from './actionTypes';
 
 const initialState =
@@ -106,13 +107,32 @@ export default function events(events = initialState, action = {}) {
     //   }
     //
     // // -------------------------------------------
-    // case SAVE_RECOMMENDATION:
-    //   var newList = [recommendations.unfinished].concat(recommendations.list);
-    //   return {
-    //     ...recommendations,
-    //     list: newList,
-    //   }
-    //
+    case ADD_EVENT: // @todo make this toggle
+      // alert('adding event');
+      var newList = [action.event].concat(events.mySchedule);
+      return {
+        ...events,
+        mySchedule: newList,
+      }
+
+    case TOGGLE_EVENT:
+      const isAleadyScheduled = _.some(events.mySchedule, action.event)
+      var newList;
+      if(isAleadyScheduled){
+        // Remove event from schedule
+        newList = _.filter(events.mySchedule, function(event){return event.name != action.event.name} );
+      } else {
+        // Add to schedule
+        newList = [action.event].concat(events.mySchedule);
+      }
+      return {
+        ...events,
+        mySchedule: newList,
+      }
+
+
+
+
     // // -------------------------------------------
     // case SET_REMINDER:
     //

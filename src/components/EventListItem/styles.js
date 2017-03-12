@@ -11,4 +11,16 @@ export default styles = StyleSheet.create({
     borderColor: '#aaa',
     borderWidth: 1,
   },
+  band: {
+    fontSize: 20,
+  },
+  stage: {
+    color: '#999'
+  },
+  time: {
+    textAlign: 'right',
+    marginTop: -40,
+    backgroundColor: 'transparent',
+    fontSize: 30
+  }
 });

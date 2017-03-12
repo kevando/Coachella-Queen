@@ -3,6 +3,7 @@ import ExNavigator from '@exponent/react-native-navigator';
 
 import Dashboard from '../routes/Dashboard';
 import Hello from '../routes/Hello';
+import Preview from '../routes/Preview';
 import { PreviewButton } from '../components';
 
 export const routes = {
@@ -23,7 +24,7 @@ export const routes = {
         return 'Dashboard';
       },
       renderRightButton(navigator) {
-        return <PreviewButton navigator={navigator} />
+        return <PreviewButton navigator={navigator} day={day} />
       },
 
       // renderTitle(navigator) {
@@ -36,25 +37,25 @@ export const routes = {
   },
 
   // -----------------------------------------
-  //    NEW RECOMMENDATION
+  //    PREVIEW SCHEDULE
   // -----------------------------------------
 
-  // getNewRecommendationRoute() {
-  //   return {
-  //     renderScene(navigator) {
-  //       return <InputTitle navigator={navigator} />;
-  //     },
-  //
-  //     renderLeftButton(navigator) {
-  //       return <Nav.Button text="Close" onPress={() => navigator.pop() } />
-  //     },
-  //
-  //     configureScene(){
-  //       return ExNavigator.SceneConfigs.FloatFromBottom
-  //     },
-  //
-  //   };
-  // },
+  getPreviewRoute(day) {
+    return {
+      renderScene(navigator) {
+        return <Preview navigator={navigator} day={day} />;
+      },
+
+      // renderLeftButton(navigator) {
+      //   return <Nav.Button text="Close" onPress={() => navigator.pop() } />
+      // },
+      //
+      // configureScene(){
+      //   return ExNavigator.SceneConfigs.FloatFromBottom
+      // },
+
+    };
+  },
 
 
 

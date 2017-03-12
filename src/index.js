@@ -25,7 +25,7 @@ class App extends Component {
 
    return (
      <Provider store={this.state.store}>
-       <Weekend />
+       {Layout}
      </Provider>
    );
   }
