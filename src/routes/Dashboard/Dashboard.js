@@ -1,22 +1,25 @@
 import React from 'react';
-import { View, ScrollView } from 'react-native';
-import _ from 'lodash';
-import { ListItem, Text, Icon } from 'native-base';
+import { View, ListView, Text } from 'react-native';
 
-// import Button from '../../components/Button';
-// import Card from '../../components/Card';
-// import EnableReminders from '../../components/EnableReminders';
+import { EventListItem } from '../../components';
+
+
+
 import styles from './styles';
 
 const Dashboard = (props) => {
 
-  const { recommendations, onNewRecPress, app, setReminder, setNotificationPermission } = props;
+  const { dataSource } = props;
 
   return (
     <View style={styles.container}>
-      <Text>Dashboard</Text>
+      <ListView
+        dataSource={dataSource}
+        renderRow={(rowData) => <EventListItem event={rowData} />}
+      />
     </View>
   );
 }
+
 
 export default Dashboard;

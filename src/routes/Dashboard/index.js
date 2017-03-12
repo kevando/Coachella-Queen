@@ -6,7 +6,8 @@ import * as AppActions from '../../reducers/app/actions';
 
 const mapStateToProps = (state) => {
   return {
-    // recommendations: state.recommendations.list,
+    schedule: state.events.schedule,
+    mySchedule: state.events.mySchedule,
     app: state.app,
   };
 };

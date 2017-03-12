@@ -1,27 +1,53 @@
 
 import React, {Component} from 'react';
 import ExNavigator from '@exponent/react-native-navigator';
+import TabNavigator from 'react-native-tab-navigator';
 import Routes from '../../config/routes';
 import styles from './styles';
 
-const Weekend = (props) => {
+class Weekend extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedTab: 'Friday',
+    };
+  }
 
-  const sceneStyle = [];
-  // sceneStyle.push({ paddingTop: 64 });
+  renderTabItem(title, initialRoute, Icon) {
+    const { selectedTab } = this.state;
+    const sceneStyle = [];
+    if (initialRoute.showNavigationBar !== false) {
+      sceneStyle.push({ paddingTop: 64 });
+    }
 
-  const initialRoute = Routes.getDashboardRoute();
-  // const initialRoute = Routes.getHelloRoute();
+    return (
+      <TabNavigator.Item
+        selected={selectedTab === title}
+        title={title}
+        {...styles}
 
-  return (
-    <ExNavigator
-      initialRoute={initialRoute}
-      style={{ flex: 1 }}
-      navigationBarStyle={styles.navBar}
-      sceneStyle={sceneStyle}
-      showNavigationBar={true}
-    />
-  );
+        onPress={() => this.setState({ selectedTab: title })}
+      >
+        <ExNavigator
+          initialRoute={initialRoute}
+          style={{ flex: 1 }}
+          {...styles}
+          sceneStyle={sceneStyle}
+          showNavigationBar={initialRoute.showNavigationBar}
+        />
+      </TabNavigator.Item>
+    );
+  }
 
+  render() {
+    return (
+      <TabNavigator {...styles} >
+        {this.renderTabItem('Friday', Routes.getDashboardRoute('Friday'))}
+        {this.renderTabItem('Saturday', Routes.getDashboardRoute('Saturday'))}
+        {this.renderTabItem('Sunday', Routes.getDashboardRoute('Sunday'))}
+      </TabNavigator>
+    );
+  }
 }
 
 

@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 
-
 import app from './app/reducer';
-
+import events from './events/reducer';
 
 const reducers = {
   app,
+  events,
 };
 
 const appReducer = combineReducers(reducers);

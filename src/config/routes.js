@@ -2,15 +2,8 @@ import React from 'react';
 import ExNavigator from '@exponent/react-native-navigator';
 
 import Dashboard from '../routes/Dashboard';
-// import InputTitle from '../routes/InputTitle';
-// import InputFriend from '../routes/InputFriend';
-// import ConfirmRecommendation from '../routes/ConfirmRecommendation';
-// import Debug from '../routes/Debug';
 import Hello from '../routes/Hello';
-
-// import * as Nav from '../components/Nav';
-
-
+import { PreviewButton } from '../components';
 
 export const routes = {
 
@@ -18,10 +11,19 @@ export const routes = {
   //    DASHBOARD
   // -----------------------------------------
 
-  getDashboardRoute() {
+  getDashboardRoute(day) {
     return {
       renderScene(navigator) {
-        return <Dashboard navigator={navigator} />;
+        return <Dashboard navigator={navigator} day={day} />;
+      },
+      getTitle() {
+        if(day == 'Friday')   return 'April 14th, 2017';
+        if(day == 'Saturday') return 'April 15th, 2017';
+        if(day == 'Sunday')   return 'April 16th, 2017';
+        return 'Dashboard';
+      },
+      renderRightButton(navigator) {
+        return <PreviewButton navigator={navigator} />
       },
 
       // renderTitle(navigator) {
