@@ -13,7 +13,7 @@ class Weekend extends Component {
     };
   }
 
-  renderTabItem(title, initialRoute, Icon) {
+  renderTabItem(title, initialRoute) {
     const { selectedTab } = this.state;
     const sceneStyle = [];
     if (initialRoute.showNavigationBar !== false) {
@@ -40,6 +40,7 @@ class Weekend extends Component {
   }
 
   render() {
+    console.log('PROPS',this.props.showTabBar)
     return (
       <TabNavigator {...styles} >
         {this.renderTabItem('Friday', Routes.getDashboardRoute('Friday'))}

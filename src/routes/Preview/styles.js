@@ -5,7 +5,7 @@ export default styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.blue,
-    paddingTop:230
+    paddingTop:200
   },
   textContainer: {
     borderWidth: 1,

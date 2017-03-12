@@ -45,7 +45,6 @@ export const routes = {
       renderScene(navigator) {
         return <Preview navigator={navigator} day={day} />;
       },
-
       // renderLeftButton(navigator) {
       //   return <Nav.Button text="Close" onPress={() => navigator.pop() } />
       // },
