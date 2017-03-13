@@ -13,6 +13,7 @@ import { Container, Header, Title, Content, Button, Icon } from 'native-base';
 import * as Animatable from 'react-native-animatable';
 
 import styles from './styles';
+const window = Dimensions.get('window');
 
 export default class Hello extends Component {
 
@@ -25,7 +26,7 @@ export default class Hello extends Component {
   // ---------------------------------------------
 
   componentDidMount() {
-    // this.riseSun(); // animate sun
+    this.riseSun(); // animate sun
   }
 
 
@@ -33,16 +34,9 @@ export default class Hello extends Component {
   riseSun() {
     Animated.timing(  // Uses easing functions
     this.state.sunPosition,  // The value to drive
-    {toValue: 20, delay: 300, duration: 1000}  // Configuration
+    {toValue: 30, delay: 300, duration: 4000}  // Configuration
     ).start();  // Don't forget start!
   }
-
-// ---------------------------------------------
-  onWeekendPress(weekend) {
-    // Pass weekend var to home
-    Actions.home({weekend})
-  }
-
 
 
   render() {
@@ -54,16 +48,14 @@ export default class Hello extends Component {
 
           <Animated.View style={[styles.sun,{top: this.state.sunPosition}]} />
 
-          <Animatable.View animation="fadeIn" delay={700} style={styles.textContainer} >
-            <Text style={styles.text} >As human beings, we crave togetherness</Text>
-            <Text style={styles.text} >Festivals bring us closer together.</Text>
-            <Text style={styles.text} >Together we can enourage more togetherness.</Text>
-            <Text style={styles.text} >{this.props.app.kevin}</Text>
-            <Button iconLeft outline light onPress={this.props.onboarded}>
-                        <Icon name='home' />
-                        <Text>Home</Text>
-                    </Button>
-          </Animatable.View>
+          <View style={styles.textContainer} >
+            <Animatable.Text animation="fadeIn" delay={4000} style={styles.title} >Coachella Queen</Animatable.Text>
+            <Animatable.Text animation="fadeIn" delay={5000} style={styles.text} >1) Tap the bands you want to see</Animatable.Text>
+            <Animatable.Text animation="fadeIn" delay={5000} style={styles.text} >2) Export your schedule for each day</Animatable.Text>
+            <Animatable.Text animation="fadeIn" delay={5000} style={styles.text} >3) Set your schedule as your background photo</Animatable.Text>
+            <Animatable.Text animation="fadeIn" delay={5000} style={styles.text} >4) Be together :)</Animatable.Text>
+              <Animatable.Text onPress={this.props.onboarded} style={{marginTop:30,width: 150, textAlign: 'center',borderColor:'#fff',color:'#fff',borderWidth:1,paddingVertical: 10}} animation="fadeIn" delay={5000}>LETS DO THIS</Animatable.Text>
+          </View>
         </View>
 
         <View style={styles.grassContainer} >
@@ -75,3 +67,7 @@ export default class Hello extends Component {
 
 // var blueCode = ((14 * 299) + (158 * 587) + (237 * 114)) / 1000;
 //  If it is below 125, use white text. If it is 125 or above, use black text.
+
+// <Text style={styles.text} >As human beings, we crave togetherness</Text>
+// <Text style={styles.text} >Festivals bring us closer together.</Text>
+// <Text style={styles.text} >Together we can enourage more togetherness.</Text>

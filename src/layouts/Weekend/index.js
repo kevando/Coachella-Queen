@@ -40,7 +40,6 @@ class Weekend extends Component {
   }
 
   render() {
-    console.log('PROPS',this.props.showTabBar)
     return (
       <TabNavigator {...styles} >
         {this.renderTabItem('Friday', Routes.getDashboardRoute('Friday'))}

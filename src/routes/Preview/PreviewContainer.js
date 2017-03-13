@@ -13,8 +13,9 @@ class PreviewContainer extends Component {
 
     const { mySchedule, day } = this.props;
     console.log(day)
-    const daySchedule = _.filter(mySchedule,({start}) => { return moment(start).format('dddd') == day})
-    this.setState({daySchedule})
+    const daySchedule = _.filter(mySchedule,({start}) => { return moment(start).format('dddd') == day});
+    const sortedSchedule = _.sortBy(daySchedule,(event) =>{ return event.start})
+    this.setState({daySchedule: sortedSchedule})
   }
 
   render() {

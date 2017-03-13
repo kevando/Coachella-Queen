@@ -34,9 +34,11 @@ class DashboardContainer extends Component {
       return event;
     });
 
+    var sortedSchedule = _.sortBy(combinedSchedules,({name}) => {return name; })
+
     // Now set the array
     this.setState({
-      dataSource: ds.cloneWithRows(combinedSchedules)
+      dataSource: ds.cloneWithRows(sortedSchedule)
     });
 
   }

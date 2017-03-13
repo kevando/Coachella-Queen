@@ -11,4 +11,10 @@ export default styles = StyleSheet.create({
     borderColor: '#aaa',
     borderWidth: 1,
   },
+  touchable: {
+    marginTop: -4,
+    paddingVertical:10,
+    paddingHorizontal:20,
+    // borderColor:'yellow',borderWidth:1
+  }
 });

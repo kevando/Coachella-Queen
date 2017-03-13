@@ -9,7 +9,7 @@ const EventListItem = (props) => {
   const { event, onPress } = props;
 
   return (
-    <TouchableOpacity onPress={onPress.bind(this,event)}>
+    <TouchableOpacity activeOpacity={0.8} onPress={onPress.bind(this,event)}>
       <View style={[styles.container,{backgroundColor: event.selected ? '#ddd' : '#fff',borderColor: event.selected ? '#333' : '#ccc'}]}>
         <Text style={styles.band}>{event.name}</Text>
         <Text style={styles.stage}>{event.stage}</Text>

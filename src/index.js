@@ -16,9 +16,17 @@ class App extends Component {
       onboarded: false,
     };
   }
+  componentWillMount(){
+    //tmp
+    // const store = this.state.store.getState();
+    // if(store.app.onboarded) alert('onboarded tru'); else alert('onboarded false');
+    // this.setState({onboarded: store.app.onboarded})
+    this.setState({onboarded: true})
+  }
 
   handleChange() {
     // soley to redirect user, this is tmp @todo
+    // this causes that flicker, but whatever
      const reduxStore = this.state.store.getState();
 
     if(this.state.onboarded == false && reduxStore.app.onboarded == true)

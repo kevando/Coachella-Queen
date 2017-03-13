@@ -5,6 +5,6 @@ export default styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.blue,
-    // padding:30
+    paddingTop:30
   },
 });
