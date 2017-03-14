@@ -16,6 +16,7 @@ class DashboardContainer extends Component {
 
   componentWillMount() {
     this._prepareList(this.props);
+    
   }
 
   componentWillReceiveProps(nextProps) {

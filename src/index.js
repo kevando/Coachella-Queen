@@ -12,23 +12,20 @@ class App extends Component {
     super(props);
     this.state = {
       isLoading: true,
-      store: configureStore(() => this.setState({ isLoading: false })),
+      // Load the Redux store from Async Storage
+      store: configureStore(() => this.onStoreConfigure() ),
       onboarded: false,
     };
   }
-  componentWillMount(){
-    //tmp
-    // const store = this.state.store.getState();
-    // if(store.app.onboarded) alert('onboarded tru'); else alert('onboarded false');
-    // this.setState({onboarded: store.app.onboarded})
-    this.setState({onboarded: true})
+
+  onStoreConfigure() {
+    this.setState({ isLoading: false });
+    const store = this.state.store.getState();
+    this.setState({onboarded: store.app.onboarded});
   }
 
   handleChange() {
-    // soley to redirect user, this is tmp @todo
-    // this causes that flicker, but whatever
-     const reduxStore = this.state.store.getState();
-
+    const reduxStore = this.state.store.getState();
     if(this.state.onboarded == false && reduxStore.app.onboarded == true)
       this.setState({onboarded: true});
   }

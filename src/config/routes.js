@@ -1,4 +1,5 @@
 import React from 'react';
+import {Text} from 'react-native';
 import ExNavigator from '@exponent/react-native-navigator';
 
 import Dashboard from '../routes/Dashboard';
@@ -45,8 +46,11 @@ export const routes = {
       renderScene(navigator) {
         return <Preview navigator={navigator} day={day} />;
       },
-      // renderLeftButton(navigator) {
-      //   return <Nav.Button text="Close" onPress={() => navigator.pop() } />
+      getBackButtonTitle() {
+        return 'Back'
+      },
+      // renderRightButton(navigator) {
+      //   return <Nav.Button text="" onPress={() => navigator.pop() } />
       // },
       //
       // configureScene(){

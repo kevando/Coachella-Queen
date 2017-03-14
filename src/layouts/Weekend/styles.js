@@ -17,6 +17,13 @@ export default styles = StyleSheet.create({
     color: colors.white,
     fontFamily: 'Baskerville',
   },
+  barButtonTextStyle: {
+    color: 'white',
+
+  },
+  barButtonIconStyle: {
+    tintColor: 'white',
+  },
 
   // Styling pass to tabBar
   tabBarStyle: {

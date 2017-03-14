@@ -5,22 +5,31 @@ export default styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.blue,
-    paddingTop:200
+    paddingTop:0
+  },
+  exportText: {
+    color: colors.white,
+    fontSize: 30,
+
+    textAlign: 'right',
+    marginRight: 25,
+  },
+  viewContainer: {
+    paddingTop: 150, // space for time
+    flex: 1,
+    backgroundColor: colors.blue
   },
   textContainer: {
-    borderWidth: 1,
+    // borderWidth: 1,
     borderColor: '#ccc',
     padding: 5,
 
   },
-  title: {
-    color: colors.white,
-    fontSize: 30,
-  },
+
   text: {
     color: colors.white,
     lineHeight: 30,
-    fontSize: 20,
-    // fontFamily: 'Baskerville'
+    fontSize: 16,
+    fontFamily: 'Courier'
   }
 });

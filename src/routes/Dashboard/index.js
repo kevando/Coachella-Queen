@@ -8,6 +8,7 @@ const mapStateToProps = (state) => {
   return {
     schedule: state.events.schedule,
     mySchedule: state.events.mySchedule,
+    app: state.app,
   };
 };
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, ListView, Text, CameraRoll } from 'react-native';
+import { Icon } from 'native-base';
 import _ from 'lodash';
 import moment from 'moment';
 import { takeSnapshot } from 'react-native-view-shot';
@@ -28,29 +29,23 @@ class Preview extends React.Component {
   }
 
   savePhoto(uri) {
-
-    CameraRoll.saveToCameraRoll(uri, 'photo', function(data) {
-      // console.log(data);
-      // this doesnt work but whatever
-      alert('photo saved to camera roll')
-  }, function(err) {
-      // console.log(err);
-      alert('ERROR saving to camera roll')
-  });
+    CameraRoll.saveToCameraRoll(uri, 'photo');
+    alert('Schedule saved to camera roll. Now set it as your background :)')
   }
 
   render() {
     const { daySchedule } = this.props;
 
     return (
-      <View style={styles.container} ref="viewContainer" >
-        <Text style={styles.title}>Coachella Queen</Text>
-        <View style={styles.textContainer}>
-          {_.map(daySchedule,(event,i)=> {return (
-            <Text style={styles.text} key={i}>{moment(event.start).format('h:mm')} @ {event.stage} - {event.name}</Text>
-          )})}
+      <View style={styles.container}>
+        <Text style={styles.exportText} onPress={this.onExportPress.bind(this)}><Icon name="ios-share" style={{color:"white"}} /></Text>
+        <View ref="viewContainer" style={styles.viewContainer} >
+          <View style={styles.textContainer}>
+            {_.map(daySchedule,(event,i)=> {return (
+              <Text style={styles.text} key={i}>{moment(event.start).format('h:mm')} @ {event.stage} - {event.name}</Text>
+            )})}
+          </View>
         </View>
-        <Text style={{marginTop: 50}} onPress={this.onExportPress.bind(this)}>Export</Text>
       </View>
     );
   }
