@@ -54,7 +54,7 @@ export default class Hello extends Component {
             <Animatable.Text animation="fadeIn" delay={5000} style={styles.text} >2) Export your schedule for each day</Animatable.Text>
             <Animatable.Text animation="fadeIn" delay={5000} style={styles.text} >3) Set your schedule as your background photo</Animatable.Text>
             <Animatable.Text animation="fadeIn" delay={5000} style={styles.text} >4) Be together :)</Animatable.Text>
-              <Animatable.Text onPress={this.props.onboarded} style={{marginTop:30,width: 150, textAlign: 'center',borderColor:'#fff',color:'#fff',borderWidth:1,paddingVertical: 10}} animation="fadeIn" delay={5000}>LETS DO THIS</Animatable.Text>
+              <Animatable.Text onPress={this.props.onButtonPress} style={{marginTop:30,width: 150, textAlign: 'center',borderColor:'#fff',color:'#fff',borderWidth:1,paddingVertical: 10}} animation="fadeIn" delay={5000}>LETS DO THIS</Animatable.Text>
           </View>
         </View>
 

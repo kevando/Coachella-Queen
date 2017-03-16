@@ -1,74 +1,56 @@
 import React from 'react';
+import { View, } from 'react-native';
 import _ from 'lodash';
 import { Container, Content, Left, Body, Right, Radio, Switch, List, ListItem, Text, Icon, Button, Badge } from 'native-base';
 
+import { database, scheduleRef } from '../../config/firebase';
 
 import styles from './styles';
 
-const Debug = (props) => {
+// const Debug = (props) => {
+class Debug extends React.Component{
 
-  const { recommendations, onPurgePress, app, onFeedbackPress, notificationPermission } = props;
+  // const { nothing } = props;
 
-  return (
-    <Container>
-      <Content>
-        <List>
+  state = {data: []}
 
-          <ListItem itemDivider style={styles.headerr}>
-            <Text>Application Info</Text>
-          </ListItem>
+  componentDidMount() {
+    // var itemsRef = firebaseApp.database().ref('v1/schedule');
+    //
+    scheduleRef.once('value', (snap) => {
 
-          <ListItem iconLeft>
-            <Icon name="ios-phone-portrait" />
-            <Text>Device</Text>
-            <Text note>{app.deviceName}</Text>
-          </ListItem>
-
-          <ListItem iconLeft>
-            <Icon name="ios-phone-portrait" />
-            <Text>Version</Text>
-            <Text note>{app.version}</Text>
-          </ListItem>
-
-          <ListItem iconLeft>
-            <Icon name="ios-phone-portrait" />
-            <Text>Notifications</Text>
-            <Text note>{app.notificationPermission}</Text>
-          </ListItem>
+      // get children as an array
+      var items = [];
+      snap.forEach((child) => {
+        items.push({
+          name: child.val().name,
+          _key: child.key
+        });
+      });
 
 
-          <ListItem itemDivider style={styles.headerr}>
-            <Text>Application Data</Text>
-          </ListItem>
+      this.setState({
+        // dataSource: this.state.dataSource.cloneWithRows(items)
+        data: items,
+      });
+
+    });
+
+  }
+
+  render() {
+    return (
+      <View style={styles.container} >
+        <Text>debug</Text>
+        <Text>{this.state.data.length}</Text>
+        <Text>{this.props.firebaseData.length}</Text>
+        <Text onPress={this.props.refreshSchedule}>Refresh schedule</Text>
 
 
-          <ListItem iconLeft>
-            <Icon name="ios-settings-outline" style={{ color: '#0A69FE' }} />
-            <Text>Recommendations</Text>
-            <Badge style={{ backgroundColor: '#8C97B5' }}>{recommendations.length}</Badge>
-          </ListItem>
+      </View>
+    );
+  }
 
-          <ListItem iconLeft>
-            <Icon name="ios-alert" style={{ color: '#8C97B5' }} />
-            <Text>Purge Data</Text>
-            <Button danger onPress={onPurgePress}>Purge Data</Button>
-          </ListItem>
-
-          <ListItem itemDivider style={styles.headerr}>
-            <Text>Support</Text>
-          </ListItem>
-
-          <ListItem iconLeft>
-            <Icon name="ios-mail" />
-            <Text>Send Feedback</Text>
-            <Button info onPress={onFeedbackPress}>Send Mail</Button>
-          </ListItem>
-
-        </List>
-
-      </Content>
-  </Container>
-  );
 }
 
 export default Debug;

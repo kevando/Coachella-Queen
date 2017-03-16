@@ -1,7 +1,7 @@
 // const Permissions = require('react-native-permissions');
 
 import {
-  ONBOARDED,
+  ONBOARD_STEP_PASSED,
 } from './actionTypes';
 
 // export function checkNotificationPermission() {
@@ -14,6 +14,6 @@ import {
 //   };
 // }
 
-export function onboarded() {
-  return { type: ONBOARDED }
+export function onboardStepPassed(onboardStep) {
+  return { type: ONBOARD_STEP_PASSED, onboardStep }
 }

@@ -27,8 +27,6 @@ class DebugContainer extends Component {
     return (
       <Debug
         {...this.props}
-        onPurgePress={this.purgeData.bind(this)}
-        onFeedbackPress={this.handleHelp.bind(this)}
       />
     );
   }

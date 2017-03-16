@@ -2,9 +2,9 @@ import _ from 'lodash';
 // var uuid = require('react-native-uuid');
 
 import {
-  ADD_EVENT,
-  REMOVE_EVENT,
+  SET_SCHEDULE_DATA,
   TOGGLE_EVENT,
+  REFRESH_SCHEDULE,
 } from './actionTypes';
 
 const initialState =
@@ -82,6 +82,7 @@ const initialState =
       {"name":"Preoccupations","short":"preocc(1)","start":"2017-04-16 21:45","end":"2017-04-16 22:35","stage":"Gobi"},
       {"name":"Devendra Banhart","short":"devend(1)","start":"2017-04-16 23:00","end":"2017-04-16 23:50"},
     ],
+    firebaseData: [],
     mySchedule: [],
 
   };
@@ -90,30 +91,13 @@ export default function events(events = initialState, action = {}) {
 
   switch (action.type) {
 
-    // case SET_TITLE:
-    //   return {
-    //   ...recommendations,
-    //   unfinished: {title: action.title, id: uuid.v1()}
-    //   }
-    //
-    // // -------------------------------------------
-    // case SET_FRIEND:
-    //   return {
-    //     ...recommendations,
-    //     unfinished: {
-    //       ...recommendations.unfinished,
-    //       friend: action.friend
-    //     }
-    //   }
-    //
-    // // -------------------------------------------
-    case ADD_EVENT: // @todo make this toggle
-      // alert('adding event');
-      var newList = [action.event].concat(events.mySchedule);
+    case SET_SCHEDULE_DATA:
       return {
         ...events,
-        mySchedule: newList,
+        firebaseData: action.events
       }
+    // -------------------------------------------
+
 
     case TOGGLE_EVENT:
       const isAleadyScheduled = _.some(events.mySchedule, action.event)
@@ -129,7 +113,7 @@ export default function events(events = initialState, action = {}) {
         ...events,
         mySchedule: newList,
       }
-
+    // -------------------------------------------
 
 
 

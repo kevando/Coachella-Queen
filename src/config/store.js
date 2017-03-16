@@ -13,7 +13,7 @@ export default configureStore = (onComplete) => {
   persistStore(store, { storage: AsyncStorage }, onComplete);
 
   // Uncomment this to purge the async store
-  // persistStore(store, { storage: AsyncStorage }, onComplete).purge();
+  persistStore(store, { storage: AsyncStorage }, onComplete).purge();
 
   return store;
 };

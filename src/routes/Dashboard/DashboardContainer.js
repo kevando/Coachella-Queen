@@ -16,7 +16,7 @@ class DashboardContainer extends Component {
 
   componentWillMount() {
     this._prepareList(this.props);
-    
+
   }
 
   componentWillReceiveProps(nextProps) {
@@ -39,7 +39,8 @@ class DashboardContainer extends Component {
 
     // Now set the array
     this.setState({
-      dataSource: ds.cloneWithRows(sortedSchedule)
+      // dataSource: ds.cloneWithRows(sortedSchedule),
+      dataSource: ds.cloneWithRows(props.firebaseData)
     });
 
   }

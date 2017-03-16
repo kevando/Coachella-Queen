@@ -1,0 +1,16 @@
+
+
+ [
+    {
+        "name": "Wydarzenie 1",
+        "start": "2015-03-19"
+    },
+    {
+        "name": "Wydarzenie 2",
+        "start": "2015-03-20"
+    },
+    {
+        "name": "Wydarzenie 3",
+        "start": "2015-03-21"
+    }
+]

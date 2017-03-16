@@ -5,14 +5,23 @@ import Routes from '../../config/routes';
 
 class HelloContainer extends Component {
 
+  componentDidMount() {
+    // Load schedule data from firebase
+    // this might be a problem if internet is slow
+    this.props.refreshSchedule();
+  }
+
+  onButtonPress(){
+    this.props.onboardStepPassed('hello');
+  }
 
   render() {
 
-    const { navigator, onboard } = this.props;
+    const { navigator } = this.props;
 
     return (
       <Hello
-        onButtonPress={() => this.onPress.bind(this)}
+        onButtonPress={this.onButtonPress.bind(this)}
         {...this.props}
       />
     );
