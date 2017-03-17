@@ -2,10 +2,9 @@ import React from 'react';
 import {Text} from 'react-native';
 import ExNavigator from '@exponent/react-native-navigator';
 
-import Dashboard from '../routes/Dashboard';
-import Hello from '../routes/Hello';
-import Preview from '../routes/Preview';
+import { Debug, Hello, Dashboard, Preview, } from '../routes';
 import { PreviewButton } from '../components';
+import * as Nav from '../components/Nav';
 
 export const routes = {
 
@@ -27,6 +26,11 @@ export const routes = {
       renderRightButton(navigator) {
         return <PreviewButton navigator={navigator} day={day} />
       },
+
+      renderLeftButton(navigator) {
+        return <Nav.Button navigator={navigator} text='Debug' />
+      },
+
 
       // renderTitle(navigator) {
       //   return (
@@ -60,8 +64,6 @@ export const routes = {
     };
   },
 
-
-
   // -----------------------------------------
   //    HELLO
   // -----------------------------------------
@@ -70,6 +72,28 @@ export const routes = {
     return {
       renderScene(navigator) {
         return <Hello navigator={navigator} />;
+      },
+      // @todo change this, user can still click button
+      // renderTitle(navigator) {
+      //   return (
+      //     <Nav.DashboardTitle title="" navigator={navigator} />
+      //   );
+      // },
+      // @todo change this, user can still click button
+      // renderLeftButton(navigator) {
+      //   return <Nav.Button text="" onPress={() => navigator.pop() } />
+      // },
+    };
+  },
+
+  // -----------------------------------------
+  //    DEBUG
+  // -----------------------------------------
+
+  getDebugRoute() {
+    return {
+      renderScene(navigator) {
+        return <Debug navigator={navigator} />;
       },
       // @todo change this, user can still click button
       // renderTitle(navigator) {

@@ -1,7 +1,7 @@
 // const Permissions = require('react-native-permissions');
 
 import {
-  ONBOARDED,
+  ONBOARD_STEP_PASSED,
 } from './actionTypes';
 
 // export function checkNotificationPermission() {
@@ -14,6 +14,16 @@ import {
 //   };
 // }
 
-export function onboarded() {
-  return { type: ONBOARDED }
+// -----------------------------------------------------------------------
+// DELETE ALL APP DATA
+
+export function purgeData() {
+  return { type: 'PURGE_DATA' }
+}
+
+// -----------------------------------------------------------------------
+// Set onboard show to false
+
+export function onboardStepPassed(onboardStep) {
+  return { type: ONBOARD_STEP_PASSED, onboardStep }
 }

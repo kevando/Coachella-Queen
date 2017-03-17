@@ -1,74 +1,77 @@
 import React from 'react';
+import { View, } from 'react-native';
 import _ from 'lodash';
 import { Container, Content, Left, Body, Right, Radio, Switch, List, ListItem, Text, Icon, Button, Badge } from 'native-base';
 
+import { database, scheduleRef } from '../../config/firebase';
 
 import styles from './styles';
 
 const Debug = (props) => {
 
-  const { recommendations, onPurgePress, app, onFeedbackPress, notificationPermission } = props;
+  const { version, deviceId, deviceName} = props.app;
 
   return (
     <Container>
       <Content>
-        <List>
 
-          <ListItem itemDivider style={styles.headerr}>
-            <Text>Application Info</Text>
-          </ListItem>
+        <ListItem itemDivider>
+          <Text>Debug Info</Text>
+        </ListItem>
 
-          <ListItem iconLeft>
-            <Icon name="ios-phone-portrait" />
-            <Text>Device</Text>
-            <Text note>{app.deviceName}</Text>
-          </ListItem>
+        <ListItem icon>
+          <Body>
+            <Text>App Version</Text>
+          </Body>
+          <Right>
+            <Text>{version}</Text>
+          </Right>
+        </ListItem>
+        <ListItem icon>
+          <Body>
+            <Text>Device Name</Text>
+          </Body>
+          <Right>
+            <Text>{deviceName}</Text>
+          </Right>
+        </ListItem>
+        <ListItem icon>
+          <Body>
+            <Text>Device ID</Text>
+          </Body>
+          <Right>
+            <Text>{deviceId}</Text>
+          </Right>
+        </ListItem>
 
-          <ListItem iconLeft>
-            <Icon name="ios-phone-portrait" />
-            <Text>Version</Text>
-            <Text note>{app.version}</Text>
-          </ListItem>
+        <ListItem itemDivider>
+          <Text>Danger Zone</Text>
+        </ListItem>
 
-          <ListItem iconLeft>
-            <Icon name="ios-phone-portrait" />
-            <Text>Notifications</Text>
-            <Text note>{app.notificationPermission}</Text>
-          </ListItem>
-
-
-          <ListItem itemDivider style={styles.headerr}>
-            <Text>Application Data</Text>
-          </ListItem>
+        <ListItem icon>
+          <Body>
+            <Text>App Data</Text>
+          </Body>
+          <Right>
+            <Button rounded danger small onPress={props.onPurgePress}>
+              <Text>Delete</Text>
+            </Button>
+          </Right>
+        </ListItem>
 
 
-          <ListItem iconLeft>
-            <Icon name="ios-settings-outline" style={{ color: '#0A69FE' }} />
-            <Text>Recommendations</Text>
-            <Badge style={{ backgroundColor: '#8C97B5' }}>{recommendations.length}</Badge>
-          </ListItem>
-
-          <ListItem iconLeft>
-            <Icon name="ios-alert" style={{ color: '#8C97B5' }} />
-            <Text>Purge Data</Text>
-            <Button danger onPress={onPurgePress}>Purge Data</Button>
-          </ListItem>
-
-          <ListItem itemDivider style={styles.headerr}>
-            <Text>Support</Text>
-          </ListItem>
-
-          <ListItem iconLeft>
-            <Icon name="ios-mail" />
-            <Text>Send Feedback</Text>
-            <Button info onPress={onFeedbackPress}>Send Mail</Button>
-          </ListItem>
-
-        </List>
 
       </Content>
-  </Container>
+    </Container>
   );
-}
 
+}
+// <ListItem>
+//   <Left>
+//     <Text>Airplane Mode</Text>
+//   </Left>
+//   <Right>
+//     <Switch valur={false} />
+//   </Right>
+// </ListItem>
 export default Debug;

@@ -14,20 +14,24 @@ class App extends Component {
       isLoading: true,
       // Load the Redux store from Async Storage
       store: configureStore(() => this.onStoreConfigure() ),
-      onboarded: false,
+      layout: null,
     };
   }
 
   onStoreConfigure() {
-    this.setState({ isLoading: false });
     const store = this.state.store.getState();
-    this.setState({onboarded: store.app.onboarded});
+    this.setState({
+      isLoading: false,
+      layout: store.app.onboarding.hello.show ? <Onboard /> : <Weekend />
+    });
   }
 
   handleChange() {
+    // This might run too many times
+    console.log('handleChange');
     const reduxStore = this.state.store.getState();
-    if(this.state.onboarded == false && reduxStore.app.onboarded == true)
-      this.setState({onboarded: true});
+    if(reduxStore.app.onboarding.hello.show == false)
+      this.setState({ layout: <Weekend /> });
   }
 
   render() {
@@ -35,9 +39,11 @@ class App extends Component {
 
    let unsubscribe = this.state.store.subscribe(this.handleChange.bind(this))
 
+   const Layout = this.state.layout;
+
    return (
      <Provider store={this.state.store}>
-       {this.state.onboarded ? <Weekend /> : <Onboard />}
+       {Layout}
      </Provider>
    );
   }

@@ -45,6 +45,7 @@ class Weekend extends Component {
         {this.renderTabItem('Friday', Routes.getDashboardRoute('Friday'))}
         {this.renderTabItem('Saturday', Routes.getDashboardRoute('Saturday'))}
         {this.renderTabItem('Sunday', Routes.getDashboardRoute('Sunday'))}
+        
       </TabNavigator>
     );
   }

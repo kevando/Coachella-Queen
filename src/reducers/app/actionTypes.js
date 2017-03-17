@@ -1,1 +1,1 @@
-export const ONBOARDED = 'ONBOARDED';
+export const ONBOARD_STEP_PASSED = 'ONBOARD_STEP_PASSED';
