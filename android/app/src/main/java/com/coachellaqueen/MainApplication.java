@@ -4,10 +4,6 @@ import android.app.Application;
 
 import com.facebook.react.ReactApplication;
 import com.evollu.react.fa.FIRAnalyticsPackage;
-import io.fullstack.firestack.FirestackPackage;
-import io.invertase.firebase.RNFirebasePackage;
-import com.oblador.vectoricons.VectorIconsPackage;
-import fr.greweb.reactnativeviewshot.RNViewShotPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -28,11 +24,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new FIRAnalyticsPackage(),
-            new FirestackPackage(),
-            new RNFirebasePackage(),
-            new VectorIconsPackage(),
-            new RNViewShotPackage()
+            new FIRAnalyticsPackage()
       );
     }
   };
