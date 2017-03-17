@@ -8,7 +8,7 @@ const mapStateToProps = (state) => {
   return {
     schedule: state.events.schedule,
     mySchedule: state.events.mySchedule,
-    firebaseData: state.events.firebaseData,
+    coachellaSchedule: state.events.coachellaSchedule,
     app: state.app,
   };
 };

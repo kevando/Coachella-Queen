@@ -4,34 +4,40 @@ import {
   REFRESH_SCHEDULE,
 } from './actionTypes';
 
-import { cheduleRef } from '../../config/firebase';
+import { scheduleRef } from '../../config/firebase';
+
+// -----------------------------------------------------------------------
+// Take events array and overwrite coachellaSchedule[]
 
 export function setScheduleData(events) {
   return { type: SET_SCHEDULE_DATA, events }
 }
 
+// -----------------------------------------------------------------------
+// Get data from firebase then overwrite coachellaSchedule[]
+
 export function refreshSchedule() {
   return dispatch => {
-    // alert('im called')
+
     scheduleRef.once('value', (snap) => {
 
-      // get children as an array
-      var items = [];
+      var events = [];
       snap.forEach((child) => {
-        items.push({
+        events.push({
           name: child.val().name,
+          stage: child.val().stage,
+          start: child.val().start,
+          end: child.val().end,
           _key: child.key
         });
       });
-
-      // Now take the items array and dispatch action
-      // that will set the array to the store
-      dispatch(setScheduleData(items));
-
-    }); // once
-
+      dispatch(setScheduleData(events));
+    }); // scheduleRef.once
   }
 }
+
+// -----------------------------------------------------------------------
+// Add or remove event from mySchedule[]
 
 export function toggleEvent(event) {
   return { type: TOGGLE_EVENT, event }

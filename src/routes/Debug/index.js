@@ -6,7 +6,8 @@ import * as EventsActions from '../../reducers/events/actions';
 
 const mapStateToProps = (state) => {
   return {
-    firebaseData: state.events.firebaseData,
+    coachellaSchedule: state.events.coachellaSchedule,
+    mySchedule: state.events.mySchedule,
     app: state.app,
   };
 };

@@ -5,18 +5,14 @@ import _ from 'lodash';
 
 import Dashboard from './Dashboard';
 import Routes from '../../config/routes';
+import { getDaySchedule } from '../../config/helpers';
 
 const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
 class DashboardContainer extends Component {
 
-  // constructor() {
-  //   super();
-  // }
-
   componentWillMount() {
     this._prepareList(this.props);
-
   }
 
   componentWillReceiveProps(nextProps) {
@@ -26,21 +22,13 @@ class DashboardContainer extends Component {
   }
 
   _prepareList(props) {
-    const { schedule, day, mySchedule } = props;
-    var daySchedule = _.filter(schedule,({start}) => { return moment(start).format('dddd') == day})
+    // const { coachellaSchedule, day, mySchedule } = props;
 
-    // find all the events already part of the user's mySchedule array
-    var combinedSchedules = _.map(daySchedule,function(event){
-      event.selected = _.some(mySchedule, event);
-      return event;
-    });
-
-    var sortedSchedule = _.sortBy(combinedSchedules,({name}) => {return name; })
+    const daySchedule = getDaySchedule(props);
 
     // Now set the array
     this.setState({
-      // dataSource: ds.cloneWithRows(sortedSchedule),
-      dataSource: ds.cloneWithRows(props.firebaseData)
+      dataSource: ds.cloneWithRows(daySchedule),
     });
 
   }

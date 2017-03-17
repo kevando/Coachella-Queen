@@ -349,7 +349,7 @@
 			<key>files</key>
 			<array>
 				<string>140ED2AC1D01E1AD002B40FF</string>
-				<string>AE9BC45DBE44BC8E8BAA21F7</string>
+				<string>5FF875B7C41FDAF045589179</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -491,7 +491,7 @@
 		<key>00E356F61AD99517003FC87E</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>14195AEC524AC580F075FEDA</string>
+			<string>45F2FE68D7610A9FDAFD029D</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>BUNDLE_LOADER</key>
@@ -535,7 +535,7 @@
 		<key>00E356F71AD99517003FC87E</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>1A188B0EC1CC4D2021296E52</string>
+			<string>A141FB68A9356E740BFFBD66</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>BUNDLE_LOADER</key>
@@ -654,6 +654,58 @@
 			<string>0A50BDDB1E7B0781004C4808</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>0A50BE371E7B8C0F004C4808</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.pb-project</string>
+			<key>name</key>
+			<string>Firestack.xcodeproj</string>
+			<key>path</key>
+			<string>../node_modules/react-native-firestack/ios/Firestack.xcodeproj</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0A50BE381E7B8C0F004C4808</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0A50BE3C1E7B8C10004C4808</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0A50BE3B1E7B8C10004C4808</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>0A50BE371E7B8C0F004C4808</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>2</string>
+			<key>remoteGlobalIDString</key>
+			<string>134814201AA4EA6300B7C361</string>
+			<key>remoteInfo</key>
+			<string>Firestack</string>
+		</dict>
+		<key>0A50BE3C1E7B8C10004C4808</key>
+		<dict>
+			<key>fileType</key>
+			<string>archive.ar</string>
+			<key>isa</key>
+			<string>PBXReferenceProxy</string>
+			<key>path</key>
+			<string>libFirestack.a</string>
+			<key>remoteRef</key>
+			<string>0A50BE3B1E7B8C10004C4808</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 		<key>0A6621C61E7409CC00EA3966</key>
 		<dict>
@@ -1111,7 +1163,7 @@
 				<string>00C302EA1ABCBA2D00DB3ED1</string>
 				<string>139FDEF61B0652A700C62182</string>
 				<string>30ACFCDF54464351B09A35BE</string>
-				<string>F3819B77DF91756EC874CEF4</string>
+				<string>1DAA4A4556B7F54F3A51B321</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -1442,21 +1494,6 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>14195AEC524AC580F075FEDA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-CoachellaQueenTests.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-CoachellaQueenTests/Pods-CoachellaQueenTests.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>146833FF1AC3E56700842450</key>
 		<dict>
 			<key>isa</key>
@@ -1544,21 +1581,6 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>1A188B0EC1CC4D2021296E52</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-CoachellaQueenTests.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-CoachellaQueenTests/Pods-CoachellaQueenTests.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>1A5A5BB88EC648719D810A20</key>
 		<dict>
 			<key>explicitFileType</key>
@@ -1601,6 +1623,13 @@
 		<dict>
 			<key>fileRef</key>
 			<string>AC574D3BDC964D3A8E6B7ED4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1DAA4A4556B7F54F3A51B321</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F5772BA936A3F40F5D4304EC</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -2271,8 +2300,8 @@ fi
 			<array>
 				<string>CA1572E6FB3EE04DB739827F</string>
 				<string>B06DBCC13E904D59AC9D4765</string>
-				<string>14195AEC524AC580F075FEDA</string>
-				<string>1A188B0EC1CC4D2021296E52</string>
+				<string>45F2FE68D7610A9FDAFD029D</string>
+				<string>A141FB68A9356E740BFFBD66</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -2649,18 +2678,20 @@ fi
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
 		</dict>
-		<key>408C95E84C8DEB8D3397B8A4</key>
+		<key>45F2FE68D7610A9FDAFD029D</key>
 		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
 			<key>includeInIndex</key>
-			<string>0</string>
+			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-CoachellaQueenTests.debug.xcconfig</string>
 			<key>path</key>
-			<string>libPods-CoachellaQueen.a</string>
+			<string>Pods/Target Support Files/Pods-CoachellaQueenTests/Pods-CoachellaQueenTests.debug.xcconfig</string>
 			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>479EF4D0A3384739B0F0EB31</key>
 		<dict>
@@ -2685,8 +2716,8 @@ fi
 		<dict>
 			<key>children</key>
 			<array>
-				<string>408C95E84C8DEB8D3397B8A4</string>
 				<string>265F6DC452D841524B63B99E</string>
+				<string>F5772BA936A3F40F5D4304EC</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -2918,6 +2949,13 @@ fi
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>5FF875B7C41FDAF045589179</key>
+		<dict>
+			<key>fileRef</key>
+			<string>265F6DC452D841524B63B99E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>6402757E7C5744E193D633E2</key>
 		<dict>
 			<key>explicitFileType</key>
@@ -3079,6 +3117,7 @@ fi
 		<dict>
 			<key>children</key>
 			<array>
+				<string>0A50BE371E7B8C0F004C4808</string>
 				<string>0A8B5F5B1E6D4AC8007E64DD</string>
 				<string>0AB97DB01E6D41A100CA7698</string>
 				<string>5E91572D1DD0AC6500FF2AA8</string>
@@ -3245,6 +3284,12 @@ fi
 			<string></string>
 			<key>projectReferences</key>
 			<array>
+				<dict>
+					<key>ProductGroup</key>
+					<string>0A50BE381E7B8C0F004C4808</string>
+					<key>ProjectRef</key>
+					<string>0A50BE371E7B8C0F004C4808</string>
+				</dict>
 				<dict>
 					<key>ProductGroup</key>
 					<string>00C302A81ABCB8CE00DB3ED1</string>
@@ -3682,6 +3727,21 @@ fi
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>A141FB68A9356E740BFFBD66</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-CoachellaQueenTests.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-CoachellaQueenTests/Pods-CoachellaQueenTests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>A1F716F103F1FBD25D25196A</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -3788,13 +3848,6 @@ fi
 			<string>../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE9BC45DBE44BC8E8BAA21F7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>265F6DC452D841524B63B99E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>AF4D465F4B7C4DCC9D17C52C</key>
 		<dict>
@@ -4227,19 +4280,25 @@ fi
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>F3819B77DF91756EC874CEF4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>408C95E84C8DEB8D3397B8A4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>F462F2609BDD4A8589B5E727</key>
 		<dict>
 			<key>fileRef</key>
 			<string>F1DB886FB6A8470BB45BC1E2</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>F5772BA936A3F40F5D4304EC</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-CoachellaQueen.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 		<key>F7E67247FC2144D2965C5E92</key>
 		<dict>

@@ -7,49 +7,20 @@ import { database, scheduleRef } from '../../config/firebase';
 
 import styles from './styles';
 
-// const Debug = (props) => {
-class Debug extends React.Component{
+const Debug = (props) => {
 
-  // const { nothing } = props;
+  return (
+    <View style={styles.container} >
+      <Text>debug</Text>
 
-  state = {data: []}
-
-  componentDidMount() {
-    // var itemsRef = firebaseApp.database().ref('v1/schedule');
-    //
-    scheduleRef.once('value', (snap) => {
-
-      // get children as an array
-      var items = [];
-      snap.forEach((child) => {
-        items.push({
-          name: child.val().name,
-          _key: child.key
-        });
-      });
+      <Text>Total Events: {props.coachellaSchedule.length}</Text>
+      <Text>My Events: {props.mySchedule.length}</Text>
+      <Text onPress={props.refreshSchedule}>Refresh schedule</Text>
 
 
-      this.setState({
-        // dataSource: this.state.dataSource.cloneWithRows(items)
-        data: items,
-      });
+    </View>
+  );
 
-    });
-
-  }
-
-  render() {
-    return (
-      <View style={styles.container} >
-        <Text>debug</Text>
-        <Text>{this.state.data.length}</Text>
-        <Text>{this.props.firebaseData.length}</Text>
-        <Text onPress={this.props.refreshSchedule}>Refresh schedule</Text>
-
-
-      </View>
-    );
-  }
 
 }
 
