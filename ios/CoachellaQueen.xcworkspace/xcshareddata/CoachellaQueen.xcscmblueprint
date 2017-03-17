@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "32A5F2B562E6E95AA14D858208BB5B0254E3A084",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "32A5F2B562E6E95AA14D858208BB5B0254E3A084" : 9223372036854775807,
+    "C1A793B7E78BAF6C6A57438FA90C8D305C02AB13" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "ACF91A48-89FD-439E-9BB9-3EA8BDEE1701",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "32A5F2B562E6E95AA14D858208BB5B0254E3A084" : "CoachellaQueen\/",
+    "C1A793B7E78BAF6C6A57438FA90C8D305C02AB13" : "CoachellaQueen\/node_modules\/react-native-screenshot-detector\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CoachellaQueen",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ios\/CoachellaQueen.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kevando\/Coachella-Queen.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "32A5F2B562E6E95AA14D858208BB5B0254E3A084"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/blendlabs\/react-native-screenshot-detector.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C1A793B7E78BAF6C6A57438FA90C8D305C02AB13"
+    }
+  ]
+}
