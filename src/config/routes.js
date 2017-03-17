@@ -3,7 +3,6 @@ import {Text} from 'react-native';
 import ExNavigator from '@exponent/react-native-navigator';
 
 import { Debug, Hello, Dashboard, Preview, } from '../routes';
-import { PreviewButton } from '../components';
 import * as Nav from '../components/Nav';
 
 export const routes = {
@@ -24,20 +23,11 @@ export const routes = {
         return 'Dashboard';
       },
       renderRightButton(navigator) {
-        return <PreviewButton navigator={navigator} day={day} />
+        return <Nav.Calendar navigator={navigator} day={day} />
       },
-
       renderLeftButton(navigator) {
         return <Nav.Button navigator={navigator} text='Debug' />
       },
-
-
-      // renderTitle(navigator) {
-      //   return (
-      //     <Nav.DashboardTitle title="Dashboard" navigator={navigator} />
-      //   );
-      // },
-
     };
   },
 

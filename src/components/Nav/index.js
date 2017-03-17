@@ -1,7 +1,7 @@
 import Button from './Button';
-// import DashboardTitle from './DashboardTitle';
+import Calendar from './Calendar';
 
 export {
-  // DashboardTitle,
   Button,
+  Calendar,
 };

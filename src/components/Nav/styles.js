@@ -13,4 +13,19 @@ export default styles = StyleSheet.create({
     color: colors.white
   },
 
+  // ----------------------------
+  // Calendar Button
+
+  touchableCalendar: {
+    marginTop: -7,
+    paddingVertical:10,
+    paddingHorizontal:20,
+    // borderColor:'yellow',borderWidth:1,
+    // backgroundColor: 'purple'
+  },
+  calendar: {
+    // backgroundColor: 'red',
+    fontSize: 28
+  },
+
 });

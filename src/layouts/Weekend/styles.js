@@ -1,31 +1,27 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../config/styles';
 
-export default styles = StyleSheet.create({
-
-
-  // Styling pass to navBar
+export const navStyles = {
+  flex: 1,
   navigationBarStyle: {
     borderBottomColor:'#fff',
-
     borderBottomWidth:0,
     backgroundColor: colors.blue,
-
   },
-  titleStyle: { // not working for some reason
-    fontSize: 45,
+  titleStyle: {
+    fontSize: 22,
     color: colors.white,
     fontFamily: 'Baskerville',
   },
   barButtonTextStyle: {
     color: 'white',
-
   },
   barButtonIconStyle: {
     tintColor: 'white',
   },
+}
 
-  // Styling pass to tabBar
+export const tabStyles = {
   tabBarStyle: {
     backgroundColor: colors.green,
     borderTopWidth:1,
@@ -39,6 +35,5 @@ export default styles = StyleSheet.create({
   selectedTitleStyle: {
     color: colors.white,
     fontWeight: '700',
-
   }
-});
+};

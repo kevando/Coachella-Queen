@@ -7,7 +7,7 @@ import moment from 'moment';
 import Routes from '../../config/routes';
 import styles from './styles';
 
-const PreviewButton = ({ navigator, day, mySchedule }) => {
+const Calendar = ({ navigator, day, mySchedule }) => {
 
   var mySchedule = _.filter(mySchedule, (event) => { return moment(event.start).format('dddd') == day })
 
@@ -16,7 +16,7 @@ const PreviewButton = ({ navigator, day, mySchedule }) => {
   const onPress = () => navigator.push(Routes.getPreviewRoute(day));
 
   return (
-    <TouchableOpacity onPress={onPress} style={styles.touchable}>
+    <TouchableOpacity onPress={onPress} style={styles.touchableCalendar}>
       <Text style={styles.calendar} >🗓️</Text>
     </TouchableOpacity>
   );
@@ -29,4 +29,4 @@ const mapStateToProps = (state) => {
 };
 
 
-export default connect(mapStateToProps)(PreviewButton)
+export default connect(mapStateToProps)(Calendar)

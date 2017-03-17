@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import ExNavigator from '@exponent/react-native-navigator';
 import TabNavigator from 'react-native-tab-navigator';
 import Routes from '../../config/routes';
-import styles from './styles';
+import { navStyles, tabStyles } from './styles';
 
 class Weekend extends Component {
   constructor(props) {
@@ -24,14 +24,13 @@ class Weekend extends Component {
       <TabNavigator.Item
         selected={selectedTab === title}
         title={title}
-        {...styles}
+        {...tabStyles}
 
         onPress={() => this.setState({ selectedTab: title })}
       >
         <ExNavigator
           initialRoute={initialRoute}
-          style={{ flex: 1 }}
-          {...styles}
+          {...navStyles}
           sceneStyle={sceneStyle}
           showNavigationBar={initialRoute.showNavigationBar}
         />
@@ -41,11 +40,11 @@ class Weekend extends Component {
 
   render() {
     return (
-      <TabNavigator {...styles} >
+      <TabNavigator {...tabStyles} >
         {this.renderTabItem('Friday', Routes.getDashboardRoute('Friday'))}
         {this.renderTabItem('Saturday', Routes.getDashboardRoute('Saturday'))}
         {this.renderTabItem('Sunday', Routes.getDashboardRoute('Sunday'))}
-        
+
       </TabNavigator>
     );
   }
