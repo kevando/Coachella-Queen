@@ -8,7 +8,6 @@ import * as EventsActions from '../../reducers/events/actions';
 const mapStateToProps = (state) => {
   return {
     app: state.app,
-    // onboardStep: state.app.onboarding.hello
   };
 };
 

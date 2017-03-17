@@ -5,10 +5,6 @@ import Debug from './Debug';
 
 class DebugContainer extends Component {
 
-  purgeData() {
-    this.props.dispatch({type:'PURGE_DATA'});
-  }
-
   handleHelp() {
     Mailer.mail({
       subject: 'Feedback',
@@ -26,6 +22,7 @@ class DebugContainer extends Component {
 
     return (
       <Debug
+        onPurgePress={this.props.purgeData}
         {...this.props}
       />
     );

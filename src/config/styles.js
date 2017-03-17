@@ -13,7 +13,7 @@ export const colors = {
   blue: '#0e9eed',
   white: '#ffffff',
   yellow: '#ffe60c',
-  green: '#24bd3a',
+  green: '#245a27',
   navy: '#081130',
 
 }
@@ -32,7 +32,7 @@ export const colors = {
 //
 // // ------------------------------
 // // Text
-// 
+//
 // export const text = {
 //   fontSize: 20,
 //   fontFamily: 'Helvetica', // default for now

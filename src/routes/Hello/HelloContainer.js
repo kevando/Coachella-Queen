@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+var Analytics = require('react-native-firebase-analytics');
 
 import Hello from './Hello';
 import Routes from '../../config/routes';
@@ -7,8 +8,11 @@ class HelloContainer extends Component {
 
   componentDidMount() {
     // Load schedule data from firebase
-    // this might be a problem if internet is slow
     this.props.refreshSchedule();
+    // Set app data like deviceID
+
+    // Log our first event!!!
+    Analytics.logEvent('app_loaded');
   }
 
   onButtonPress(){

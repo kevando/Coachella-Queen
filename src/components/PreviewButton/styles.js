@@ -12,9 +12,14 @@ export default styles = StyleSheet.create({
     borderWidth: 1,
   },
   touchable: {
-    marginTop: -4,
+    marginTop: -7,
     paddingVertical:10,
     paddingHorizontal:20,
-    // borderColor:'yellow',borderWidth:1
-  }
+    // borderColor:'yellow',borderWidth:1,
+    // backgroundColor: 'purple'
+  },
+  calendar: {
+    // backgroundColor: 'red',
+    fontSize: 28
+  },
 });

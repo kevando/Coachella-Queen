@@ -1,5 +1,4 @@
 import _ from 'lodash';
-// var uuid = require('react-native-uuid');
 
 import {
   SET_SCHEDULE_DATA,
@@ -11,20 +10,23 @@ const initialState =
   {
     coachellaSchedule: [],
     mySchedule: [],
-
   };
 
 export default function events(events = initialState, action = {}) {
 
   switch (action.type) {
 
+    // -------------------------------------------
+    // Called from REFRESH_SCHEDULE
+
     case SET_SCHEDULE_DATA:
       return {
         ...events,
         coachellaSchedule: action.events
       }
-    // -------------------------------------------
 
+    // -------------------------------------------
+    // Called each band tap
 
     case TOGGLE_EVENT:
       const isAleadyScheduled = _.some(events.mySchedule, action.event)
@@ -40,21 +42,6 @@ export default function events(events = initialState, action = {}) {
         ...events,
         mySchedule: newList,
       }
-    // -------------------------------------------
-
-
-
-    // // -------------------------------------------
-    // case SET_REMINDER:
-    //
-    //   var newList = _.map(recommendations.list, function(rec) {
-    //     return rec.id === action.recId ? {...rec,reminder: true} : rec;
-    //   });
-    //
-    //   return {
-    //     ...recommendations,
-    //     list: newList,
-    //   }
 
     // -------------------------------------------
     default:

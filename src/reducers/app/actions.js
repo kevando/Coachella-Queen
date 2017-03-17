@@ -14,6 +14,16 @@ import {
 //   };
 // }
 
+// -----------------------------------------------------------------------
+// DELETE ALL APP DATA
+
+export function purgeData() {
+  return { type: 'PURGE_DATA' }
+}
+
+// -----------------------------------------------------------------------
+// Set onboard show to false
+
 export function onboardStepPassed(onboardStep) {
   return { type: ONBOARD_STEP_PASSED, onboardStep }
 }

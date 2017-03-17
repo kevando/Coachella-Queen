@@ -9,19 +9,69 @@ import styles from './styles';
 
 const Debug = (props) => {
 
+  const { version, deviceId, deviceName} = props.app;
+
   return (
-    <View style={styles.container} >
-      <Text>debug</Text>
+    <Container>
+      <Content>
 
-      <Text>Total Events: {props.coachellaSchedule.length}</Text>
-      <Text>My Events: {props.mySchedule.length}</Text>
-      <Text onPress={props.refreshSchedule}>Refresh schedule</Text>
+        <ListItem itemDivider>
+          <Text>Debug Info</Text>
+        </ListItem>
+
+        <ListItem icon>
+          <Body>
+            <Text>App Version</Text>
+          </Body>
+          <Right>
+            <Text>{version}</Text>
+          </Right>
+        </ListItem>
+        <ListItem icon>
+          <Body>
+            <Text>Device Name</Text>
+          </Body>
+          <Right>
+            <Text>{deviceName}</Text>
+          </Right>
+        </ListItem>
+        <ListItem icon>
+          <Body>
+            <Text>Device ID</Text>
+          </Body>
+          <Right>
+            <Text>{deviceId}</Text>
+          </Right>
+        </ListItem>
+
+        <ListItem itemDivider>
+          <Text>Danger Zone</Text>
+        </ListItem>
+
+        <ListItem icon>
+          <Body>
+            <Text>App Data</Text>
+          </Body>
+          <Right>
+            <Button rounded danger small onPress={props.onPurgePress}>
+              <Text>Delete</Text>
+            </Button>
+          </Right>
+        </ListItem>
 
 
-    </View>
+
+      </Content>
+    </Container>
   );
 
-
 }
-
+// <ListItem>
+//   <Left>
+//     <Text>Airplane Mode</Text>
+//   </Left>
+//   <Right>
+//     <Switch valur={false} />
+//   </Right>
+// </ListItem>
 export default Debug;

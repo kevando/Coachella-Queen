@@ -17,11 +17,13 @@ export default styles = StyleSheet.create({
   },
   grassContainer: {
     height: 49,
-    backgroundColor: colors.green,
+    borderColor: colors.green,
+    borderTopWidth:5,
   },
   sun: {
     position: 'absolute',
     right: 40,
+    top: 50,
     width: 100,
     height: 100,
     borderRadius: SUN_RADIUS/2,
@@ -40,6 +42,7 @@ export default styles = StyleSheet.create({
     fontWeight: '400',
     lineHeight:37,
     marginTop:15,
+    backgroundColor: 'transparent',
   },
   text: {
     color: '#fff',
@@ -48,6 +51,13 @@ export default styles = StyleSheet.create({
     fontWeight: '300',
     lineHeight:20,
     marginTop:15,
+    backgroundColor: 'transparent',
   },
+  button: {
+    marginTop:30,width: 150, textAlign: 'center',borderColor:'#fff',color:'#fff',borderWidth:1,paddingVertical: 10,
+    backgroundColor: 'transparent',
+  }
+
+
 
 });
