@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, AlertIOS } from 'react-native';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import moment from 'moment';
+import * as Animatable from 'react-native-animatable';
 
 import Routes from '../../config/routes';
 import styles from './styles';
@@ -17,7 +18,7 @@ const Calendar = ({ navigator, day, mySchedule }) => {
 
   return (
     <TouchableOpacity onPress={onPress} style={styles.touchableCalendar}>
-      <Text style={styles.calendar} >🗓️</Text>
+      <Animatable.Text animation="fadeInDown" style={styles.calendar} >🗓️</Animatable.Text>
     </TouchableOpacity>
   );
 }

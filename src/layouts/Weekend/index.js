@@ -2,8 +2,15 @@
 import React, {Component} from 'react';
 import ExNavigator from '@exponent/react-native-navigator';
 import TabNavigator from 'react-native-tab-navigator';
+import LinearGradient from 'react-native-linear-gradient';
+
 import Routes from '../../config/routes';
 import { navStyles, tabStyles } from './styles';
+
+const grassGradient = {
+  colors: ['#4f7b2b', '#70881b', '#366f31'],
+  locations: [0.2,0.3,0.5],
+}
 
 class Weekend extends Component {
   constructor(props) {
@@ -17,7 +24,7 @@ class Weekend extends Component {
     const { selectedTab } = this.state;
     const sceneStyle = [];
     if (initialRoute.showNavigationBar !== false) {
-      sceneStyle.push({ paddingTop: 64 });
+      sceneStyle.push({ paddingTop: 64,backgroundColor: '#7dcdce' });
     }
 
     return (
@@ -40,12 +47,14 @@ class Weekend extends Component {
 
   render() {
     return (
+      
       <TabNavigator {...tabStyles} >
         {this.renderTabItem('Friday', Routes.getDashboardRoute('Friday'))}
         {this.renderTabItem('Saturday', Routes.getDashboardRoute('Saturday'))}
         {this.renderTabItem('Sunday', Routes.getDashboardRoute('Sunday'))}
 
       </TabNavigator>
+
     );
   }
 }

@@ -30,8 +30,12 @@ class App extends Component {
     // This might run too many times
     console.log('handleChange');
     const reduxStore = this.state.store.getState();
+
     if(reduxStore.app.onboarding.hello.show == false)
       this.setState({ layout: <Weekend /> });
+
+    if(reduxStore.app.initialized == false) // on app reset
+      this.setState({ layout: <Onboard /> });
   }
 
   render() {

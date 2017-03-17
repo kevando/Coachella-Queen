@@ -12,7 +12,7 @@ const Debug = (props) => {
   const { version, deviceId, deviceName} = props.app;
 
   return (
-    <Container>
+    <Container style={{backgroundColor:'#fff'}}>
       <Content>
 
         <ListItem itemDivider>

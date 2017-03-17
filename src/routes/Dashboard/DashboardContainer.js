@@ -33,12 +33,19 @@ class DashboardContainer extends Component {
 
   }
 
+  onArtistPress(event) {
+    // alert(event.name)
+    this.props.toggleEvent(event)
+
+  }
+
   render() {
 
     const { navigator } = this.props;
 
     return (
       <Dashboard
+        onArtistPress={this.onArtistPress.bind(this)}
         {...this.props}
         {...this.state}
       />

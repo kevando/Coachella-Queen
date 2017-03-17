@@ -5,11 +5,13 @@ export default styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
-    marginVertical: 3,
-    marginHorizontal: 20,
-    padding:20,
+    marginVertical: 0,
+    marginHorizontal: 0,
+    paddingVertical:10,
+    paddingHorizontal:10,
     borderColor: '#aaa',
     borderWidth: 1,
+    height:70,
   },
   band: {
     fontSize: 20,
@@ -19,8 +21,9 @@ export default styles = StyleSheet.create({
   },
   time: {
     textAlign: 'right',
-    marginTop: -40,
+    marginTop: -30,
     backgroundColor: 'transparent',
-    fontSize: 30
+    fontSize: 20,
+    color: '#555'
   }
 });

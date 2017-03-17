@@ -3,10 +3,14 @@ import { colors } from '../../config/styles';
 
 export const navStyles = {
   flex: 1,
+  backgroundColor: 'red',
   navigationBarStyle: {
     borderBottomColor:'#fff',
     borderBottomWidth:0,
-    backgroundColor: colors.blue,
+    // attempted to get listview to scroll behind this
+    // backgroundColor: '#7dcdce',
+    // backgroundColor: 'rgba(0,0,0,0)',
+    backgroundColor: 'transparent',
   },
   titleStyle: {
     fontSize: 22,

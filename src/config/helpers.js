@@ -11,7 +11,7 @@ export function getDaySchedule({ coachellaSchedule, day, mySchedule }) {
     return event;
   });
 
-  var sortedSchedule = _.sortBy(combinedSchedules,({name}) => {return name; })
+  var sortedSchedule = _.sortBy(combinedSchedules,({start}) => {return start; })
 
   return sortedSchedule;
 
