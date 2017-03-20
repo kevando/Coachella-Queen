@@ -1,9 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import { colors, SUN_RADIUS } from '../../config/styles';
+import { colors, width, height } from '../../config/styles';
 
-const window = Dimensions.get('window');
-const BUTTON_WIDTH = 250;
-const MARGIN_HORIZONTAL = (window.width - BUTTON_WIDTH) / 2;
 
 export default styles = StyleSheet.create({
 
@@ -11,7 +8,10 @@ export default styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'transparent',
     marginTop: 5,
-    // marginBottom: 165,
+    height,
+    width,
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
   skyContainer: {
     flex: 5,
@@ -56,7 +56,7 @@ export default styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   button: {
-    marginTop:30,width: 150, textAlign: 'center',borderColor:'#fff',color:'#fff',borderWidth:1,paddingVertical: 10,
+    marginTop:30,width: 150, textAlign: 'center',borderColor:'#fff',color:'#fff',borderWidth:0,paddingVertical: 10,
     backgroundColor: 'transparent',
   }
 

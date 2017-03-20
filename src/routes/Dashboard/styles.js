@@ -1,7 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import { colors } from '../../config/styles';
-
-const window = Dimensions.get('window');
+import { colors, width, height, } from '../../config/styles';
 
 export default styles = StyleSheet.create({
   container: {
@@ -9,7 +7,18 @@ export default styles = StyleSheet.create({
     // backgroundColor: 'blue',
     // borderWidth: 2,
     // borderColor: 'yellow',
-    width: window.width,
+    width,
+    height,
+  },
+  contentContainer: {
+    // flex: 1,
+    // backgroundColor: 'blue',
+    position: 'absolute',
+    top: 0,
+    // borderWidth: 2,
+    // borderColor: 'yellow',
+    width,
+    height,
   },
   title: {
     fontSize: 30,
@@ -19,7 +28,7 @@ export default styles = StyleSheet.create({
     marginTop: 40,
   },
   listContainer: {
-    width: window.width-30,
+    width: width-30,
     marginLeft: 15,
     backgroundColor: 'rgba(255,255,255,0.4)', // trans press down
     // borderWidth: 1,
@@ -29,40 +38,44 @@ export default styles = StyleSheet.create({
     marginBottom: 120,
     borderRadius: 10,
     padding:5,
-    // shadowColor: '#000000',
-    // shadowOffset: {
-    //   width: 30,
-    //   height: 30
-    // },
-    // shadowRadius: 5,
-    // shadowOpacity: 1.0
-    //
+
 
   },
   exportContainer: {
-    width: window.width-30,
+    width: width-30,
     marginLeft: 15,
-    backgroundColor: 'rgba(255,255,255,0.4)', // trans press down
-    // borderWidth: 1,
-    // borderColor: '#bbb',
+    backgroundColor: 'rgba(255,255,255,0)', // trans press down
     marginHorizontal: 0,
-    marginTop: 150,
-    // marginBottom: 120,
+    marginTop: 190,
+    marginBottom: 120,
     borderRadius: 10,
     padding:5,
-
-
+  },
+  exportText: {
+    fontSize: 20,
+    color: 'black',
+    fontFamily: 'Gill Sans',
+    fontWeight: '100',
+    marginBottom: 10,
+    shadowColor: '#fff',
+    shadowOffset: {width: 0, height: 0},
+    shadowOpacity: 1.0,
+    shadowRadius: 1,
+  },
+  exportBandText: {
+    fontWeight: '600'
   },
   button: {
     position: 'absolute',
-    bottom: 10,
+    bottom: 0,
     backgroundColor: 'transparent',
     // borderWidth: 2,
     // borderColor: 'yellow',
-    width: window.width,
+    width,
   },
   buttonText: {
     textAlign: 'center',
-    color: '#555',
+    color: '#ccc',
+    paddingVertical: 15,
   },
 });

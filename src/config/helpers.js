@@ -7,17 +7,22 @@ export function getDaySchedule({ coachellaSchedule, day, mySchedule }) {
 
   // find all the events already part of the user's mySchedule array
   var combinedSchedules = _.map(daySchedule,function(event){
-    event.selected = _.some(mySchedule, event);
+    const isFound = _.find(mySchedule,({name}) => {return name == event.name })
+    if(isFound) {
+      // console.log('BITCH FOUND',event.name)
+      event.selected = true;
+    } else {
+      event.selected = false;
+    }
     return event;
   });
 
-  var sortedSchedule = _.sortBy(combinedSchedules,({start}) => {return start; })
+  return _.sortBy(combinedSchedules,({start}) => {return start; })
 
-  return sortedSchedule;
 
 }
 
-export function getMyDaySchedule(mySchedule,day) {
+export function getMyDaySchedule({mySchedule,day}) {
 
   // find only the events I selected
   var myDaySchedule = _.filter(mySchedule,function(event){

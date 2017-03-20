@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, ListView, Text, TouchableOpacity } from 'react-native';
+import { View, ListView, Text, TouchableOpacity, StatusBar } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import * as Animatable from 'react-native-animatable';
+import moment from 'moment';
 
 import { EventListItem,  } from '../../components';
 import styles from './styles';
@@ -11,12 +12,19 @@ const Export = (props) => {
 
   const { mySchedule, myDaySchedule, day } = props;
 
-  const myDaySchedulee = getMyDaySchedule(mySchedule,day);
-
   return (
     <View style={styles.exportContainer}>
+    <StatusBar hidden={true} />
       {
-        _.map(myDaySchedulee,(event, i) => {return <Text key={i} >{event.name}</Text>})
+        _.map(myDaySchedule,(event, i) => {
+          return (
+            <Text style={styles.exportText} key={i} >
+              <Text style={styles.exportStartText}>{moment(event.start).format('h:mm')} </Text>
+              <Text style={styles.exportBandText}>{event.name} </Text>
+              <Text style={styles.exportStageText}>{event.stage}</Text>
+            </Text>
+          )
+        })
       }
 
       </View>

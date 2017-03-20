@@ -1,7 +1,6 @@
 
 import React, {Component} from 'react';
 import { Text, View, StyleSheet, Dimensions, ScrollView, Animated, StatusBar, TouchableOpacity } from 'react-native';
-var Analytics = require('react-native-firebase-analytics');
 
 import Queen from './Queen';
 
@@ -14,6 +13,7 @@ class QueenContainer extends Component {
       showModal: false,
       openModal: this._openModal.bind(this),
       offSet: new Animated.Value(0),
+      sunOffSet: new Animated.Value(0),
     }
   }
 
@@ -25,8 +25,6 @@ class QueenContainer extends Component {
       initializeAppData();
     }
 
-    // Log our first event!!!
-    // Analytics.logEvent('app_loaded');
   }
 
   componentWillReceiveProps(nextProps){
@@ -39,10 +37,18 @@ class QueenContainer extends Component {
   }
 
   _handleScroll = (e) => {
-    const offset = -1 * e.nativeEvent.contentOffset.x / 2;
+    const offset = -1 * e.nativeEvent.contentOffset.x / 3;
     Animated.timing(this.state.offSet, {
       toValue: offset,
     }).start();
+
+
+    const sunoffset = -1 * e.nativeEvent.contentOffset.x / 1.5;
+    Animated.timing(this.state.sunOffSet, {
+      toValue: sunoffset,
+    }).start();
+
+
   }
 
   render() {

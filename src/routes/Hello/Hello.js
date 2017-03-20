@@ -28,7 +28,7 @@ const Hello = (props) => {
           <Text style={styles.text} >3) Set your schedule as your background photo</Text>
           <Text style={styles.text} >4) Be together :)</Text>
           { props.app.initialized &&
-            <Animatable.Text style={styles.button} animation="bounceIn" duration={800}  >Swipe --> </Animatable.Text>
+            <Animatable.Text style={styles.button} animation="bounceIn" duration={800}  > {'< <<'} Swipe to begin</Animatable.Text>
           }
 
         </Animatable.View>
@@ -37,6 +37,12 @@ const Hello = (props) => {
 
     </View>
   );
+
+}
+const Helloo = (props) => {
+
+
+  return ( <View style={styles.container} /> );
 
 }
 

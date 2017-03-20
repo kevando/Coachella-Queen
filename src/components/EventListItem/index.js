@@ -29,7 +29,7 @@ class EventListItem extends React.Component {
       <TouchableOpacity activeOpacity={0.8} onPress={this._onEventPress.bind(this)}>
         <View style={[styles.container,{backgroundColor: this.state.selected ? 'rgba(255,255,255,0.4)' : 'transparent'}]}>
           <Text style={styles.band}>{event.name}</Text>
-          <Text style={styles.stage}>{event.stage} {event.selected && 'event'} {this.state.selected && 'state'} </Text>
+          <Text style={styles.stage}>{event.stage}</Text>
           <Text style={styles.time}>{moment(event.start).format('h:mm')}</Text>
         </View>
       </TouchableOpacity>
