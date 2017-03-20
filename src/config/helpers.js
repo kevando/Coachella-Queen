@@ -16,3 +16,13 @@ export function getDaySchedule({ coachellaSchedule, day, mySchedule }) {
   return sortedSchedule;
 
 }
+
+export function getMyDaySchedule(mySchedule,day) {
+
+  // find only the events I selected
+  var myDaySchedule = _.filter(mySchedule,function(event){
+    return moment(event.start).format('dddd') == day
+  });
+
+  return _.sortBy(myDaySchedule,({start}) => {return start; })
+}

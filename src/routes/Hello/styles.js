@@ -8,8 +8,10 @@ const MARGIN_HORIZONTAL = (window.width - BUTTON_WIDTH) / 2;
 export default styles = StyleSheet.create({
 
   container: {
-    flex: 2,
-    backgroundColor: '#F5FCFF',
+    flex: 1,
+    backgroundColor: 'transparent',
+    marginTop: 5,
+    // marginBottom: 165,
   },
   skyContainer: {
     flex: 5,

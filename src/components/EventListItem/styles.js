@@ -7,14 +7,14 @@ export default styles = StyleSheet.create({
     backgroundColor: colors.white,
     marginVertical: 0,
     marginHorizontal: 0,
-    paddingVertical:10,
+    paddingVertical:5,
     paddingHorizontal:10,
-    borderColor: '#aaa',
-    borderWidth: 1,
-    height:70,
+    borderColor: 'rgba(100,100,100,0.1)',
+    borderBottomWidth: 1,
+    height: 50,
   },
   band: {
-    fontSize: 20,
+    fontSize: 16,
   },
   stage: {
     color: '#999'

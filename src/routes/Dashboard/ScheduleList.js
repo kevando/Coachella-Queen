@@ -9,21 +9,21 @@ import styles from './styles';
 const Dashboard = (props) => {
 
 
-  const { dataSource, onArtistPress, day, onPress } = props;
+  const { dataSource, toggleEvent, day, onPress } = props;
 
 
 
   return (
-    <View style={styles.container}>
+    <View style={{flex:1}}>
       <Text style={styles.title}>{day}</Text>
       <ListView
         enableEmptySections={true}
         style={styles.listContainer}
         dataSource={dataSource}
-        renderRow={(rowData) => <EventListItem event={rowData} onPress={onArtistPress} />}
+        renderRow={(rowData) => <EventListItem event={rowData} toggleEvent={toggleEvent} />}
       />
 
-      <TouchableOpacity onPress={onPress}><Text>Export</Text></TouchableOpacity>
+
       </View>
   );
 }

@@ -10,29 +10,14 @@ import{
 } from 'react-native';
 import { Container, Header, Title, Content, Button, Icon } from 'native-base';
 import * as Animatable from 'react-native-animatable';
-import LinearGradient from 'react-native-linear-gradient';
 
 import styles from './styles';
 const window = Dimensions.get('window');
-
-const grassGradient = {
-  colors: ['#4f7b2b', '#70881b', '#366f31'],
-  locations: [0.2,0.3,0.5],
-}
-
-const skyGradient = {
-  colors: ['#7dcdce', '#6093c2', '#f6b4cf'],
-  locations: [0.1,0.5,1.0],
-}
 
 const Hello = (props) => {
 
   return (
     <View style={styles.container}>
-
-      <LinearGradient {...skyGradient} style={styles.skyContainer} >
-
-        <Animatable.View style={[styles.sun]} animation="fadeIn" delay={1000} duration={3000} />
 
         <Animatable.View style={styles.textContainer} animation="fadeIn" delay={1000} duration={500}>
           <Text style={styles.title} >Coachella Queen</Text>
@@ -47,15 +32,16 @@ const Hello = (props) => {
           }
 
         </Animatable.View>
-      </LinearGradient>
-
-      <LinearGradient {...grassGradient} style={styles.grassContainer} />
 
     </View>
   );
 
 }
+
 export default Hello;
+
+const Tmp = () => { return <View />}
+// export default Tmp;
 // var blueCode = ((14 * 299) + (158 * 587) + (237 * 114)) / 1000;
 //  If it is below 125, use white text. If it is 125 or above, use black text.
 

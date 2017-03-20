@@ -6,14 +6,14 @@ import Routes from '../../config/routes';
 
 class HelloContainer extends Component {
 
-  componentDidMount() {
-    // Load schedule data from firebase
-    this.props.refreshSchedule();
-    // Set app data like deviceID
-
-    // Log our first event!!!
-    Analytics.logEvent('app_loaded');
-  }
+  // componentDidMount() {
+  //   // Load schedule data from firebase
+  //   this.props.refreshSchedule();
+  //   // Set app data like deviceID
+  //
+  //   // Log our first event!!!
+  //   Analytics.logEvent('app_loaded');
+  // }
 
   onButtonPress(){
     this.props.onboardStepPassed('hello');

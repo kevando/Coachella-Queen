@@ -64,7 +64,6 @@
 		A5D1485C8D164A1CB2A44E98 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECD3FAAF184F43B88CFD95C7 /* Ionicons.ttf */; };
 		BFACAD1D19FBB5C84D6C6B12 /* Pods_CoachellaQueen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D067E5790F6C3AA59BE1BF /* Pods_CoachellaQueen.framework */; };
 		C827705421AE4D8999D68AE4 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B65F5ADB6D3F4F95914CE115 /* Rubik-Bold.ttf */; };
-		C89CF1396E2E48409CD9EEF7 /* libRNScreenshotDetector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D07F21DFC4466684C98779 /* libRNScreenshotDetector.a */; };
 		CC70AB43CE664286884BF8A3 /* Courier New.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA57AF8D8CDD47588AC75396 /* Courier New.ttf */; };
 		D3C2E0B104EB4B72B953152D /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5BDE6B222FC4DBCA7738096 /* rubicon-icon-font.ttf */; };
 		DF1DF113DB524726BD78024A /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 997C64ED6255465D8B7A0199 /* Rubik-MediumItalic.ttf */; };
@@ -141,13 +140,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = BVLinearGradient;
-		};
-		0A9A1F851E7C3C0200140C4D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DD2B87A1B8FD45B5BDFD2785 /* RNScreenshotDetector.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = RNScreenshotDetector;
 		};
 		139105C01AF99BAD00B5F7CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -358,7 +350,6 @@
 		CA27BE0FBAA841DAB295DD07 /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
 		CE8C45D6661E4C5FAD68B9AA /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-LightItalic.ttf"; path = "../node_modules/native-base/Fonts/Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
 		D976857B37A64E28A4B32CF4 /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-BlackItalic.ttf"; path = "../node_modules/native-base/Fonts/Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
-		DD2B87A1B8FD45B5BDFD2785 /* RNScreenshotDetector.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNScreenshotDetector.xcodeproj; path = "../node_modules/react-native-screenshot-detector/ios/RNScreenshotDetector.xcodeproj"; sourceTree = "<group>"; };
 		E01379656B36AFEA3D29A343 /* Pods-CoachellaQueen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoachellaQueen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoachellaQueen/Pods-CoachellaQueen.debug.xcconfig"; sourceTree = "<group>"; };
 		E5BDE6B222FC4DBCA7738096 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
 		E852562FF4FD47499D1ACCEA /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
@@ -366,7 +357,6 @@
 		EA57AF8D8CDD47588AC75396 /* Courier New.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Courier New.ttf"; path = "../node_modules/native-base/Fonts/Courier New.ttf"; sourceTree = "<group>"; };
 		ECD3FAAF184F43B88CFD95C7 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/native-base/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		F2EFD76D05384BAEA68E1A5D /* SF-UI-Text-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF-UI-Text-Regular.otf"; path = "../node_modules/native-base/Fonts/SF-UI-Text-Regular.otf"; sourceTree = "<group>"; };
-		F5D07F21DFC4466684C98779 /* libRNScreenshotDetector.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNScreenshotDetector.a; sourceTree = "<group>"; };
 		FF7B928B116E48178C8C1FDD /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -398,7 +388,6 @@
 				BFACAD1D19FBB5C84D6C6B12 /* Pods_CoachellaQueen.framework in Frameworks */,
 				EF398D9B13B14B87AA26A222 /* libRNDeviceInfo.a in Frameworks */,
 				8F1FF5C474FF4EA7B1A44ED0 /* libBVLinearGradient.a in Frameworks */,
-				C89CF1396E2E48409CD9EEF7 /* libRNScreenshotDetector.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,14 +495,6 @@
 			isa = PBXGroup;
 			children = (
 				0A9A1F2E1E7BB02400140C4D /* libBVLinearGradient.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		0A9A1F661E7C3C0200140C4D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0A9A1F861E7C3C0200140C4D /* libRNScreenshotDetector.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -650,7 +631,6 @@
 				84D88060F2AD43D7AFCBAA73 /* RNFIRAnalytics.xcodeproj */,
 				E852562FF4FD47499D1ACCEA /* RNDeviceInfo.xcodeproj */,
 				425F040D1E2A4C2AAC5A425D /* BVLinearGradient.xcodeproj */,
-				DD2B87A1B8FD45B5BDFD2785 /* RNScreenshotDetector.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -871,10 +851,6 @@
 					ProductGroup = 0A9A1E5F1E7B9D5800140C4D /* Products */;
 					ProjectRef = 84D88060F2AD43D7AFCBAA73 /* RNFIRAnalytics.xcodeproj */;
 				},
-				{
-					ProductGroup = 0A9A1F661E7C3C0200140C4D /* Products */;
-					ProjectRef = DD2B87A1B8FD45B5BDFD2785 /* RNScreenshotDetector.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -941,13 +917,6 @@
 			fileType = archive.ar;
 			path = libBVLinearGradient.a;
 			remoteRef = 0A9A1F2D1E7BB02400140C4D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0A9A1F861E7C3C0200140C4D /* libRNScreenshotDetector.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNScreenshotDetector.a;
-			remoteRef = 0A9A1F851E7C3C0200140C4D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		139105C11AF99BAD00B5F7CC /* libRCTSettings.a */ = {
@@ -1313,18 +1282,11 @@
 					"$(SRCROOT)/../node_modules/react-native-firebase-analytics/ios",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
-					"$(SRCROOT)/../node_modules/react-native-screenshot-detector/ios",
 				);
 				INFOPLIST_FILE = CoachellaQueenTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1344,18 +1306,11 @@
 					"$(SRCROOT)/../node_modules/react-native-firebase-analytics/ios",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
-					"$(SRCROOT)/../node_modules/react-native-screenshot-detector/ios",
 				);
 				INFOPLIST_FILE = CoachellaQueenTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1378,7 +1333,6 @@
 					"$(SRCROOT)/../node_modules/react-native-firebase-analytics/ios",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
-					"$(SRCROOT)/../node_modules/react-native-screenshot-detector/ios",
 				);
 				INFOPLIST_FILE = CoachellaQueen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1405,7 +1359,6 @@
 					"$(SRCROOT)/../node_modules/react-native-firebase-analytics/ios",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
-					"$(SRCROOT)/../node_modules/react-native-screenshot-detector/ios",
 				);
 				INFOPLIST_FILE = CoachellaQueen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1437,17 +1390,10 @@
 					"$(SRCROOT)/../node_modules/react-native-firebase-analytics/ios",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
-					"$(SRCROOT)/../node_modules/react-native-screenshot-detector/ios",
 				);
 				INFOPLIST_FILE = "CoachellaQueen-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1477,17 +1423,10 @@
 					"$(SRCROOT)/../node_modules/react-native-firebase-analytics/ios",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
-					"$(SRCROOT)/../node_modules/react-native-screenshot-detector/ios",
 				);
 				INFOPLIST_FILE = "CoachellaQueen-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1513,13 +1452,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "CoachellaQueen-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.CoachellaQueen-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -1541,13 +1474,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "CoachellaQueen-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.CoachellaQueen-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;

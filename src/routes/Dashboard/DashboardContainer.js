@@ -1,57 +1,93 @@
 import React, { Component } from 'react';
-import { ListView } from 'react-native';
+import { ListView, View, TouchableOpacity, Text } from 'react-native';
 import moment from 'moment';
 import _ from 'lodash';
 
-import Dashboard from './Dashboard';
+import ScheduleList from './ScheduleList';
+import Export from './Export';
 import Routes from '../../config/routes';
-import { getDaySchedule } from '../../config/helpers';
-
-const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+import { getDaySchedule, getMyDaySchedule } from '../../config/helpers';
+import styles from './styles';
 
 class DashboardContainer extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      ds: new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}),
+      showExport: false,
+    }
+  }
 
   componentWillMount() {
     this._prepareList(this.props);
   }
 
-  componentWillReceiveProps(nextProps) {
-    // @todo by updating the listview from redux, this saves alot of render code
-    // BUT it does seem to slow things down when user taps an event
-    this._prepareList(nextProps);
-  }
-
   _prepareList(props) {
-    // const { coachellaSchedule, day, mySchedule } = props;
 
     const daySchedule = getDaySchedule(props);
+    // const myDaySchedule = getMyDaySchedule(props);
 
     // Now set the array
     this.setState({
-      dataSource: ds.cloneWithRows(daySchedule),
+      dataSource: this.state.ds.cloneWithRows(daySchedule),
+      daySchedule,
+      // myDaySchedule,
     });
 
   }
 
-  onArtistPress(event) {
-    // alert(event.name)
-    this.props.toggleEvent(event)
+  _toggleEvent(event) {
+    this.props.toggleEvent(event);
+    this._prepareList(this.props);
 
+  }
+
+  toggleDisplay() {
+    // toggle display
+    this.setState({showExport: !this.state.showExport})
+    this._prepareList(this.props);
+
+  }
+
+  _renderButtonText() {
+    if(this.state.showExport)
+      return 'Take a screen shot';
+    else
+      return 'Show my schedule'
   }
 
   render() {
 
-    const { navigator } = this.props;
-
     return (
-      <Dashboard
-        onArtistPress={this.onArtistPress.bind(this)}
-        {...this.props}
-        {...this.state}
-      />
+      <View style={styles.container}>
+      {this.state.showExport ?
+        <Export
+          {...this.props}
+          {...this.state}
+        />
+        :
+        <ScheduleList
+          toggleEvent={this._toggleEvent.bind(this)}
+          {...this.props}
+          {...this.state}
+        />
+
+
+      }
+
+        <TouchableOpacity onPress={this.toggleDisplay.bind(this)} style={styles.button}>
+          <Text style={styles.buttonText}>{ this._renderButtonText() }</Text>
+        </TouchableOpacity>
+      </View>
       )
 
   }
 }
-
+// <Export
+//   onArtistPress={this.onArtistPress.bind(this)}
+//   onPress={this.onExportPress.bind(this)}
+//   {...this.props}
+//   {...this.state}
+// />
 export default DashboardContainer;

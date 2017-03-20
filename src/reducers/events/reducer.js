@@ -29,9 +29,10 @@ export default function events(events = initialState, action = {}) {
     // Called each band tap
 
     case TOGGLE_EVENT:
-      const isAleadyScheduled = _.some(events.mySchedule, action.event)
+      const isFound = _.find(events.mySchedule,({name}) => {return name == action.event.name })
+
       var newList;
-      if(isAleadyScheduled){
+      if(isFound){
         // Remove event from schedule
         newList = _.filter(events.mySchedule, function(event){return event.name != action.event.name} );
       } else {
