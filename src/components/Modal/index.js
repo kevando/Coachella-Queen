@@ -1,35 +1,23 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import moment from 'moment';
+import {Icon} from 'native-base';
+import * as Animatable from 'react-native-animatable';
 
-import styles from './styles';
+import styles, {iconStyle} from './styles';
 
 class Modal extends React.Component {
-  constructor(props) {
-    super(props);
-    // this.state = {
-    //   event: this.props.event,
-    //   // selected: this.props.event.selected,
-    // }
-  }
-
 
   render() {
-    // const { event, onPress } = this.props;
-// <View style={[styles.container,{backgroundColor: this.state.selected ? '#ddd' : '#fff',borderColor: this.state.selected ? '#333' : '#ccc'}]}>
+
     return (
-
-        <View style={styles.container}>
-          <Text style={styles.close} onPress={this.props.onClose}>Close</Text>
-          {this.props.children}
-
-        </View>
-
+      <Animatable.View style={styles.container} animation="fadeIn" >
+        <TouchableOpacity style={styles.closeBar} onPress={this.props.onClose}>
+          <View style={styles.closeIcon} ><Icon ios='ios-close' android="md-pizza" {...iconStyle} /></View>
+        </TouchableOpacity>
+        {this.props.children}
+      </Animatable.View>
     );
-
   }
-
 }
-
 
 export default Modal;

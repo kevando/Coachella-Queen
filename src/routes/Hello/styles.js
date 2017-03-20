@@ -22,14 +22,14 @@ export default styles = StyleSheet.create({
     borderColor: colors.green,
     borderTopWidth:5,
   },
-  sun: {
+  sunTouch: {
     position: 'absolute',
     right: 40,
     top: 50,
     width: 100,
     height: 100,
-    borderRadius: SUN_RADIUS/2,
-    backgroundColor: colors.yellow,
+    borderColor: 'yellow',
+    borderWidth: 0,
     zIndex:2
   },
   textContainer: {

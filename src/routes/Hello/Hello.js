@@ -16,6 +16,8 @@ const window = Dimensions.get('window');
 
 const Hello = (props) => {
 
+  const { openDebugModal } = props;
+
   return (
     <View style={styles.container}>
 
@@ -26,12 +28,12 @@ const Hello = (props) => {
           <Text style={styles.text} >3) Set your schedule as your background photo</Text>
           <Text style={styles.text} >4) Be together :)</Text>
           { props.app.initialized &&
-            <TouchableOpacity onPress={props.onButtonPress} >
-              <Animatable.Text style={styles.button} animation="bounceIn" duration={800}  >LETS DO THIS</Animatable.Text>
-            </TouchableOpacity>
+            <Animatable.Text style={styles.button} animation="bounceIn" duration={800}  >Swipe --> </Animatable.Text>
           }
 
         </Animatable.View>
+
+        <TouchableOpacity onPress={openDebugModal} style={styles.sunTouch} />
 
     </View>
   );
@@ -40,8 +42,6 @@ const Hello = (props) => {
 
 export default Hello;
 
-const Tmp = () => { return <View />}
-// export default Tmp;
 // var blueCode = ((14 * 299) + (158 * 587) + (237 * 114)) / 1000;
 //  If it is below 125, use white text. If it is 125 or above, use black text.
 

@@ -1,1 +1,2 @@
 export const ONBOARD_STEP_PASSED = 'ONBOARD_STEP_PASSED';
+export const SET_APP_CONFIG = 'SET_APP_CONFIG';

@@ -13,6 +13,7 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* CoachellaQueenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CoachellaQueenTests.m */; };
+		0A98D0C61E7F989C00C4140E /* libRNMail.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A98D0C31E7F988C00C4140E /* libRNMail.a */; };
 		0A9A1EB01E7B9FC000140C4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A1EAF1E7B9FC000140C4D /* GoogleService-Info.plist */; };
 		0BAF1A44A9F64866840319E0 /* Arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3767068D47084DAFA6A8C941 /* Arial.ttf */; };
 		10235B7B3403410ABE9824AD /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D957D3672E34522A0FBE8E8 /* Roboto_medium.ttf */; };
@@ -119,6 +120,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = CoachellaQueen;
+		};
+		0A98D0C21E7F988C00C4140E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A98D0BD1E7F988B00C4140E /* RNMail.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46FEDE7F1AFF192F00D3261C;
+			remoteInfo = RNMail;
+		};
+		0A98D0C41E7F988C00C4140E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A98D0BD1E7F988B00C4140E /* RNMail.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46FEDE8A1AFF192F00D3261C;
+			remoteInfo = RNMailTests;
 		};
 		0A9A1E7B1E7B9D5800140C4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -300,6 +315,7 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* CoachellaQueenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoachellaQueenTests.m; sourceTree = "<group>"; };
 		0961ACFBD41EECC45C762930 /* Pods-CoachellaQueen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoachellaQueen.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoachellaQueen/Pods-CoachellaQueen.release.xcconfig"; sourceTree = "<group>"; };
+		0A98D0BD1E7F988B00C4140E /* RNMail.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNMail.xcodeproj; path = "../node_modules/react-native-mail/RNMail.xcodeproj"; sourceTree = "<group>"; };
 		0A9A1EAF1E7B9FC000140C4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "CoachellaQueen/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
@@ -373,6 +389,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A98D0C61E7F989C00C4140E /* libRNMail.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
@@ -473,6 +490,15 @@
 				00E356F11AD99517003FC87E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0A98D0BE1E7F988B00C4140E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A98D0C31E7F988C00C4140E /* libRNMail.a */,
+				0A98D0C51E7F988C00C4140E /* RNMailTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		0A9A1E5F1E7B9D5800140C4D /* Products */ = {
@@ -647,6 +673,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				0A98D0BD1E7F988B00C4140E /* RNMail.xcodeproj */,
 				13B07FAE1A68108700A75B9A /* CoachellaQueen */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* CoachellaQueenTests */,
@@ -851,6 +878,10 @@
 					ProductGroup = 0A9A1E5F1E7B9D5800140C4D /* Products */;
 					ProjectRef = 84D88060F2AD43D7AFCBAA73 /* RNFIRAnalytics.xcodeproj */;
 				},
+				{
+					ProductGroup = 0A98D0BE1E7F988B00C4140E /* Products */;
+					ProjectRef = 0A98D0BD1E7F988B00C4140E /* RNMail.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -896,6 +927,20 @@
 			fileType = archive.ar;
 			path = libRCTVibration.a;
 			remoteRef = 00C302E31ABCB9EE00DB3ED1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0A98D0C31E7F988C00C4140E /* libRNMail.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNMail.a;
+			remoteRef = 0A98D0C21E7F988C00C4140E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0A98D0C51E7F988C00C4140E /* RNMailTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RNMailTests.xctest;
+			remoteRef = 0A98D0C41E7F988C00C4140E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		0A9A1E7C1E7B9D5800140C4D /* libRNFIRAnalytics.a */ = {

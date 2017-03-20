@@ -41,7 +41,7 @@ export default styles = StyleSheet.create({
   },
   sun: {
     position: 'absolute',
-    left: 40,
+    left: window.width-(SUN_RADIUS),
     top: 50,
     width: 100,
     height: 100,

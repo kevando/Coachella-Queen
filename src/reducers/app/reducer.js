@@ -2,6 +2,7 @@ import _ from 'lodash';
 
 import {
   ONBOARD_STEP_PASSED,
+  SET_APP_CONFIG,
 } from './actionTypes';
 
 
@@ -40,6 +41,17 @@ export default function recs(app = initialState, action = {}) {
 
     // --------------------------------------------------------------------
     // Called when the app first loads
+
+    case SET_APP_CONFIG:
+      return {
+        ...app,
+        version: action.DeviceInfo.getReadableVersion(),
+        deviceId: action.DeviceInfo.getUniqueID(),
+        deviceName: action.DeviceInfo.getDeviceName(),
+      }
+
+    // --------------------------------------------------------------------
+    // Called when the app finishes loading firebase data
 
     case 'APP_INIT':
       return {

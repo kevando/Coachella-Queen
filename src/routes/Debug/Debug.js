@@ -16,6 +16,21 @@ const Debug = (props) => {
       <Content>
 
         <ListItem itemDivider>
+          <Text>Help Center</Text>
+        </ListItem>
+
+        <ListItem icon>
+          <Body>
+            <Text>Feedback?</Text>
+          </Body>
+          <Right>
+            <Button rounded info small onPress={props.onSendFeedbackPress}>
+              <Text>Send Email</Text>
+            </Button>
+          </Right>
+        </ListItem>
+
+        <ListItem itemDivider>
           <Text>Debug Info</Text>
         </ListItem>
 
