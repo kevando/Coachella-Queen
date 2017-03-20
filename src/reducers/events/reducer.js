@@ -1,3 +1,4 @@
+var Analytics = require('react-native-firebase-analytics');
 import _ from 'lodash';
 
 import {
@@ -20,6 +21,7 @@ export default function events(events = initialState, action = {}) {
     // Called from REFRESH_SCHEDULE
 
     case SET_SCHEDULE_DATA:
+    Analytics.logEvent('SET_SCHEDULE_DATA');
       return {
         ...events,
         coachellaSchedule: action.events
@@ -29,15 +31,22 @@ export default function events(events = initialState, action = {}) {
     // Called each band tap
 
     case TOGGLE_EVENT:
-      const isAleadyScheduled = _.some(events.mySchedule, action.event)
+      const isFound = _.find(events.mySchedule,({name}) => {return name == action.event.name })
+
       var newList;
-      if(isAleadyScheduled){
+      if(isFound){
+
         // Remove event from schedule
         newList = _.filter(events.mySchedule, function(event){return event.name != action.event.name} );
       } else {
         // Add to schedule
+
         newList = [action.event].concat(events.mySchedule);
+        Analytics.logEvent('artist_added', {
+          'artist': action.event.name
+        });
       }
+
       return {
         ...events,
         mySchedule: newList,

@@ -2,17 +2,13 @@ import React, { Component } from 'react';
 var Analytics = require('react-native-firebase-analytics');
 
 import Hello from './Hello';
-import Routes from '../../config/routes';
+import Debug from '../Debug';
 
 class HelloContainer extends Component {
 
-  componentDidMount() {
-    // Load schedule data from firebase
-    this.props.refreshSchedule();
-    // Set app data like deviceID
-
-    // Log our first event!!!
-    Analytics.logEvent('app_loaded');
+  _openDebugModal(){
+    this.props.openModal(<Debug />)
+    Analytics.logEvent('open_debug');
   }
 
   onButtonPress(){
@@ -21,11 +17,10 @@ class HelloContainer extends Component {
 
   render() {
 
-    const { navigator } = this.props;
-
     return (
       <Hello
         onButtonPress={this.onButtonPress.bind(this)}
+        openDebugModal={this._openDebugModal.bind(this)}
         {...this.props}
       />
     );

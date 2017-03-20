@@ -5,15 +5,15 @@ import Debug from './Debug';
 
 class DebugContainer extends Component {
 
-  handleHelp() {
+  _handleHelp() {
     Mailer.mail({
-      subject: 'Feedback',
-      recipients: ['feedback@chaz.co'],
+      subject: 'Coachella Queen Feedback',
+      recipients: ['khabich@gmail.com'],
       body: '',
       isHTML: true, // iOS only, exclude if false
     }, (error, event) => {
         if(error) {
-          alert('Could not send mail. Please send a mail to feedback@chaz.co');
+          alert('Could not send mail. Please send a mail to khabich@gmail.com');
         }
     });
   }
@@ -23,6 +23,7 @@ class DebugContainer extends Component {
     return (
       <Debug
         onPurgePress={this.props.purgeData}
+        onSendFeedbackPress={this._handleHelp.bind(this)}
         {...this.props}
       />
     );

@@ -1,6 +1,11 @@
+import { StyleSheet, Dimensions } from 'react-native';
+const window = Dimensions.get('window');
 
 // ------------------------------
 // Constants
+
+export const width = window.width;
+export const height = window.height;
 
 export const SUN_RADIUS = 100; //@todo change this based on screen size
 
@@ -15,6 +20,8 @@ export const colors = {
   yellow: '#ffe60c',
   green: '#245a27',
   navy: '#081130',
+
+  grey: '#bbb'
 
 }
 //

@@ -10,29 +10,16 @@ import{
 } from 'react-native';
 import { Container, Header, Title, Content, Button, Icon } from 'native-base';
 import * as Animatable from 'react-native-animatable';
-import LinearGradient from 'react-native-linear-gradient';
 
 import styles from './styles';
 const window = Dimensions.get('window');
 
-const grassGradient = {
-  colors: ['#4f7b2b', '#70881b', '#366f31'],
-  locations: [0.2,0.3,0.5],
-}
-
-const skyGradient = {
-  colors: ['#7dcdce', '#6093c2', '#f6b4cf'],
-  locations: [0.1,0.5,1.0],
-}
-
 const Hello = (props) => {
+
+  const { openDebugModal } = props;
 
   return (
     <View style={styles.container}>
-
-      <LinearGradient {...skyGradient} style={styles.skyContainer} >
-
-        <Animatable.View style={[styles.sun]} animation="fadeIn" delay={1000} duration={3000} />
 
         <Animatable.View style={styles.textContainer} animation="fadeIn" delay={1000} duration={500}>
           <Text style={styles.title} >Coachella Queen</Text>
@@ -41,21 +28,26 @@ const Hello = (props) => {
           <Text style={styles.text} >3) Set your schedule as your background photo</Text>
           <Text style={styles.text} >4) Be together :)</Text>
           { props.app.initialized &&
-            <TouchableOpacity onPress={props.onButtonPress} >
-              <Animatable.Text style={styles.button} animation="bounceIn" duration={800}  >LETS DO THIS</Animatable.Text>
-            </TouchableOpacity>
+            <Animatable.Text style={styles.button} animation="bounceIn" duration={800}  > {'< <<'} Swipe to begin</Animatable.Text>
           }
 
         </Animatable.View>
-      </LinearGradient>
 
-      <LinearGradient {...grassGradient} style={styles.grassContainer} />
+        <TouchableOpacity onPress={openDebugModal} style={styles.sunTouch} />
 
     </View>
   );
 
 }
+const Helloo = (props) => {
+
+
+  return ( <View style={styles.container} /> );
+
+}
+
 export default Hello;
+
 // var blueCode = ((14 * 299) + (158 * 587) + (237 * 114)) / 1000;
 //  If it is below 125, use white text. If it is 125 or above, use black text.
 
