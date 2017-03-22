@@ -43,7 +43,7 @@ export default function events(events = initialState, action = {}) {
 
         newList = [action.event].concat(events.mySchedule);
         Analytics.logEvent('artist_added', {
-          'artist': action.event.name
+          'item_id': action.event.name,
         });
       }
 

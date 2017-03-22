@@ -10,9 +10,10 @@ import { getMyDaySchedule, getDaySchedule } from '../../config/helpers';
 
 const Export = (props) => {
 
-  const { mySchedule, myDaySchedule, day } = props;
+  const { mySchedule, myDaySchedule, day, onPress } = props;
 
   return (
+    <TouchableOpacity onPress={onPress}>
     <View style={styles.exportContainer}>
     <StatusBar hidden={true} />
       {
@@ -28,6 +29,7 @@ const Export = (props) => {
       }
 
       </View>
+      </TouchableOpacity>
   );
 }
 

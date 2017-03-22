@@ -19,7 +19,7 @@ class Queen extends Component {
       // <Hello key="1" {...this.props} />,
       // <Hello key="2" {...this.props} />,
       // <Hello key="3" {...this.props} />,
-      <Dashboard day="Friday" key="1"/>,
+      <Dashboard day="Friday" key="1" />,
       <Dashboard day="Saturday" key="2"/>,
       <Dashboard day="Sunday" key="3"/>,
     ]

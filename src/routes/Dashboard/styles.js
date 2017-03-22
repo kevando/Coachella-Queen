@@ -4,19 +4,12 @@ import { colors, width, height, } from '../../config/styles';
 export default styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: 'blue',
-    // borderWidth: 2,
-    // borderColor: 'yellow',
     width,
     height,
   },
   contentContainer: {
-    // flex: 1,
-    // backgroundColor: 'blue',
     position: 'absolute',
     top: 0,
-    // borderWidth: 2,
-    // borderColor: 'yellow',
     width,
     height,
   },
@@ -31,8 +24,6 @@ export default styles = StyleSheet.create({
     width: width-30,
     marginLeft: 15,
     backgroundColor: 'rgba(255,255,255,0.4)', // trans press down
-    // borderWidth: 1,
-    // borderColor: '#bbb',
     marginHorizontal: 0,
     marginTop: 20,
     marginBottom: 120,
@@ -46,7 +37,9 @@ export default styles = StyleSheet.create({
     marginLeft: 15,
     backgroundColor: 'rgba(255,255,255,0)', // trans press down
     marginHorizontal: 0,
-    marginTop: 190,
+    paddingTop: 200,
+    paddingBottom: 90,
+    height,
     marginBottom: 120,
     borderRadius: 10,
     padding:5,

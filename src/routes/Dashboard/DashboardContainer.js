@@ -110,6 +110,7 @@ class DashboardContainer extends Component {
         {
           this.state.showExport ?
           <Export
+              onPress={this._showList.bind(this)} 
               {...this.props}
               {...this.state}
             />
