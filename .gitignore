@@ -55,3 +55,4 @@ fastlane/screenshots
 # Coachella Queen
 assets/
 ios/Pods/
+android/gradle.properties
