@@ -110,4 +110,31 @@ export default styles = StyleSheet.create({
     borderRightColor: 'transparent',
     borderBottomColor: '#C9775E'
   },
+
+  footer: {
+    height: 50,
+    // backgroundColor:'#444',
+    // flex:1,
+    flexDirection: 'row',
+    justifyContent: 'center', //h
+    alignItems: 'center', //v
+  },
+  pageCircle: {
+    height: 10,
+    width:10,
+    borderRadius: 10,
+    backgroundColor: 'rgba(222,222,222,0.6)',
+    marginHorizontal: 7,
+  },
+  pageCircleActive: {
+    // height: 10,
+    // width:10,
+    // borderRadius: 10,
+    backgroundColor: 'rgba(222,222,222,0.9)',
+    // marginHorizontal: 7,
+  },
 });
+
+export const getActivePage = (activePage, page) => {
+  return activePage == page && {backgroundColor: 'rgba(222,222,222,0.9)'}
+}

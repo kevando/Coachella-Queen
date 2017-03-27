@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import { Text, View, StyleSheet, Dimensions, ScrollView, Animated, StatusBar, TouchableOpacity } from 'react-native';
 
 import Queen from './Queen';
+import {width} from '../../config/styles'
 
 
 class QueenContainer extends Component {
@@ -14,6 +15,7 @@ class QueenContainer extends Component {
       openModal: this._openModal.bind(this),
       offSet: new Animated.Value(0),
       sunOffSet: new Animated.Value(0),
+      activePage: 0,
     }
   }
 
@@ -48,6 +50,7 @@ class QueenContainer extends Component {
       toValue: sunoffset,
     }).start();
 
+    this.setState({activePage:e.nativeEvent.contentOffset.x/width})
 
   }
 
