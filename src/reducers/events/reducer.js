@@ -1,16 +1,19 @@
 var Analytics = require('react-native-firebase-analytics');
 import _ from 'lodash';
+import moment from 'moment';
 
 import {
   SET_SCHEDULE_DATA,
   TOGGLE_EVENT,
   REFRESH_SCHEDULE,
+  SET_INTEREST,
 } from './actionTypes';
 
 const initialState =
   {
     coachellaSchedule: [],
     mySchedule: [],
+    smartSchedule: [],
   };
 
 export default function events(events = initialState, action = {}) {
@@ -24,7 +27,8 @@ export default function events(events = initialState, action = {}) {
     Analytics.logEvent('SET_SCHEDULE_DATA');
       return {
         ...events,
-        coachellaSchedule: action.events
+        coachellaSchedule: action.events,
+        smartSchedule: action.events,
       }
 
     // -------------------------------------------
@@ -51,6 +55,39 @@ export default function events(events = initialState, action = {}) {
         ...events,
         mySchedule: newList,
       }
+
+      // -------------------------------------------
+      //
+
+      case SET_INTEREST:
+
+        // Find event index
+        var index = _.indexOf(events.smartSchedule, _.find(events.smartSchedule, {name: action.event.name}));
+        // console.log('found event at index: '+index)
+
+        // Iterate the schedule and find clashes
+        // not at all implemented correctly
+        var newArr = _.map(events.smartSchedule,(event) => {
+          // do this just for the day
+          if(moment(action.event.start).format('dddd') == moment(event.start).format('dddd')) {
+            if(event.name == action.event.name) {
+              event.interest = action.interest;
+              // event.clash = 'none';
+            } else if (moment(action.event.start).isBefore(event.end) && moment(action.event.end).isAfter(event.start)) {
+                event.clash = 'potential';
+            }
+          }
+
+          return event;
+        })
+
+        // Replace item at index using native splice
+        newArr.splice(index, 1, {...action.event,interest: action.interest});
+
+        return {
+          ...events,
+          smartSchedule: newArr,
+        }
 
     // -------------------------------------------
     default:

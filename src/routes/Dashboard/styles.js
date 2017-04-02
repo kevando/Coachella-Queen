@@ -13,24 +13,57 @@ export default styles = StyleSheet.create({
     width,
     height,
   },
+  scheduleListContainer: {
+    flex:1,
+    // backgroundColor: 'blue',
+  },
   title: {
     fontSize: 30,
     textAlign: 'center',
     color: colors.white,
     backgroundColor: 'transparent',
-    marginTop: 40,
+    marginTop: 22,
+    fontFamily: 'Georgia',
+  },
+  horizontalScheduleContainer: {
+    overflow: 'hidden',
+    borderColor: 'rgba(255,255,255,0.7)',
+    paddingVertical: 5,
+    paddingHorizontal: 5,
+    borderWidth: 1,
+    height: 40,
+    marginVertical: 5,
+    marginHorizontal: 20,
+    flexDirection: 'row',
+  },
+  horizontalScheduleEvent: {
+    marginVertical: 2,
+    marginHorizontal: 5,
+    height: 20,
+    // flex: 1,
+    borderColor: '#fff',
+    borderWidth: 1,
+    // paddingTop: 3,
+    justifyContent: 'center',
+    paddingHorizontal: 15,
+    backgroundColor: 'rgba(14, 158, 237, 0.15)',
+    borderColor:'rgba(255,255,255,0.6)',
+  },
+  horizontalScheduleText: {
+    backgroundColor: 'transparent',
+    color: '#fff',
+    fontSize: 12,
   },
   listContainer: {
     width: width-30,
     marginLeft: 15,
-    backgroundColor: 'rgba(255,255,255,0.4)', // trans press down
+    // backgroundColor: 'yellow',
+    // backgroundColor: 'rgba(255,255,255,0.4)', // trans press down
     marginHorizontal: 0,
-    marginTop: 20,
-    marginBottom: 120,
-    borderRadius: 10,
+    marginTop: 10,
+    marginBottom: 90,
+    // borderRadius: 10,
     padding:5,
-
-
   },
   exportContainer: {
     width: width-30,
@@ -59,8 +92,8 @@ export default styles = StyleSheet.create({
     fontWeight: '600'
   },
   button: {
-    position: 'absolute',
-    bottom: 0,
+    // position: 'absolute',
+    // bottom: 0,
     backgroundColor: 'transparent',
     // borderWidth: 2,
     // borderColor: 'yellow',
@@ -68,7 +101,7 @@ export default styles = StyleSheet.create({
   },
   buttonText: {
     textAlign: 'center',
-    color: '#ccc',
-    paddingVertical: 15,
+    color: colors.white,
+    paddingVertical: 5,
   },
 });

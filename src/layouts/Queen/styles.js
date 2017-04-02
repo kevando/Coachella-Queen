@@ -19,6 +19,7 @@ export default styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
+    // backgroundColor:'blue',
   },
   skyContainer: {
     flex: 5,
@@ -125,13 +126,6 @@ export default styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: 'rgba(222,222,222,0.6)',
     marginHorizontal: 7,
-  },
-  pageCircleActive: {
-    // height: 10,
-    // width:10,
-    // borderRadius: 10,
-    backgroundColor: 'rgba(222,222,222,0.9)',
-    // marginHorizontal: 7,
   },
 });
 

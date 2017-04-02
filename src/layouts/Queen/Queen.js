@@ -12,7 +12,7 @@ import Landscape from './Landscape';
 class Queen extends Component {
 
   render() {
-    const { activePage, showModal, modalComponent, updateState, handleScroll, offSet, sunOffSet } = this.props;
+    const { activePage, showModal, modalComponent, updateState, handleScroll, offSet, sunOffSet, app } = this.props;
 
     const Slides = [
       <Hello key="0" {...this.props} />,
@@ -47,12 +47,16 @@ class Queen extends Component {
             })
           }
         </ScrollView>
-        <View style={styles.footer}>
-          <View style={[styles.pageCircle,getActivePage(activePage,0)]} />
-          <View style={[styles.pageCircle,getActivePage(activePage,1)]} />
-          <View style={[styles.pageCircle,getActivePage(activePage,2)]} />
-          <View style={[styles.pageCircle,getActivePage(activePage,3)]} />
-        </View>
+
+        { app.initialized &&
+          <View style={styles.footer}>
+            <View style={[styles.pageCircle,getActivePage(activePage,0)]} />
+            <View style={[styles.pageCircle,getActivePage(activePage,1)]} />
+            <View style={[styles.pageCircle,getActivePage(activePage,2)]} />
+            <View style={[styles.pageCircle,getActivePage(activePage,3)]} />
+          </View>
+        }
+
 
         {showModal && <Modal onClose={() => updateState({showModal: false})}>{modalComponent}</Modal>}
 

@@ -6,11 +6,15 @@ import moment from 'moment';
 
 import { EventListItem,  } from '../../components';
 import styles from './styles';
-import { getMyDaySchedule, getDaySchedule } from '../../config/helpers';
+import { getMyDaySchedule, getDaySchedule, getScheduleByDay } from '../../config/helpers';
 
 const Export = (props) => {
 
-  const { mySchedule, myDaySchedule, day, onPress } = props;
+  const { mySchedule, smartSchedule, day, onPress } = props;
+
+  const smartDaySchedule = getScheduleByDay(smartSchedule,props.day);
+
+  const myDaySchedule = _.filter(smartDaySchedule,(event) => { return event.interest == 'yes' })
 
   return (
     <TouchableOpacity onPress={onPress}>

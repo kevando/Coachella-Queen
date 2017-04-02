@@ -22,13 +22,13 @@ const Hello = (props) => {
     <View style={styles.container}>
 
         <Animatable.View style={styles.textContainer} animation="fadeIn" delay={1000} duration={500}>
-          <Text style={styles.title} >Coachella Queen</Text>
+          <Text style={styles.title} >Festival Queen</Text>
           <Text style={styles.text} >1) Tap the bands you want to see</Text>
           <Text style={styles.text} >2) Export your schedule for each day</Text>
           <Text style={styles.text} >3) Set your schedule as your background photo</Text>
           <Text style={styles.text} >4) Be together :)</Text>
           { props.app.initialized &&
-            <Animatable.Text style={styles.button} animation="bounceIn" duration={800}  > {'< <<'} Swipe to begin</Animatable.Text>
+            <Animatable.Text style={styles.button} animation="bounceIn" duration={800}  >Swipe to begin</Animatable.Text>
           }
 
         </Animatable.View>

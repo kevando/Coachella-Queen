@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ListView, View, TouchableOpacity, Text, Animated } from 'react-native';
+import { ListView, View, TouchableOpacity, Text, Animated, LayoutAnimation } from 'react-native';
 import moment from 'moment';
 import _ from 'lodash';
 import * as Animatable from 'react-native-animatable';
@@ -8,7 +8,7 @@ var Analytics = require('react-native-firebase-analytics');
 import ScheduleList from './ScheduleList';
 import Export from './Export';
 import Routes from '../../config/routes';
-import { getDaySchedule, getMyDaySchedule } from '../../config/helpers';
+import { getDaySchedule, getMyDaySchedule, getScheduleByDay } from '../../config/helpers';
 import styles from './styles';
 
 class DashboardContainer extends Component {
@@ -25,8 +25,13 @@ class DashboardContainer extends Component {
   }
 
   componentWillMount() {
-    if(this.props.app.initialized == true)
-      this._prepareList(this.props);
+    // if(this.props.app.initialized == true)
+    //   this._prepareList(this.props);
+
+    this._prepareList(this.props);
+  }
+  componentWillUpdate() {
+    LayoutAnimation.easeInEaseOut();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -34,7 +39,7 @@ class DashboardContainer extends Component {
     // fuck this
     // refreshing the components every fucking time
     // @todo change this
-    this._prepareList(nextProps);
+    // this._prepareList(nextProps);
 
     // if(nextProps.app.initialized == true && !this.state.hasData){
     //   // alert('then we gotta show data!')
@@ -43,21 +48,38 @@ class DashboardContainer extends Component {
     // }
   }
 
+  // _prepareList_og(props) {
+  //   // this function refreshes the presentation data from redux,
+  //   // this is not really how it should work, i dont think
+  //
+  //
+  //   const daySchedule = getDaySchedule(props);
+  //   const myDaySchedule = getMyDaySchedule(props);
+  //   // console.log('daySchedule',daySchedule)
+  //
+  //   // Now set the array
+  //   this.setState({
+  //     dataSource: this.state.ds.cloneWithRows(daySchedule),
+  //     daySchedule,
+  //     hasData: true,
+  //     myDaySchedule,
+  //   });
+  //
+  // }
   _prepareList(props) {
-    // this function refreshes the presentation data from redux,
-    // this is not really how it should work, i dont think
-
 
     const daySchedule = getDaySchedule(props);
-    const myDaySchedule = getMyDaySchedule(props);
-    // console.log('daySchedule',daySchedule)
+    // const myDaySchedule = getMyDaySchedule(props);
+
+    const smartDaySchedule = getScheduleByDay(props.smartSchedule,props.day);
 
     // Now set the array
     this.setState({
-      dataSource: this.state.ds.cloneWithRows(daySchedule),
-      daySchedule,
+      // dataSource: this.state.ds.cloneWithRows(daySchedule),
+      dataSource: this.state.ds.cloneWithRows(smartDaySchedule),
+      smartDaySchedule,
       hasData: true,
-      myDaySchedule,
+      // myDaySchedule,
     });
 
   }
@@ -85,19 +107,22 @@ class DashboardContainer extends Component {
 
 
   _showExport() {
-    // this._hideList();
-    // this._displayExport();
     this.setState({showExport: true});
-
-    Analytics.logEvent('view_export', {
-      'day': this.props.day,
-      'scheduleLength': this.state.myDaySchedule.length
-    });
+    // Analytics.logEvent('view_export', {
+    //   'day': this.props.day,
+    //   'scheduleLength': this.state.myDaySchedule.length
+    // });
   }
   _showList() {
-    // this._hideExport();
-    // this._displayList();
     this.setState({showExport: false})
+  }
+
+  renderViewScheduleButton() {
+    return (
+      <TouchableOpacity onPress={this._showExport.bind(this)} style={styles.button}>
+        <Text style={styles.buttonText}>View Schedule</Text>
+      </TouchableOpacity>
+    )
   }
 
   render() {
@@ -110,13 +135,14 @@ class DashboardContainer extends Component {
         {
           this.state.showExport ?
           <Export
-              onPress={this._showList.bind(this)} 
+              onPress={this._showList.bind(this)}
               {...this.props}
               {...this.state}
             />
           :
           <ScheduleList
             toggleEvent={this._toggleEvent.bind(this)}
+            renderViewScheduleButton={this.renderViewScheduleButton.bind(this)}
             {...this.props}
             {...this.state}
           />
@@ -129,11 +155,7 @@ class DashboardContainer extends Component {
           </TouchableOpacity>
         }
 
-        {!this.state.showExport && this.state.myDaySchedule.length > 0 &&
-          <TouchableOpacity onPress={this._showExport.bind(this)} style={styles.button}>
-            <Text style={styles.buttonText}>View Schedule</Text>
-          </TouchableOpacity>
-        }
+
 
 
 

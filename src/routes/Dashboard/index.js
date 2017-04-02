@@ -6,9 +6,10 @@ import * as EventsActions from '../../reducers/events/actions';
 
 const mapStateToProps = (state) => {
   return {
-    schedule: state.events.schedule,
+    // schedule: state.events.schedule,
     mySchedule: state.events.mySchedule,
     coachellaSchedule: state.events.coachellaSchedule,
+    smartSchedule: state.events.smartSchedule,
     app: state.app,
   };
 };

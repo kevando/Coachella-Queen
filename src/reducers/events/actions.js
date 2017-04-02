@@ -2,6 +2,7 @@ import {
   SET_SCHEDULE_DATA,
   TOGGLE_EVENT,
   REFRESH_SCHEDULE,
+  SET_INTEREST,
 } from './actionTypes';
 
 import { scheduleRef } from '../../config/firebase';
@@ -42,4 +43,12 @@ export function refreshSchedule() {
 
 export function toggleEvent(event) {
   return { type: TOGGLE_EVENT, event }
+}
+
+
+// -----------------------------------------------------------------------
+// Add or remove event from mySchedule[]
+
+export function setInterest(event,interest) {
+  return { type: SET_INTEREST, event, interest }
 }

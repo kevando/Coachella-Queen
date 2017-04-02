@@ -31,3 +31,12 @@ export function getMyDaySchedule({mySchedule,day}) {
 
   return _.sortBy(myDaySchedule,({start}) => {return start; })
 }
+
+export function getScheduleByDay(schedule, day) {
+
+  var daySchedule = _.filter(schedule,({start}) => { return moment(start).format('dddd') == day})
+
+  return _.sortBy(daySchedule,({start}) => {return start; })
+
+
+}

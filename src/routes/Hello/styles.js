@@ -39,7 +39,7 @@ export default styles = StyleSheet.create({
   },
   title: {
     color: '#fff',
-    fontSize: 26,
+    fontSize: 30,
     textAlign: 'left',
     fontWeight: '400',
     lineHeight:37,
