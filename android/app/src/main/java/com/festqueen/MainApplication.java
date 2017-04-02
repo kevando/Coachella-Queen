@@ -1,4 +1,4 @@
-package com.coachellaqueen;
+package com.festqueen;
 
 import android.app.Application;
 

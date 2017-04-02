@@ -28,6 +28,9 @@ class EventListItem extends React.Component {
   //   this.props.setInterest(this.state.event);
   //
   // }
+
+
+
   _onRowPress(){
     const {showSelection}=this.state;
     if(showSelection) {
@@ -61,7 +64,7 @@ class EventListItem extends React.Component {
   }
 
   _renderTime() {
-    const { start, interest } = this.state.event;
+    const { start, interest } = this.props.event;
     if(interest == 'yes')
       return <Text style={styles.time}>👍</Text>
     else if(interest == 'maybe')
@@ -73,7 +76,7 @@ class EventListItem extends React.Component {
   }
 
   _getRowStyle() {
-      const { interest } = this.state.event;
+      const { interest } = this.props.event;
       if(interest == 'no')
         return {borderWidth: 1, borderColor:'rgba(255,255,255,0)', height: 20,}
       else if(interest == 'maybe')
@@ -83,7 +86,7 @@ class EventListItem extends React.Component {
   }
 
   _renderStage(){
-    const { interest, stage } = this.state.event;
+    const { interest, stage } = this.props.event;
     if(interest == 'no')
       return null;
     else if(interest == 'maybe')
@@ -93,12 +96,14 @@ class EventListItem extends React.Component {
   }
 
   _renderName() {
-    const { interest, name } = this.state.event;
+    const { interest, name } = this.props.event;
     return <Text style={styles.band}>{name}</Text>
   }
 
   render() {
     const { event, onPress, setInterest } = this.props;
+
+    // console.log('new EventItem props',event.interest);
 
     return (
 
