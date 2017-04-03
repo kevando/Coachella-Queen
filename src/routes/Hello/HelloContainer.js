@@ -15,8 +15,9 @@ class HelloContainer extends Component {
   }
 
   componentDidMount() {
-    const { initialized, initializeAppData} = this.props;
-    !initialized && this._animateSunRise();
+    const { initialized } = this.props.app;
+    this._animateSunRise(initialized ? 0 : SUN_RISE_DURATION );
+    initialized && this._animateSunFull();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -26,12 +27,12 @@ class HelloContainer extends Component {
     }
   }
 
-  _animateSunRise(callback) {
+  _animateSunRise(duration) {
     // @todo this animation bugs out when refreshData is called during
     // the sun rise animation. fix this
     Animated.timing(this.state.sunOffSet, {
-      toValue: 50, delay: 100, duration: SUN_RISE_DURATION
-    }).start(callback);
+      toValue: 50, delay: 100, duration
+    }).start();
   }
 
   _animateSunSet() {}
@@ -43,7 +44,7 @@ class HelloContainer extends Component {
   }
 
   _openDebugModal(){
-    this.props.openModal(<Debug />)
+    this.props.openModal(<Debug />, 'Settings')
     Analytics.logEvent('open_debug');
   }
 
@@ -54,6 +55,7 @@ class HelloContainer extends Component {
   _onWeekendPress(weekend) {
     this.props.setWeekend(weekend);
     this.props.initApp();
+    this.props.onboardStepPassed('wiggle'); // this can happen multiple times
   }
 
   render() {

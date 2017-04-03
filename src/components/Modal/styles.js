@@ -1,58 +1,72 @@
-import { StyleSheet, Dimensions } from 'react-native';
-import { colors } from '../../config/styles';
-
-const window = Dimensions.get('window');
+import { StyleSheet } from 'react-native';
+import { colors, width, height } from '../../config/styles';
 
 export default styles = StyleSheet.create({
-  container: {
-    // flex: 1,
-    position: 'absolute',
-    top: 100,
-    left: 20,
-    width: window.width-40,
-    height: window.height-200,
-    backgroundColor: '#fff',
-    marginVertical: 0,
-    marginHorizontal: 0,
-    paddingVertical:5,
-    paddingHorizontal:10,
-    borderColor: 'rgba(100,100,100,0.9)',
-    borderWidth: 1,
-  	// backgroundColor: 'grey',
-    borderRadius: 10,
-    shadowColor: "#000000",
-    shadowOpacity: 0.99,
-    shadowRadius: 100,
-    shadowOffset: {
-      height: 0,
-      width: 0
-    }
 
+  wrapper: {
+    position: 'absolute',
+    height,
+    width,
+    backgroundColor: 'transparent',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  touchableOverlay: {
+    position: 'absolute',
+    height,
+    width,
+    top: 0,
+  },
+  overlay: {
+    position: 'absolute',
+    height,
+    width,
+    top: 0,
+    backgroundColor: 'rgba(23,22,31,0.85)',
+  },
+
+  container: {
+    width: width-40,
+    backgroundColor: 'transparent',
+    borderColor: 'rgba(100,100,100,0.5)',
   },
   closeBar: {
-    // backgroundColor:'yellow',
+    backgroundColor:'#5FAB3E',
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderColor: colors.grey,
+    borderColor: '#306732',
     borderBottomWidth: 1,
-    alignItems: 'flex-end'
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+  },
+  title: {
+    color: colors.white,
+    fontSize: 16,
+    letterSpacing: 2,
+    fontWeight: '600',
+    textAlign: 'center',
   },
   closeIcon: {
-    backgroundColor: colors.grey,
-    borderRadius:40,
-    borderWidth:1,
-    borderColor:colors.grey,
-    width:30,
-    height:30,
+    position: 'absolute',
+    right: 20,
   },
+  content: {
+    // height: 150,
+    // flex: 'flexGrow',
+    backgroundColor: 'green',
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
+    // zIndex: 999
+  }
 
 });
 
 export const iconStyle = {
   style: {
     backgroundColor: 'transparent',
-    fontSize: 30,
+    fontSize: 40,
     textAlign:'center',
-    color: '#fff'
+    color: '#408025',
+
   }
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import{
   Text,
   View,
@@ -53,38 +53,53 @@ Animatable.initializeRegistryWithDefinitions({
 
 });
 
-const Hello = (props) => {
+class Hello extends Component {
 
-  const { openDebugModal, sunOffSet, sunOpacity, onWeekendPress, app } = props;
+  // @todo props not passing down the way i want
+  // figure how to animate welcome later
+  // componentWillReceiveProps(nextProps) {
+  //   const { initialized, onboarding } = nextProps.app;
+  //   console.log('ob',this.props.app)
+  //   if(this.props.app.onboarding.wiggle.show) {
+  //     // @todo this lags
+  //     this._scrollView.tapperoo(500);
+  //   }
+  // }
 
-  return (
-    <Animatable.View easing="linear" ref={(scrollView) => { this._scrollView = scrollView; }} style={styles.container}>
-      <Animated.View style={[styles.sun, {top: sunOffSet, opacity: sunOpacity}]} />
-      <Animatable.View style={styles.textContainer} animation="fadeInUp" delay={SUN_RISE_DURATION+1000} duration={500}>
-          <Text style={styles.titleFest} >FEST</Text>
-          <Text style={styles.titleQueen} >QUEEN</Text>
-          <Text style={styles.text}>Music brings us closer together.</Text>
-          <Text style={styles.text} onPress={() => this._scrollView.tapperoo(500) }>
-            Pick the artists you want to see with your friends, then share your
-            list so you can enjoy the music together.
-          </Text>
+  render(){
+    const { openDebugModal, sunOffSet, sunOpacity, onWeekendPress, app } = this.props;
 
-          <Text style={styles.optionsLabel}>I am going to:</Text>
+    return (
+      <Animatable.View easing="linear" ref={(scrollView) => { this._scrollView = scrollView; }} style={styles.container}>
+        <Animated.View style={[styles.sun, {top: sunOffSet, opacity: sunOpacity}]} />
+        <Animatable.View style={styles.textContainer} animation="fadeIn" delay={app.initialized ? 0 : SUN_RISE_DURATION+1000} duration={app.initialized ? 10 : 200}>
+            <Text style={styles.titleFest} >FEST</Text>
+            <Text style={styles.titleQueen} >QUEEN</Text>
+            <Text style={styles.text}>Music brings us closer together.</Text>
+            <Text style={styles.text} onPress={() => this._scrollView.tapperoo(500) }>
+              Pick the artists you want to see with your friends, then share your
+              list so you can enjoy the music together.
+            </Text>
 
-          <TouchableOpacity onPress={()=>onWeekendPress(1)}>
-            <Text style={[styles.button, app.weekend == 1 && styles.selected]}>Coachella Weekend 1</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={()=>onWeekendPress(2)}>
-            <Text style={[styles.button, app.weekend == 2 && styles.selected]}>Coachella Weekend 2</Text>
-          </TouchableOpacity>
+            <Text style={styles.optionsLabel}>I am going to:</Text>
+
+            <TouchableOpacity onPress={()=>onWeekendPress(1)}>
+              <Text style={[styles.button, app.weekend == 1 && styles.selected]}>Coachella Weekend 1</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=>onWeekendPress(2)}>
+              <Text style={[styles.button, app.weekend == 2 && styles.selected]}>Coachella Weekend 2</Text>
+            </TouchableOpacity>
 
 
-        </Animatable.View>
+          </Animatable.View>
 
-        <TouchableOpacity onPress={openDebugModal} style={styles.sunTouch} />
+          <TouchableOpacity onPress={openDebugModal} style={styles.sunTouch} />
 
-    </Animatable.View>
-  );
+      </Animatable.View>
+    );
+
+  }
+
 
 }
 

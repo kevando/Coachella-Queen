@@ -1,9 +1,6 @@
 import React from 'react';
-import { View, } from 'react-native';
-import _ from 'lodash';
-import { Container, Content, Left, Body, Right, Radio, Switch, List, ListItem, Text, Icon, Button, Badge } from 'native-base';
-
-import { database, scheduleRef } from '../../config/firebase';
+import { View, Text } from 'react-native';
+import { Left, Body, Right, Switch, ListItem, Icon, Button } from 'native-base';
 
 import styles from './styles';
 
@@ -11,74 +8,52 @@ const Debug = (props) => {
 
   const { version, deviceId, deviceName} = props.app;
 
-  return (
-    <Container style={{backgroundColor:'#fff'}}>
-      <Content>
+    return (
+      <View style={styles.container}>
 
-        <ListItem itemDivider>
-          <Text>Help Center</Text>
+        <ListItem>
+          <Body>
+            <Text style={styles.text}>App Version</Text>
+          </Body>
+          <Right>
+            <Text style={styles.text}>{version}</Text>
+          </Right>
+        </ListItem>
+
+        <ListItem>
+          <Body>
+            <Text style={styles.text}>Username</Text>
+          </Body>
+          <Right>
+            <Text style={styles.text}>Unknown</Text>
+          </Right>
         </ListItem>
 
         <ListItem icon>
           <Body>
-            <Text>Feedback?</Text>
+            <Text style={styles.text}>Feedback</Text>
           </Body>
           <Right>
-            <Button rounded info small onPress={props.onSendFeedbackPress}>
+            <Button info small onPress={props.onSendFeedbackPress}>
               <Text>Send Email</Text>
             </Button>
           </Right>
         </ListItem>
 
-        <ListItem itemDivider>
-          <Text>Debug Info</Text>
-        </ListItem>
-
         <ListItem icon>
           <Body>
-            <Text>App Version</Text>
+            <Text style={styles.text}>Data</Text>
           </Body>
           <Right>
-            <Text>{version}</Text>
-          </Right>
-        </ListItem>
-        <ListItem icon>
-          <Body>
-            <Text>Device Name</Text>
-          </Body>
-          <Right>
-            <Text>{deviceName}</Text>
-          </Right>
-        </ListItem>
-        <ListItem icon>
-          <Body>
-            <Text>Device ID</Text>
-          </Body>
-          <Right>
-            <Text>{deviceId}</Text>
-          </Right>
-        </ListItem>
-
-        <ListItem itemDivider>
-          <Text>Danger Zone</Text>
-        </ListItem>
-
-        <ListItem icon>
-          <Body>
-            <Text>App Data</Text>
-          </Body>
-          <Right>
-            <Button rounded danger small onPress={props.onPurgePress}>
-              <Text>Delete</Text>
+            <Button danger small onPress={props.onPurgePress}>
+              <Text>Purge Data</Text>
             </Button>
           </Right>
         </ListItem>
 
+      </View>
+    )
 
-
-      </Content>
-    </Container>
-  );
 
 }
 // <ListItem>

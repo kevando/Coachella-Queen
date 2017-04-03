@@ -3,9 +3,11 @@ import { colors } from '../../config/styles';
 
 export default styles = StyleSheet.create({
   container: {
-    padding: 10,
+    padding: 30,
   },
   text: {
     color: colors.white,
+    fontSize: 19,
+    lineHeight: 30
   }
 });

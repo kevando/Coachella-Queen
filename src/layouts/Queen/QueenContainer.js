@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import { Text, View, StyleSheet, Dimensions, ScrollView, Animated, StatusBar, TouchableOpacity } from 'react-native';
 
 import Queen from './Queen';
+import * as Onboard from '../../components/Onboard';
 import {width} from '../../config/styles'
 
 
@@ -40,12 +41,14 @@ class QueenContainer extends Component {
 
   }
   componentDidUpdate(){
-    if(this.state.activePage == 1)
-    alert('page 1')
+    if(this.state.activePage == 1 && this.props.app.onboarding.welcome.show) {
+      this.props.onboardStepPassed('welcome');
+      this._openModal(<Onboard.Hello />, 'Welcome');
+    }
   }
 
-  _openModal(modalComponent) {
-    this.setState({showModal: true, modalComponent})
+  _openModal(modalComponent, modalTitle = 'Default Title') {
+    this.setState({showModal: true, modalComponent, modalTitle})
   }
 
   _handleScroll = (e) => {
@@ -66,12 +69,14 @@ class QueenContainer extends Component {
 
   render() {
     return (
+
       <Queen
         updateState={this.setState.bind(this)}
         handleScroll={this._handleScroll.bind(this)}
         {...this.state}
         {...this.props}
       />
+
     );
   }
 

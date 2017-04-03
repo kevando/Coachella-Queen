@@ -15,6 +15,7 @@ const initialState = {
   deviceName: 'Not Set',
   weekend: null,
   onboarding: {
+    wiggle : { show: true },
     hello : { show: true,  },
     welcome : { show: true, title: 'Welcome to Coachella Queen', message: 'Select the bands you and your friends want to see at Coachella'}
   }
@@ -32,6 +33,10 @@ export default function app(app = initialState, action = {}) {
 
       // @todo refactor this
       var onboardStep = app.onboarding[action.onboardStep];
+
+      // if onboard step is not found, just return
+      if(!onboardStep) { alert('onboad step not found'); return app; }
+
       onboardStep.show = false;
 
       var newOnboarding = Object.assign({},app.onboarding)
@@ -57,7 +62,6 @@ export default function app(app = initialState, action = {}) {
     // Called when the app finishes loading firebase data
 
     case INIT_APP:
-    // alert('am i called')
       return {
         ...app,
         initialized: true,

@@ -10,7 +10,7 @@ import Landscape from './Landscape';
 class Queen extends Component {
 
   render() {
-    const { activePage, showModal, modalComponent, updateState, handleScroll, offSet, sunOffSet, app } = this.props;
+    const { activePage, showModal, modalComponent, modalTitle, updateState, handleScroll, offSet, sunOffSet, app } = this.props;
 
     const Slides = [
       <Hello key="0" {...this.props} />,
@@ -59,7 +59,7 @@ class Queen extends Component {
         }
 
 
-        {showModal && <Modal onClose={() => updateState({showModal: false})}>{modalComponent}</Modal>}
+        {showModal && <Modal title={modalTitle} onClose={() => updateState({showModal: false})}>{modalComponent}</Modal>}
 
       </View>
     );
