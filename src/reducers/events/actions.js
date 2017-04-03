@@ -33,7 +33,7 @@ export function refreshSchedule() {
         });
       });
       dispatch(setScheduleData(events));
-      dispatch({type: 'APP_INIT'});
+      // dispatch({type: 'APP_INIT'});
     }); // scheduleRef.once
   }
 }

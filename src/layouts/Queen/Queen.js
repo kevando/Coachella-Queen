@@ -1,11 +1,9 @@
-
 import React, {Component} from 'react';
 import { Text, View, StyleSheet, ScrollView, Animated, StatusBar, TouchableOpacity } from 'react-native';
+import * as Animatable from 'react-native-animatable';
 
-
-import styles, {getActivePage} from './styles';
+import styles, { getActivePage, width } from './styles';
 import { Hello, Dashboard, Debug } from '../../routes';
-
 import Modal from '../../components/Modal';
 import Landscape from './Landscape';
 
@@ -32,7 +30,10 @@ class Queen extends Component {
       style: styles.scrollView,
       onScroll: handleScroll,
       scrollEventThrottle: 1000,
+      scrollEnabled: app.initialized
     }
+
+
 
     return (
       <View style={{ flex: 1 }}>
@@ -40,7 +41,7 @@ class Queen extends Component {
 
         <Landscape offSet={offSet} sunOffSet={sunOffSet} slides={Slides.length} />
 
-        <ScrollView {...scrollViewConfig}>
+        <ScrollView {...scrollViewConfig} >
           {
             _.map(Slides,function(Component){
               return Component;
@@ -49,12 +50,12 @@ class Queen extends Component {
         </ScrollView>
 
         { app.initialized &&
-          <View style={styles.footer}>
+          <Animatable.View style={styles.footer} animation="zoomIn">
             <View style={[styles.pageCircle,getActivePage(activePage,0)]} />
             <View style={[styles.pageCircle,getActivePage(activePage,1)]} />
             <View style={[styles.pageCircle,getActivePage(activePage,2)]} />
             <View style={[styles.pageCircle,getActivePage(activePage,3)]} />
-          </View>
+          </Animatable.View>
         }
 
 

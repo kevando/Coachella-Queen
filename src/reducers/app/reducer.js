@@ -3,6 +3,8 @@ import _ from 'lodash';
 import {
   ONBOARD_STEP_PASSED,
   SET_APP_CONFIG,
+  SET_WEEKEND,
+  INIT_APP,
 } from './actionTypes';
 
 
@@ -11,6 +13,7 @@ const initialState = {
   version: 'Not Set',
   deviceId: 'Not Set',
   deviceName: 'Not Set',
+  weekend: null,
   onboarding: {
     hello : { show: true,  },
     welcome : { show: true, title: 'Welcome to Coachella Queen', message: 'Select the bands you and your friends want to see at Coachella'}
@@ -18,7 +21,7 @@ const initialState = {
 };
 
 
-export default function recs(app = initialState, action = {}) {
+export default function app(app = initialState, action = {}) {
 
   switch (action.type) {
 
@@ -53,10 +56,20 @@ export default function recs(app = initialState, action = {}) {
     // --------------------------------------------------------------------
     // Called when the app finishes loading firebase data
 
-    case 'APP_INIT':
+    case INIT_APP:
+    // alert('am i called')
       return {
         ...app,
         initialized: true,
+      }
+
+    // --------------------------------------------------------------------
+    // User action in hello.js
+
+    case SET_WEEKEND:
+      return {
+        ...app,
+        weekend: action.weekend
       }
 
     // --------------------------------------------------------------------

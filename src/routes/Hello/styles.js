@@ -1,6 +1,5 @@
-import { StyleSheet, Dimensions } from 'react-native';
-import { colors, width, height } from '../../config/styles';
-
+import { StyleSheet } from 'react-native';
+import { colors, width, height, SUN_RADIUS } from '../../config/styles';
 
 export default styles = StyleSheet.create({
 
@@ -10,17 +9,15 @@ export default styles = StyleSheet.create({
     marginTop: 5,
     height,
     width,
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
-  skyContainer: {
-    flex: 5,
-    backgroundColor: colors.blue,
-  },
-  grassContainer: {
-    height: 49,
-    borderColor: colors.green,
-    borderTopWidth:5,
+  sun: {
+    position: 'absolute',
+    right: 30,
+    width: 100,
+    height: 100,
+    borderRadius: SUN_RADIUS/2,
+    backgroundColor: colors.yellow,
+    zIndex:0
   },
   sunTouch: {
     position: 'absolute',
@@ -34,32 +31,57 @@ export default styles = StyleSheet.create({
   },
   textContainer: {
     flex: 1,
-    paddingTop: 170,
-    paddingLeft: 20,
+    paddingTop: 70,
+    paddingHorizontal: 30,
   },
-  title: {
-    color: '#fff',
-    fontSize: 30,
+  titleFest: {
+    color: colors.white,
+    fontSize: 60,
     textAlign: 'left',
-    fontWeight: '400',
-    lineHeight:37,
+    fontWeight: '600',
     marginTop:15,
     backgroundColor: 'transparent',
+    letterSpacing: 5,
+  },
+  titleQueen: {
+    color: colors.white,
+    fontSize: 48,
+    textAlign: 'left',
+    fontWeight: '500',
+    backgroundColor: 'transparent',
+    letterSpacing: 0.1,
   },
   text: {
-    color: '#fff',
+    color: colors.white,
     fontSize: 18,
     textAlign: 'left',
     fontWeight: '300',
-    lineHeight:20,
-    marginTop:15,
+    lineHeight: 28,
+    marginTop: 15,
+    backgroundColor: 'transparent',
+  },
+  optionsLabel: {
+    color: colors.white,
+    fontSize: 14,
+    textAlign: 'left',
+    fontWeight: '300',
+    lineHeight: 23,
+    marginBottom: 15,
+    marginTop: 30,
     backgroundColor: 'transparent',
   },
   button: {
-    marginTop:30,width: 150, textAlign: 'center',borderColor:'#fff',color:'#fff',borderWidth:0,paddingVertical: 10,
+    marginBottom:30,
+    width: 200,
+    textAlign: 'center',
+    borderColor: colors.white,
+    color: colors.white,
+    borderWidth:1,
+    paddingVertical: 10,
     backgroundColor: 'transparent',
+  },
+  selected: {
+    backgroundColor: colors.white,
+    color: 'rgba(155,155,155,0.6)',
   }
-
-
-
 });

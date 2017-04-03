@@ -19,7 +19,7 @@ const skyGradient = {
 
 const Landscape = (props) => {
 
-  const { offSet, sunOffSet } = props;
+  const { offSet } = props;
 
   const bgStyles = [styles.container, {
     transform: [
@@ -27,16 +27,11 @@ const Landscape = (props) => {
     ],
   }];
 
-  const sunStyles = [styles.sun, {
-    transform: [
-      { translateX: sunOffSet },
-    ],
-  }];
 
   return (
     <Animated.View style={bgStyles} >
       <LinearGradient {...skyGradient} style={styles.skyContainer} >
-        <Animated.View style={sunStyles} />
+
         <View style={styles.mountains} >
           <View style={styles.trapezoid} />
           <View style={styles.triangleLeft} />
@@ -49,11 +44,5 @@ const Landscape = (props) => {
   );
 
 }
-
-
-
-
-
-
 
 export default Landscape;

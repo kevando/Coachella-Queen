@@ -1,11 +1,7 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors, width, height } from '../../config/styles';
 
-const window = Dimensions.get('window');
-
-
-const SUN_RADIUS = 150;
-const TOTAL_WIDTH = window.width * 2;
+const TOTAL_WIDTH = width * 2;
 const MOUNTAIN_PEAK = 70;
 
 export default styles = StyleSheet.create({
@@ -33,17 +29,6 @@ export default styles = StyleSheet.create({
     borderColor: colors.green,
     borderTopWidth:5,
   },
-  sun: {
-    position: 'absolute',
-    left: width-(SUN_RADIUS),
-    top: 50,
-    width: 100,
-    height: 100,
-    borderRadius: SUN_RADIUS/2,
-    backgroundColor: colors.yellow,
-    zIndex:2
-  },
-
   mountains: {
     borderWidth: 0,
     borderColor: 'yellow',
@@ -66,6 +51,8 @@ export default styles = StyleSheet.create({
     borderLeftColor: 'transparent',
     borderRightColor: 'transparent',
     borderBottomColor: '#C9775E'
+    // borderBottomColor: 'red',
+    // zIndex: 999,
   },
   trapezoid: {
     position: 'absolute',
@@ -114,7 +101,7 @@ export default styles = StyleSheet.create({
 
   footer: {
     height: 50,
-    // backgroundColor:'#444',
+    backgroundColor:'transparent',
     // flex:1,
     flexDirection: 'row',
     justifyContent: 'center', //h

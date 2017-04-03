@@ -24,14 +24,24 @@ class QueenContainer extends Component {
 
     if(!app.initialized) {
       refreshSchedule(); // Load firebase data
-      initializeAppData();
+      initializeAppData(); // Set some app and user variables
     }
-
   }
 
   componentWillReceiveProps(nextProps){
-    if(nextProps.app.initialized == false)
-      this.props.refreshSchedule();
+    // why is this here?
+    // if(nextProps.app.initialized == false)
+      // this.props.refreshSchedule();
+
+    if(nextProps.app.weekend){
+      // alert('weekend set')
+
+    }
+
+  }
+  componentDidUpdate(){
+    if(this.state.activePage == 1)
+    alert('page 1')
   }
 
   _openModal(modalComponent) {

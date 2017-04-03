@@ -8,6 +8,7 @@ import * as EventsActions from '../../reducers/events/actions';
 const mapStateToProps = (state) => {
   return {
     app: state.app,
+    dataLoaded: state.events.coachellaSchedule.length > 0 ? true : false,
   };
 };
 
