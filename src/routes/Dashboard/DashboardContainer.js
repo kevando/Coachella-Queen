@@ -19,7 +19,7 @@ class DashboardContainer extends Component {
     super(props);
     this.state = {
       ds: new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}),
-      showExport: false,
+      showExport: true,
       hasData: false,
       listOpacity: new Animated.Value(0),
       exportOpacity: new Animated.Value(0),
@@ -37,10 +37,22 @@ class DashboardContainer extends Component {
   }
 
   componentDidUpdate(){
+    // Run checks and see if we should show the user an onboard message
+
     if(this.state.showExport && this.props.app.onboarding.screenshot.show) {
       this.props.onboardStepPassed('screenshot');
       this.props.openModal(<Onboard.Screenshot />, 'Save Your Schedule');
     }
+
+    const mySchedule = _.filter(this.props.smartSchedule,(event) => { return event.interest; })
+
+    if(mySchedule.length == 1 && this.props.app.onboarding.options.show) {
+      // Show this modal after the user sets interest on first item
+      this.props.onboardStepPassed('options');
+      this.props.openModal(<Onboard.Options />, 'What do these mean?');
+    }
+
+
   }
 
   componentWillReceiveProps(nextProps) {
@@ -118,10 +130,11 @@ class DashboardContainer extends Component {
     this.setState({showExport: false})
   }
 
-  renderViewScheduleButton() {
+  renderViewScheduleButton(count) {
     return (
       <TouchableOpacity onPress={this._showExport.bind(this)} style={styles.viewScheduleButton}>
         <Icon ios='ios-calendar' android="md-calendar" style={{color: '#fff',textAlign:'center',}} />
+        <Text style={styles.calendarNumber}>{count}</Text>
       </TouchableOpacity>
     )
   }

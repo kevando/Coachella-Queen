@@ -18,6 +18,7 @@ const initialState = {
     wiggle : { show: true },
     hello : { show: true,  },
     screenshot : { show: true,  },
+    options : { show: true,  },
     welcome : { show: true, title: 'Welcome to Coachella Queen', message: 'Select the bands you and your friends want to see at Coachella'}
   }
 };

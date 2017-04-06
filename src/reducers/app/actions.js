@@ -1,5 +1,6 @@
 import DeviceInfo from 'react-native-device-info';
 var Analytics = require('react-native-firebase-analytics');
+var Mixpanel = require('react-native-mixpanel');
 
 import {
   ONBOARD_STEP_PASSED,
@@ -15,6 +16,9 @@ export function initializeAppData() {
   Analytics.setUserId(DeviceInfo.getUniqueID());
   Analytics.setUserProperty('deviceName', DeviceInfo.getDeviceName());
   Analytics.setUserProperty('deviceNamePreset', DeviceInfo.getDeviceName());
+  Mixpanel.identify(DeviceInfo.getUniqueID());
+  Mixpanel.registerSuperProperties({"App Version": DeviceInfo.getReadableVersion()});
+  Mixpanel.track("App Initialized!");
   return { type: SET_APP_CONFIG, DeviceInfo }
 }
 
@@ -29,6 +33,7 @@ export function purgeData() {
 // Set onboard show to false
 
 export function onboardStepPassed(onboardStep) {
+  Mixpanel.trackWithProperties('Onboard Step Passed', {step: onboardStep});
   return { type: ONBOARD_STEP_PASSED, onboardStep }
 }
 
@@ -37,6 +42,7 @@ export function onboardStepPassed(onboardStep) {
 // Set which schedule to show user (hello.js)
 
 export function setWeekend(weekend) {
+  Mixpanel.registerSuperProperties({"Weekend": ""+weekend});
   return { type: SET_WEEKEND, weekend }
 }
 
@@ -48,7 +54,13 @@ export function initApp() {
 }
 
 
+// -----------------------------------------------------------------------
+// Set Emergency contact info
 
+export function setEmergencyDetails(details) {
+  // Mixpanel.registerSuperProperties({"Weekend": ""+weekend});
+  // return { type: SET_WEEKEND, weekend }
+}
 
 
 

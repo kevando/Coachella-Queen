@@ -13,7 +13,7 @@ class Queen extends Component {
     const { activePage, showModal, openModal, modalComponent, modalTitle, updateState, handleScroll, offSet, sunOffSet, app } = this.props;
 
     const Slides = [
-      <Hello key="0" {...this.props} />,
+      // <Hello key="0" {...this.props} />,
       // <Hello key="1" {...this.props} />,
       // <Hello key="2" {...this.props} />,
       // <Hello key="3" {...this.props} />,
@@ -32,8 +32,6 @@ class Queen extends Component {
       scrollEventThrottle: 1000,
       scrollEnabled: app.initialized
     }
-
-
 
     return (
       <View style={{ flex: 1 }}>

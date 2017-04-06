@@ -1,3 +1,5 @@
+var Mixpanel = require('react-native-mixpanel');
+
 import {
   SET_SCHEDULE_DATA,
   TOGGLE_EVENT,
@@ -33,16 +35,8 @@ export function refreshSchedule() {
         });
       });
       dispatch(setScheduleData(events));
-      // dispatch({type: 'APP_INIT'});
     }); // scheduleRef.once
   }
-}
-
-// -----------------------------------------------------------------------
-// Add or remove event from mySchedule[]
-
-export function toggleEvent(event) {
-  return { type: TOGGLE_EVENT, event }
 }
 
 
@@ -50,5 +44,6 @@ export function toggleEvent(event) {
 // Add or remove event from mySchedule[]
 
 export function setInterest(event,interest) {
+  Mixpanel.trackWithProperties('User Set Interest',{artist: event.name,interest})
   return { type: SET_INTEREST, event, interest }
 }

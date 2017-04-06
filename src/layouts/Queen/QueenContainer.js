@@ -45,6 +45,7 @@ class QueenContainer extends Component {
       this.props.onboardStepPassed('welcome');
       this._openModal(<Onboard.Hello />, 'Welcome');
     }
+
   }
 
   _openModal(modalComponent, modalTitle = 'Default Title') {
@@ -62,6 +63,7 @@ class QueenContainer extends Component {
     Animated.timing(this.state.sunOffSet, {
       toValue: sunoffset,
     }).start();
+
 
     this.setState({activePage:e.nativeEvent.contentOffset.x/width})
 

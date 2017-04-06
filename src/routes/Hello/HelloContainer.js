@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { Animated } from 'react-native';
-var Analytics = require('react-native-firebase-analytics');
+var Mixpanel = require('react-native-mixpanel');
 
 import Hello from './Hello';
 import Debug from '../Debug';
+// import * as Onboard from '../../components/Onboard';
 import { height, SUN_RISE_DURATION } from '../../config/styles';
 
 class HelloContainer extends Component {
 
   state = {
     sunOffSet: new Animated.Value(height+100),
-    // sunOffSet: new Animated.Value(50),
     sunOpacity: new Animated.Value(0.4),
   }
 
@@ -44,8 +44,8 @@ class HelloContainer extends Component {
   }
 
   _openDebugModal(){
-    this.props.openModal(<Debug />, 'Settings')
-    Analytics.logEvent('open_debug');
+    this.props.openModal(<Debug />, 'Settings');
+    Mixpanel.track('Debug Opened');
   }
 
   onButtonPress(){

@@ -92,6 +92,15 @@ export default styles = StyleSheet.create({
     backgroundColor: 'transparent',
     width: 40,
     paddingVertical: 5,
+    height: 50
+  },
+  calendarNumber: {
+    backgroundColor: 'transparent',
+    position: 'absolute',
+    top: 17,
+    textAlign: 'center',
+    width: 40,
+    fontSize: 11,
   },
   buttonText: {
     textAlign: 'center',

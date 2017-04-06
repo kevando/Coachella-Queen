@@ -9,5 +9,9 @@ export default styles = StyleSheet.create({
     color: colors.white,
     fontSize: 19,
     lineHeight: 30
+  },
+  emojiIcon: {
+    fontSize: 30,
+    lineHeight: 50,
   }
 });

@@ -25,7 +25,7 @@ const Dashboard = (props) => {
 
       { myDaySchedule.length > 0 &&
         <View>
-          {renderViewScheduleButton()}
+          {renderViewScheduleButton(myDaySchedule.length)}
         </View>
 
       }

@@ -4,6 +4,10 @@ import { Provider } from 'react-redux';
 import configureStore from './config/store';
 import Queen from './layouts/Queen';
 
+
+var Mixpanel = require('react-native-mixpanel');
+Mixpanel.sharedInstanceWithToken('75619e5c47ce83defe28797a23bb308f');
+
 class App extends Component {
   constructor(props) {
     super(props);

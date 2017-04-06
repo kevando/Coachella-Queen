@@ -4,20 +4,22 @@ import LinearGradient from 'react-native-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 import moment from 'moment';
 
-import { EventListItem,  } from '../../components';
+import { ContactInfo,  } from '../../components';
 import styles from './styles';
 import { getMyDaySchedule, getDaySchedule, getScheduleByDay } from '../../config/helpers';
 
 const Export = (props) => {
 
-  const { mySchedule, smartSchedule, day, onPress } = props;
+  const { mySchedule, smartSchedule, day, onPress, setEmergencyDetails } = props;
 
   const smartDaySchedule = getScheduleByDay(smartSchedule,props.day);
 
   const myDaySchedule = _.filter(smartDaySchedule,(event) => { return event.interest == 'yes' })
-
+//onPress={onPress}
   return (
-    <TouchableOpacity onPress={onPress}>
+    <View style={{flex:1,backgroundColor:'transparent'}}>
+      <ContactInfo setEmergencyDetails={setEmergencyDetails} />
+    <TouchableOpacity >
     <View style={styles.exportContainer}>
     <StatusBar hidden={true} />
       {
@@ -34,6 +36,7 @@ const Export = (props) => {
 
       </View>
       </TouchableOpacity>
+      </View>
   );
 }
 
