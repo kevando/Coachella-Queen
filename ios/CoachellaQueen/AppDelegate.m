@@ -14,6 +14,9 @@
 
 @import Firebase;
 
+// April 6 2017
+#import "Mixpanel/Mixpanel.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -34,6 +37,9 @@
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   [FIRApp configure];
+
+  // April 6 2017
+  [Mixpanel sharedInstanceWithToken:@"75619e5c47ce83defe28797a23bb308f"];
   return YES;
 }
 
