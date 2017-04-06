@@ -76,10 +76,7 @@ class Hello extends Component {
             <Text style={styles.titleFest} >FEST</Text>
             <Text style={styles.titleQueen} >QUEEN</Text>
             <Text style={styles.text}>Music brings us closer together.</Text>
-            <Text style={styles.text} onPress={() => this._scrollView.tapperoo(500) }>
-              Pick the artists you want to see with your friends, then share your
-              list so you can enjoy the music together.
-            </Text>
+          
 
             <Text style={styles.optionsLabel}>I am going to:</Text>
 

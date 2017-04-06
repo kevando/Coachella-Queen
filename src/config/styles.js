@@ -7,7 +7,7 @@ const window = Dimensions.get('window');
 export const width = window.width;
 export const height = window.height;
 
-export const SUN_RADIUS = 100; //@todo change this based on screen size
+export const SUN_RADIUS = width/4; 
 export const SUN_RISE_DURATION = 5000;
 // ------------------------------
 // Coachella coolors baby

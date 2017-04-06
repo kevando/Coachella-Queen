@@ -73,6 +73,7 @@ class QueenContainer extends Component {
       <Queen
         updateState={this.setState.bind(this)}
         handleScroll={this._handleScroll.bind(this)}
+        openModal={this._openModal.bind(this)}
         {...this.state}
         {...this.props}
       />

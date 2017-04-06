@@ -25,13 +25,6 @@ const Dashboard = (props) => {
 
       { myDaySchedule.length > 0 &&
         <View>
-          <ScrollView style={styles.horizontalScheduleContainer} horizontal={true}>
-          {
-            _.map(myDaySchedule,(event,i) => {
-              return <View key={i} style={styles.horizontalScheduleEvent}><Text style={[styles.horizontalScheduleText]}>{event.name}</Text></View>
-            })
-          }
-          </ScrollView>
           {renderViewScheduleButton()}
         </View>
 
@@ -50,11 +43,16 @@ const Dashboard = (props) => {
 }
 
 
-// {
-//   _.map(myDaySchedule,(event,i)=>{return <Text key={i}>{event.name}</Text>})
-// }
 
-// {
-//   _.map(daySchedule,(event,i)=>{return <Text key={i}>{event.name} - {event.selected && 'selected'}</Text>})
-// }
 export default Dashboard;
+
+
+
+
+// <ScrollView style={styles.horizontalScheduleContainer} horizontal={true}>
+// {
+//   _.map(myDaySchedule,(event,i) => {
+//     return <View key={i} style={styles.horizontalScheduleEvent}><Text style={[styles.horizontalScheduleText]}>{event.name}</Text></View>
+//   })
+// }
+// </ScrollView>

@@ -78,11 +78,11 @@ class EventListItem extends React.Component {
   _getRowStyle() {
       const { interest } = this.props.event;
       if(interest == 'no')
-        return {borderWidth: 1, borderColor:'rgba(255,255,255,0)', height: 20,}
+        return {borderWidth: 1, borderColor:'rgba(255,255,255,0.3)', height: 30,}
       else if(interest == 'maybe')
         return {borderWidth: 1, borderColor:'rgba(255,255,255,0.3)', height: 30,}
       else if(interest == 'yes')
-        return {backgroundColor: 'rgba(14, 158, 237, 0.15)',borderColor:'rgba(255,255,255,0.6)'}
+        return {backgroundColor: 'rgba(14, 158, 237, 0.1)',borderColor:'rgba(255,255,255,0.2)'}
   }
 
   _renderStage(){

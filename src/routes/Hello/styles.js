@@ -6,15 +6,14 @@ export default styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'transparent',
-    marginTop: 5,
     height,
     width,
   },
   sun: {
     position: 'absolute',
     right: 30,
-    width: 100,
-    height: 100,
+    width: SUN_RADIUS,
+    height: SUN_RADIUS,
     borderRadius: SUN_RADIUS/2,
     backgroundColor: colors.yellow,
     zIndex:0
@@ -31,7 +30,7 @@ export default styles = StyleSheet.create({
   },
   textContainer: {
     flex: 1,
-    paddingTop: 70,
+    paddingTop: 60,
     paddingHorizontal: 30,
   },
   titleFest: {

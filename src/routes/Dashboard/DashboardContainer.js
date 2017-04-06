@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { ListView, View, TouchableOpacity, Text, Animated, LayoutAnimation } from 'react-native';
 import moment from 'moment';
 import _ from 'lodash';
+import {Icon} from 'native-base';
 import * as Animatable from 'react-native-animatable';
+import * as Onboard from '../../components/Onboard';
 var Analytics = require('react-native-firebase-analytics');
 
 import ScheduleList from './ScheduleList';
@@ -32,6 +34,13 @@ class DashboardContainer extends Component {
   }
   componentWillUpdate() {
     LayoutAnimation.easeInEaseOut();
+  }
+
+  componentDidUpdate(){
+    if(this.state.showExport && this.props.app.onboarding.screenshot.show) {
+      this.props.onboardStepPassed('screenshot');
+      this.props.openModal(<Onboard.Screenshot />, 'Save Your Schedule');
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -97,14 +106,6 @@ class DashboardContainer extends Component {
 
   }
 
-  _renderButtonText() {
-    if(this.state.showExport)
-      return 'Take a screen shot';
-    else
-      return 'Show my schedule'
-  }
-
-
 
   _showExport() {
     this.setState({showExport: true});
@@ -119,8 +120,8 @@ class DashboardContainer extends Component {
 
   renderViewScheduleButton() {
     return (
-      <TouchableOpacity onPress={this._showExport.bind(this)} style={styles.button}>
-        <Text style={styles.buttonText}>View Schedule</Text>
+      <TouchableOpacity onPress={this._showExport.bind(this)} style={styles.viewScheduleButton}>
+        <Icon ios='ios-calendar' android="md-calendar" style={{color: '#fff',textAlign:'center',}} />
       </TouchableOpacity>
     )
   }

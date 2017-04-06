@@ -91,13 +91,17 @@ export default styles = StyleSheet.create({
   exportBandText: {
     fontWeight: '600'
   },
-  button: {
-    // position: 'absolute',
-    // bottom: 0,
+  viewScheduleButton: {
+    position: 'absolute',
+    top: -35,
+    right: 20,
     backgroundColor: 'transparent',
+    width: 40,
+    paddingVertical: 5,
+
     // borderWidth: 2,
     // borderColor: 'yellow',
-    width,
+    // width,
   },
   buttonText: {
     textAlign: 'center',

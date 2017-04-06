@@ -5,16 +5,16 @@ export default styles = StyleSheet.create({
   row: {
     flex: 1,
     flexDirection:'row',
-    backgroundColor: 'transparent',
-    marginVertical: 3,
+    marginVertical: 5,
     marginHorizontal: 0,
     paddingVertical:5,
     // paddingHorizontal:10,
-    // borderColor: 'rgba(100,100,100,0.1)',
-    borderColor: colors.white,
+    backgroundColor: 'rgba(255,255,255,0.2)',
+    borderColor: 'rgba(255,255,255,0.01)',
     borderWidth: 1,
     height: 50,
     overflow: 'hidden',
+    borderRadius: 5,
   },
   rowTouchable: {
     flex:1,
@@ -56,12 +56,14 @@ export default styles = StyleSheet.create({
   },
   band: {
     fontSize: 14,
+    fontWeight: '500',
     color: colors.white,
     // fontFamily: 'Monaco',
   },
   stage: {
     color: colors.white,
-    fontSize: 14,
+    fontSize: 12,
+    fontWeight: '400',
   },
   time: {
     textAlign: 'right',
