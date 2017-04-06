@@ -8,15 +8,10 @@
  */
 
 #import "AppDelegate.h"
+#import <RNScreenshotDetector/RNScreenshotDetector.h>
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-
-@import Firebase;
-
-// April 6 2017
-#import "Mixpanel/Mixpanel.h"
-#import <RNScreenshotDetector/RNScreenshotDetector.h>
 
 @implementation AppDelegate
 
@@ -24,15 +19,20 @@
 {
   NSURL *jsCodeLocation;
 
-  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+  
+#ifdef DEBUG
+    jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+#else
+    jsCodeLocation = [CodePush bundleURL];
+#endif
 
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
-                                                      moduleName:@"CoachellaQueen"
+                                                      moduleName:@"Example"
                                                initialProperties:nil
                                                    launchOptions:launchOptions];
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
-
-  // April 6 2017
+  
+  // Setup screenshot detector
   RNScreenshotDetector* screenshotDetector = [[RNScreenshotDetector alloc] init];
   [screenshotDetector setupAndListen:rootView.bridge];
 
@@ -41,10 +41,6 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
-  [FIRApp configure];
-
-  // April 6 2017
-  [Mixpanel sharedInstanceWithToken:@"75619e5c47ce83defe28797a23bb308f"];
   return YES;
 }
 

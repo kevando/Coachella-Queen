@@ -6,6 +6,7 @@ import {Icon} from 'native-base';
 import * as Animatable from 'react-native-animatable';
 import * as Onboard from '../../components/Onboard';
 var Analytics = require('react-native-firebase-analytics');
+import * as ScreenshotDetector from 'react-native-screenshot-detector';
 
 import ScheduleList from './ScheduleList';
 import Export from './Export';
@@ -26,14 +27,28 @@ class DashboardContainer extends Component {
     }
   }
 
+
+
+
+
   componentWillMount() {
     // if(this.props.app.initialized == true)
     //   this._prepareList(this.props);
 
     this._prepareList(this.props);
+
+    // Subscribe callback to screenshots:
+    this.eventEmitter = ScreenshotDetector.subscribe(function() {
+      alert('screenshot taken!')
+     });
   }
   componentWillUpdate() {
     LayoutAnimation.easeInEaseOut();
+  }
+
+  componentWillUnmount() {
+    // Unsubscribe later (a good place would be componentWillUnmount)
+    ScreenshotDetector.unsubscribe(this.eventEmitter);
   }
 
   componentDidUpdate(){
