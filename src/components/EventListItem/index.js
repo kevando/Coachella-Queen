@@ -92,7 +92,7 @@ class EventListItem extends React.Component {
 
 
     const { event, setInterest } = this.props;
-    console.log('EventListItem Render',event.name)
+    // console.log('EventListItem Render',event.name)
     return (
 
         <View style={[styles.row,this._getRowStyle()]}>

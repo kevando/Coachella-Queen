@@ -24,7 +24,7 @@ class QueenContainer extends Component {
     const { app, refreshSchedule, initializeAppData } = this.props;
 
     if(!app.initialized) {
-      refreshSchedule(); // Load firebase data
+      // refreshSchedule(); // Load firebase data
       initializeAppData(); // Set some app and user variables
     }
   }

@@ -15,11 +15,19 @@ const Export = (props) => {
   const smartDaySchedule = getScheduleByDay(smartSchedule,props.day);
 
   const myDaySchedule = _.filter(smartDaySchedule,(event) => { return event.interest == 'yes' })
-//onPress={onPress}
+
   return (
     <View style={{flex:1,backgroundColor:'transparent'}}>
       <ContactInfo setEmergencyDetails={setEmergencyDetails} {...props.app} />
-    <TouchableOpacity >
+      <View style={styles.optionsContainer} >
+        <TouchableOpacity>
+          <Text style={styles.saveOptionText}>Save to Camera roll</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.saveOptionText}>I{"'"}ll just take a screenshot</Text>
+        </TouchableOpacity>
+      </View>
+    <TouchableOpacity onPress={onPress}>
     <View style={styles.exportContainer}>
     <StatusBar hidden={true} />
       {

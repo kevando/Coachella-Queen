@@ -19,7 +19,7 @@ class DashboardContainer extends Component {
     super(props);
     this.state = {
       ds: new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}),
-      showExport: true,
+      showExport: false,
       hasData: false,
       listOpacity: new Animated.Value(0),
       exportOpacity: new Animated.Value(0),
@@ -105,11 +105,6 @@ class DashboardContainer extends Component {
 
   }
 
-  _toggleEvent(event) {
-    this.props.toggleEvent(event);
-    this._prepareList(this.props);
-
-  }
 
   toggleDisplay() {
     // toggle display
@@ -121,10 +116,6 @@ class DashboardContainer extends Component {
 
   _showExport() {
     this.setState({showExport: true});
-    // Analytics.logEvent('view_export', {
-    //   'day': this.props.day,
-    //   'scheduleLength': this.state.myDaySchedule.length
-    // });
   }
   _showList() {
     this.setState({showExport: false})
@@ -155,22 +146,11 @@ class DashboardContainer extends Component {
             />
           :
           <ScheduleList
-            toggleEvent={this._toggleEvent.bind(this)}
             renderViewScheduleButton={this.renderViewScheduleButton.bind(this)}
             {...this.props}
             {...this.state}
           />
         }
-
-        {
-          this.state.showExport &&
-          <TouchableOpacity onPress={this._showList.bind(this)} style={styles.button}>
-            <Animatable.Text style={styles.buttonText} animation="fadeOut" delay={3000}>Tap again to go back</Animatable.Text>
-          </TouchableOpacity>
-        }
-
-
-
 
 
 
