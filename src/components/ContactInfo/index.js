@@ -14,41 +14,51 @@ class ContactInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: null,
-      details: null,
+      name: this.props.name,
+      details: this.props.emergencyDetails,
     }
   }
-  componentDidUpdate(){
-    if(this.state.details != null){
-      // alert('details saved!')
-      // this.props.setEmergencyDetails(this.state.details);
-    }
-  }
+
 
   _onAddInfoPress() {
-
     AlertIOS.prompt(
-      'Emergency Contact',
+      'What is your name?',
       'In case you lose your phone, this will show on your lockscreen',
       [
         {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-        {text: 'Save', onPress: details => this.setState({details}) },
+        {text: 'Next', onPress: name => this._onNextPress(name) },
       ],
     );
+  }
+  _onNextPress(name) {
+    this.setState({name});
+    AlertIOS.prompt(
+      'How should you be reached??',
+      'Add your email or a friend\'s phone number.',
+      [
+        {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+        {text: 'Save', onPress: details => this._onSavePress(details) },
+      ],
+    );
+  }
 
+  _onSavePress(details) {
+    this.setState({details});
+    this.props.setEmergencyDetails(this.state.name,details);
   }
 
 
 
   render() {
+    const { name, details } = this.state;
 
     return (
 
         <View style={styles.container}>
 
           <TouchableOpacity onPress={this._onAddInfoPress.bind(this)}>
-            { this.state.details ?
-              <Text style={styles.buttonText}>{this.state.details}</Text>
+            { details ?
+              <Text style={styles.buttonText}>{name}: {details}</Text>
               :
               <Text style={styles.buttonText}>Add Emergency Contact Information</Text>
             }

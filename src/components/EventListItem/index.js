@@ -13,15 +13,15 @@ class EventListItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      event: this.props.event,
+      // event: this.props.event,
       showOptions: false,
       // selected: this.props.event.selected,
     }
   }
   componentDidMount(){
-    // console.log('GOT PROPS')
+    // console.log('GOT PROPS for EventListItem')
     // still doesnt quite update this list properly
-    this.setState({selected: this.props.event.selected})
+    // this.setState({selected: this.props.event.selected})
   }
   _onRowPress(){
     const {showOptions}=this.state;
@@ -36,7 +36,7 @@ class EventListItem extends React.Component {
     this.refs.optionsRef.bounceOut(500).then(()=> {
       // calling setInterest lags the app, so i am waiting until the animation
       // completes before calling it. this is not ideal
-      this.props.setInterest(this.state.event,interest);
+      this.props.setInterest(this.props.event,interest);
       this._hideOptions()
     })
   }
@@ -89,8 +89,10 @@ class EventListItem extends React.Component {
   }
 
   render() {
-    const { event, onPress, setInterest } = this.props;
 
+
+    const { event, setInterest } = this.props;
+    console.log('EventListItem Render',event.name)
     return (
 
         <View style={[styles.row,this._getRowStyle()]}>

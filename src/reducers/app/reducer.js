@@ -5,6 +5,7 @@ import {
   SET_APP_CONFIG,
   SET_WEEKEND,
   INIT_APP,
+  SET_EMERGENCY_INFO,
 } from './actionTypes';
 
 
@@ -14,6 +15,8 @@ const initialState = {
   deviceId: 'Not Set',
   deviceName: 'Not Set',
   weekend: null,
+  name: null,
+  emergencyDetails: null,
   onboarding: {
     wiggle : { show: true },
     hello : { show: true,  },
@@ -77,6 +80,16 @@ export default function app(app = initialState, action = {}) {
         ...app,
         weekend: action.weekend
       }
+
+    // --------------------------------------------------------------------
+    // User saved contact info
+    case SET_EMERGENCY_INFO:
+      return {
+        ...app,
+        name: action.name,
+        emergencyDetails: action.details,
+      }
+
 
     // --------------------------------------------------------------------
     default:

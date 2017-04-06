@@ -7,6 +7,7 @@ import {
   SET_APP_CONFIG,
   SET_WEEKEND,
   INIT_APP,
+  SET_EMERGENCY_INFO,
 } from './actionTypes';
 
 
@@ -57,9 +58,9 @@ export function initApp() {
 // -----------------------------------------------------------------------
 // Set Emergency contact info
 
-export function setEmergencyDetails(details) {
-  // Mixpanel.registerSuperProperties({"Weekend": ""+weekend});
-  // return { type: SET_WEEKEND, weekend }
+export function setEmergencyDetails(name, details) {
+  Mixpanel.set({"$email": details, "$name": name});
+  return { type: SET_EMERGENCY_INFO, name, details }
 }
 
 

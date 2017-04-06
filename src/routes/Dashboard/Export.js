@@ -18,7 +18,7 @@ const Export = (props) => {
 //onPress={onPress}
   return (
     <View style={{flex:1,backgroundColor:'transparent'}}>
-      <ContactInfo setEmergencyDetails={setEmergencyDetails} />
+      <ContactInfo setEmergencyDetails={setEmergencyDetails} {...props.app} />
     <TouchableOpacity >
     <View style={styles.exportContainer}>
     <StatusBar hidden={true} />
