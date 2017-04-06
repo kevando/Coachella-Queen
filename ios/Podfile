@@ -13,6 +13,6 @@ target 'CoachellaQueen' do
   pod 'Firebase/Database'
   pod 'Firebase/RemoteConfig'
   pod 'Firebase/Messaging'
-
+  pod 'Mixpanel'
 
 end
