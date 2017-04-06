@@ -7,8 +7,19 @@ const window = Dimensions.get('window');
 export const width = window.width;
 export const height = window.height;
 
-export const SUN_RADIUS = width/4; 
+export const SUN_RADIUS = width/4;
 export const SUN_RISE_DURATION = 5000;
+
+export const TAB_HEIGHT = 50;
+
+// ------------------------------
+// Emoji Options
+export const EMOJIS = {
+  'yes' : '+1',
+  'no'  : '-1',
+  'maybe' : 'ok_hand',
+}
+
 // ------------------------------
 // Coachella coolors baby
 

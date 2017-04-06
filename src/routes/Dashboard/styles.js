@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import { colors, width, height, } from '../../config/styles';
+import { colors, width, height, TAB_HEIGHT } from '../../config/styles';
 
 export default styles = StyleSheet.create({
   container: {
@@ -15,7 +15,6 @@ export default styles = StyleSheet.create({
   },
   scheduleListContainer: {
     flex:1,
-    // backgroundColor: 'blue',
   },
   title: {
     fontSize: 30,
@@ -40,10 +39,8 @@ export default styles = StyleSheet.create({
     marginVertical: 2,
     marginHorizontal: 5,
     height: 20,
-    // flex: 1,
     borderColor: '#fff',
     borderWidth: 1,
-    // paddingTop: 3,
     justifyContent: 'center',
     paddingHorizontal: 15,
     backgroundColor: 'rgba(14, 158, 237, 0.15)',
@@ -57,12 +54,9 @@ export default styles = StyleSheet.create({
   listContainer: {
     width: width-30,
     marginLeft: 15,
-    // backgroundColor: 'yellow',
-    // backgroundColor: 'rgba(255,255,255,0.4)', // trans press down
     marginHorizontal: 0,
     marginTop: 10,
-    marginBottom: 90,
-    // borderRadius: 10,
+    marginBottom: TAB_HEIGHT,
     padding:5,
   },
   exportContainer: {
@@ -93,15 +87,11 @@ export default styles = StyleSheet.create({
   },
   viewScheduleButton: {
     position: 'absolute',
-    top: -35,
+    top: -40,
     right: 20,
     backgroundColor: 'transparent',
     width: 40,
     paddingVertical: 5,
-
-    // borderWidth: 2,
-    // borderColor: 'yellow',
-    // width,
   },
   buttonText: {
     textAlign: 'center',

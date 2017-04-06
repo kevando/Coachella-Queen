@@ -15,14 +15,12 @@ export default styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
-    // backgroundColor:'blue',
   },
   skyContainer: {
     flex: 5,
     backgroundColor: colors.blue,
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
-
   },
   grassContainer: {
     height: 49,

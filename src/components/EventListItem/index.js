@@ -1,18 +1,20 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Animated } from 'react-native';
 import moment from 'moment';
+import Emoji from 'react-native-emoji';
+import * as Animatable from 'react-native-animatable';
 
 import styles from './styles';
+import { EMOJIS } from '../../config/styles';
 
-const OFF_SCREEN = -110;
+const OPTIONS_WIDTH = 130;
 
 class EventListItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       event: this.props.event,
-      optionsOffset: new Animated.Value(OFF_SCREEN),
-      showSelection: false,
+      showOptions: false,
       // selected: this.props.event.selected,
     }
   }
@@ -21,56 +23,42 @@ class EventListItem extends React.Component {
     // still doesnt quite update this list properly
     this.setState({selected: this.props.event.selected})
   }
-  // _onEventPress(){
-  //   // this.setState({selected: !this.state.selected});
-  //   // this.props.toggleEvent(this.state.event);
-  //
-  //   this.props.setInterest(this.state.event);
-  //
-  // }
-
-
-
   _onRowPress(){
-    const {showSelection}=this.state;
-    if(showSelection) {
+    const {showOptions}=this.state;
+    if(showOptions) {
       this._hideOptions();
-
     } else {
       this._revealOptions();
     }
-    this.setState({showSelection: !this.state.showSelection})
-
-
   }
 
   _onOptionPress(interest){
-    this.props.setInterest(this.state.event,interest);
-    this._hideOptions();
+    this.refs.optionsRef.bounceOut(500).then(()=> {
+      // calling setInterest lags the app, so i am waiting until the animation
+      // completes before calling it. this is not ideal
+      this.props.setInterest(this.state.event,interest);
+      this._hideOptions()
+    })
   }
 
   _hideOptions(){
-    Animated.timing(
-       this.state.optionsOffset,
-       {toValue: OFF_SCREEN}
-     ).start();
+    this.refs.bodyRef.transitionTo({opacity: 0.9, marginLeft: 0});
+    this.refs.optionsRef.transitionTo({width: 0},400);
+    this.refs.leftRef.bounceIn(800);
+    this.setState({showOptions: false});
   }
   _revealOptions(){
-    Animated.timing(
-       this.state.optionsOffset,
-       {toValue: 0}
-     ).start();
-
+    this.refs.leftRef.zoomOut(300)
+    this.refs.bodyRef.transitionTo({opacity: 1.0, marginLeft: -40});
+    this.refs.optionsRef.transitionTo({width: OPTIONS_WIDTH},400);
+    this.refs.optionsRef.zoomIn(400);
+    this.setState({showOptions: true});
   }
 
-  _renderTime() {
+  _renderLeft() {
     const { start, interest } = this.props.event;
-    if(interest == 'yes')
-      return <Text style={styles.time}>👍</Text>
-    else if(interest == 'maybe')
-      return <Text style={styles.time}>🤔</Text>
-    else if(interest == 'no')
-      return <Text style={styles.time}>👎</Text>
+    if(interest)
+      return <Emoji name={EMOJIS[interest]} />
     else
       return <Text style={styles.time}>{moment(start).format('h:mm')}</Text>
   }
@@ -78,9 +66,9 @@ class EventListItem extends React.Component {
   _getRowStyle() {
       const { interest } = this.props.event;
       if(interest == 'no')
-        return {borderWidth: 1, borderColor:'rgba(255,255,255,0.3)', height: 30,}
+        return {borderWidth: 1, borderColor:'rgba(255,255,255,0.3)'}
       else if(interest == 'maybe')
-        return {borderWidth: 1, borderColor:'rgba(255,255,255,0.3)', height: 30,}
+        return {borderWidth: 1, borderColor:'rgba(255,255,255,0.3)'}
       else if(interest == 'yes')
         return {backgroundColor: 'rgba(14, 158, 237, 0.1)',borderColor:'rgba(255,255,255,0.2)'}
   }
@@ -103,58 +91,40 @@ class EventListItem extends React.Component {
   render() {
     const { event, onPress, setInterest } = this.props;
 
-    // console.log('new EventItem props',event.interest);
-
     return (
 
         <View style={[styles.row,this._getRowStyle()]}>
           <TouchableOpacity style={styles.rowTouchable} activeOpacity={0.7} onPress={this._onRowPress.bind(this)} >
           <View style={styles.left}>
-            {this._renderTime()}
+            <Animatable.Text ref="leftRef" style={{fontSize: 30}}>{this._renderLeft()}</Animatable.Text>
 
           </View>
-          <View style={styles.body}>
+          <Animatable.View ref="bodyRef" style={styles.body}>
             {this._renderName()}
             {this._renderStage()}
-          </View>
+          </Animatable.View>
           </TouchableOpacity>
-          <Animated.View style={[styles.right,{right:this.state.optionsOffset}]}>
+          <Animatable.View ref="optionsRef" style={styles.right}>
             <View style={styles.optionContainer}>
-              <Text onPress={this._onOptionPress.bind(this,'yes')} style={styles.optionIcon}>👍</Text>
+              <TouchableOpacity onPress={this._onOptionPress.bind(this,'yes')} >
+                <Text style={{fontSize: 25}}><Emoji name={EMOJIS['yes']} /></Text>
+              </TouchableOpacity>
             </View>
             <View style={styles.optionContainer}>
-              <Text onPress={this._onOptionPress.bind(this,'maybe')} style={styles.optionIcon}>🤔</Text>
+              <TouchableOpacity onPress={this._onOptionPress.bind(this,'maybe')} >
+                <Text style={{fontSize: 25}}><Emoji name={EMOJIS['maybe']} /></Text>
+              </TouchableOpacity>
             </View>
             <View style={styles.optionContainer}>
-              <Text onPress={this._onOptionPress.bind(this,'no')} style={styles.optionIcon}>👎</Text>
+            <TouchableOpacity onPress={this._onOptionPress.bind(this,'no')} >
+              <Text style={{fontSize: 25}}><Emoji name={EMOJIS['no']} /></Text>
+            </TouchableOpacity>
             </View>
-          </Animated.View>
+          </Animatable.View>
         </View>
-
-
-    );
-
-  }
-  // <View style={styles.right}>
-  //   <Text style={styles.time} onPress={this._onEventPress.bind(this)}>Set Fire</Text>
-  //
-  // </View>
-  render_og() {
-    const { event, onPress } = this.props;
-// <View style={[styles.container,{backgroundColor: this.state.selected ? '#ddd' : '#fff',borderColor: this.state.selected ? '#333' : '#ccc'}]}>
-    return (
-      <TouchableOpacity activeOpacity={0.8} onPress={this._onEventPress.bind(this)}>
-        <View style={[styles.container,{backgroundColor: this.state.selected ? 'rgba(255,255,255,0.4)' : 'transparent'}]}>
-          <Text style={styles.band}>{event.name}</Text>
-          <Text style={styles.stage}>{event.stage}</Text>
-          <Text style={styles.time}>{moment(event.start).format('h:mm')}</Text>
-        </View>
-      </TouchableOpacity>
     );
 
   }
 
 }
-
-
 export default EventListItem;

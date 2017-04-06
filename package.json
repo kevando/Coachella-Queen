@@ -17,6 +17,7 @@
     "react-native": "^0.42.0",
     "react-native-animatable": "^1.1.0",
     "react-native-device-info": "^0.10.1",
+    "react-native-emoji": "^1.2.0",
     "react-native-firebase-analytics": "^3.0.0",
     "react-native-linear-gradient": "^2.0.0",
     "react-native-mail": "^3.0.1",
