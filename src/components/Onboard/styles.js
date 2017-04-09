@@ -7,7 +7,12 @@ export default styles = StyleSheet.create({
   },
   text: {
     color: colors.white,
-    fontSize: 19,
+    fontSize: 14,
+    lineHeight: 30
+  },
+  title: {
+    color: colors.white,
+    fontSize: 17,
     lineHeight: 30
   },
   emojiIcon: {

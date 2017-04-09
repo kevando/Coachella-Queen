@@ -1,13 +1,15 @@
 import React from 'react';
 import { View, ListView, Text, TouchableOpacity, StatusBar } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import {Icon} from 'native-base';
 import * as Animatable from 'react-native-animatable';
 import moment from 'moment';
 
 
-import { ContactInfo,  } from '../../components';
+import { ContactInfo, OnboardBox } from '../../components';
 import styles from './styles';
 import { getMyDaySchedule, getDaySchedule, getScheduleByDay } from '../../config/helpers';
+
 
 const Export = (props) => {
 
@@ -20,14 +22,7 @@ const Export = (props) => {
   return (
     <View style={{flex:1,backgroundColor:'transparent'}}>
       <ContactInfo setEmergencyDetails={setEmergencyDetails} {...props.app} />
-      <View style={styles.optionsContainer} >
-        <TouchableOpacity>
-          <Text style={styles.saveOptionText}>Save to Camera roll</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text style={styles.saveOptionText}>I{"'"}ll just take a screenshot</Text>
-        </TouchableOpacity>
-      </View>
+      <OnboardBox {...props} />
     <TouchableOpacity onPress={onPress}>
     <View style={styles.exportContainer}>
     <StatusBar hidden={true} />

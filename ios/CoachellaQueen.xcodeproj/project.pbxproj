@@ -15,6 +15,8 @@
 		00E356F31AD99517003FC87E /* CoachellaQueenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CoachellaQueenTests.m */; };
 		0A98D0C61E7F989C00C4140E /* libRNMail.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A98D0C31E7F988C00C4140E /* libRNMail.a */; };
 		0A9A1EB01E7B9FC000140C4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A1EAF1E7B9FC000140C4D /* GoogleService-Info.plist */; };
+		0AE148D61E99B83700C6321E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE148D51E99B83700C6321E /* Social.framework */; };
+		0AE148D81E99B84200C6321E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE148D71E99B84200C6321E /* MessageUI.framework */; };
 		0BAF1A44A9F64866840319E0 /* Arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3767068D47084DAFA6A8C941 /* Arial.ttf */; };
 		10235B7B3403410ABE9824AD /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D957D3672E34522A0FBE8E8 /* Roboto_medium.ttf */; };
 		10E4F3337AA84130AC7E3B5C /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D976857B37A64E28A4B32CF4 /* Rubik-BlackItalic.ttf */; };
@@ -31,6 +33,7 @@
 		16CB1F954D8A4B599D5C2198 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADB33D85A35945959F6AE051 /* Rubik-Regular.ttf */; };
 		17CFDB3ECD6541488D2618A6 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4DD331A8BB4D3C8C4BF64D /* Zocial.ttf */; };
 		1E559A7D639E4E0CA2C03F98 /* libRNScreenshotDetector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B21BC85577447CE8186A71A /* libRNScreenshotDetector.a */; };
+		214359B89BB24CBF8AD0DC90 /* libRNShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 282B25FB570E4D0EA08B4827 /* libRNShare.a */; };
 		2CA4DB198F7A445ABA3490D5 /* SanFranciscoBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8D490626D3642BD966B546D /* SanFranciscoBold.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -171,6 +174,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNScreenshotDetector;
+		};
+		0AE148D31E99B77D00C6321E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9817ACF7833431FA3B363E4 /* RNShare.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNShare;
 		};
 		139105C01AF99BAD00B5F7CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -333,6 +343,8 @@
 		0961ACFBD41EECC45C762930 /* Pods-CoachellaQueen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoachellaQueen.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoachellaQueen/Pods-CoachellaQueen.release.xcconfig"; sourceTree = "<group>"; };
 		0A98D0BD1E7F988B00C4140E /* RNMail.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNMail.xcodeproj; path = "../node_modules/react-native-mail/RNMail.xcodeproj"; sourceTree = "<group>"; };
 		0A9A1EAF1E7B9FC000140C4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "CoachellaQueen/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0AE148D51E99B83700C6321E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		0AE148D71E99B84200C6321E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* CoachellaQueen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoachellaQueen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -347,6 +359,7 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		15B79C4FD2364AF2AF980688 /* Andale Mono.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Andale Mono.ttf"; path = "../node_modules/native-base/Fonts/Andale Mono.ttf"; sourceTree = "<group>"; };
 		1B0198C6291F4389A09EFBBC /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/native-base/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		282B25FB570E4D0EA08B4827 /* libRNShare.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNShare.a; sourceTree = "<group>"; };
 		2B21BC85577447CE8186A71A /* libRNScreenshotDetector.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNScreenshotDetector.a; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* CoachellaQueen-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoachellaQueen-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* CoachellaQueen-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CoachellaQueen-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -386,6 +399,7 @@
 		CA27BE0FBAA841DAB295DD07 /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
 		CE8C45D6661E4C5FAD68B9AA /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-LightItalic.ttf"; path = "../node_modules/native-base/Fonts/Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
 		D976857B37A64E28A4B32CF4 /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-BlackItalic.ttf"; path = "../node_modules/native-base/Fonts/Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
+		D9817ACF7833431FA3B363E4 /* RNShare.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNShare.xcodeproj; path = "../node_modules/react-native-share/ios/RNShare.xcodeproj"; sourceTree = "<group>"; };
 		E01379656B36AFEA3D29A343 /* Pods-CoachellaQueen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoachellaQueen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoachellaQueen/Pods-CoachellaQueen.debug.xcconfig"; sourceTree = "<group>"; };
 		E5BDE6B222FC4DBCA7738096 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
 		E852562FF4FD47499D1ACCEA /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
@@ -409,6 +423,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AE148D81E99B84200C6321E /* MessageUI.framework in Frameworks */,
+				0AE148D61E99B83700C6321E /* Social.framework in Frameworks */,
 				0A98D0C61E7F989C00C4140E /* libRNMail.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
@@ -427,6 +443,7 @@
 				8F1FF5C474FF4EA7B1A44ED0 /* libBVLinearGradient.a in Frameworks */,
 				D695175F879E4AC382479C16 /* libRNMixpanel.a in Frameworks */,
 				1E559A7D639E4E0CA2C03F98 /* libRNScreenshotDetector.a in Frameworks */,
+				214359B89BB24CBF8AD0DC90 /* libRNShare.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +576,14 @@
 			isa = PBXGroup;
 			children = (
 				0AE1489E1E962AC400C6321E /* libRNScreenshotDetector.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0AE148B01E99B77D00C6321E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0AE148D41E99B77D00C6321E /* libRNShare.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -697,6 +722,7 @@
 				425F040D1E2A4C2AAC5A425D /* BVLinearGradient.xcodeproj */,
 				3B3AFFB042CA4DC6AF413D4E /* RNMixpanel.xcodeproj */,
 				300B049ECC764C55BAFD38BD /* RNScreenshotDetector.xcodeproj */,
+				D9817ACF7833431FA3B363E4 /* RNShare.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -740,6 +766,8 @@
 		9957CA21E2203F2A3659437C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0AE148D71E99B84200C6321E /* MessageUI.framework */,
+				0AE148D51E99B83700C6321E /* Social.framework */,
 				B3D067E5790F6C3AA59BE1BF /* Pods_CoachellaQueen.framework */,
 			);
 			name = Frameworks;
@@ -930,6 +958,10 @@
 					ProductGroup = 0AE1487B1E962AC300C6321E /* Products */;
 					ProjectRef = 300B049ECC764C55BAFD38BD /* RNScreenshotDetector.xcodeproj */;
 				},
+				{
+					ProductGroup = 0AE148B01E99B77D00C6321E /* Products */;
+					ProjectRef = D9817ACF7833431FA3B363E4 /* RNShare.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1024,6 +1056,13 @@
 			fileType = archive.ar;
 			path = libRNScreenshotDetector.a;
 			remoteRef = 0AE1489D1E962AC400C6321E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0AE148D41E99B77D00C6321E /* libRNShare.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNShare.a;
+			remoteRef = 0AE148D31E99B77D00C6321E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		139105C11AF99BAD00B5F7CC /* libRCTSettings.a */ = {
@@ -1391,12 +1430,14 @@
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 					"$(SRCROOT)/../node_modules/react-native-screenshot-detector/ios/RNScreenshotDetector/**",
+					"$(SRCROOT)/../node_modules/react-native-share/ios",
 				);
 				INFOPLIST_FILE = CoachellaQueenTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1421,12 +1462,14 @@
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 					"$(SRCROOT)/../node_modules/react-native-screenshot-detector/ios/RNScreenshotDetector/**",
+					"$(SRCROOT)/../node_modules/react-native-share/ios",
 				);
 				INFOPLIST_FILE = CoachellaQueenTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1454,6 +1497,7 @@
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 					"$(SRCROOT)/../node_modules/react-native-screenshot-detector/ios/RNScreenshotDetector/**",
+					"$(SRCROOT)/../node_modules/react-native-share/ios",
 				);
 				INFOPLIST_FILE = CoachellaQueen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1482,6 +1526,7 @@
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 					"$(SRCROOT)/../node_modules/react-native-screenshot-detector/ios/RNScreenshotDetector/**",
+					"$(SRCROOT)/../node_modules/react-native-share/ios",
 				);
 				INFOPLIST_FILE = CoachellaQueen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1515,11 +1560,13 @@
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 					"$(SRCROOT)/../node_modules/react-native-screenshot-detector/ios/RNScreenshotDetector/**",
+					"$(SRCROOT)/../node_modules/react-native-share/ios",
 				);
 				INFOPLIST_FILE = "CoachellaQueen-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1554,11 +1601,13 @@
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 					"$(SRCROOT)/../node_modules/react-native-screenshot-detector/ios/RNScreenshotDetector/**",
+					"$(SRCROOT)/../node_modules/react-native-share/ios",
 				);
 				INFOPLIST_FILE = "CoachellaQueen-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1591,6 +1640,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.CoachellaQueen-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1615,6 +1665,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);

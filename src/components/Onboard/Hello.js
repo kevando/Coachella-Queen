@@ -7,9 +7,11 @@ const Hello = (props) => {
 
     return (
       <View style={styles.container}>
-      <Text style={styles.text}>
-        Quickly create your schedule and save it as your lockscreen background.
+      <Text style={styles.title}>
+        Tap the bands you want to see and add
+        them to your schedule.
       </Text>
+
       </View>
     );
 }

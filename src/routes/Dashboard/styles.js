@@ -107,19 +107,5 @@ export default styles = StyleSheet.create({
     color: colors.white,
     paddingVertical: 5,
   },
-  optionsContainer: {
-    // backgroundColor: 'yellow',
-    marginTop: 100,
-  },
-  saveOptionText: {
-    paddingVertical: 7,
-    paddingHorizontal: 10,
-    marginVertical: 10,
-    marginHorizontal: 30,
-    color: colors.white,
-    backgroundColor: 'transparent',
-    borderColor: colors.white,
-    borderWidth: 1,
-    textAlign: 'center',
-  }
+
 });

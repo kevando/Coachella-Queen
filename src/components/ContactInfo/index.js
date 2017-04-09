@@ -54,11 +54,11 @@ class ContactInfo extends React.Component {
 
     return (
 
-        <View style={styles.container}>
+        <View style={[styles.container,details && {backgroundColor:'transparent',borderWidth:0}]}>
 
           <TouchableOpacity onPress={this._onAddInfoPress.bind(this)}>
             { details ?
-              <Text style={styles.buttonText}>{name}: {details}</Text>
+              <Text style={styles.contactText}>{name}: {details}</Text>
               :
               <Text style={styles.buttonText}>Add Emergency Contact Information</Text>
             }

@@ -4,15 +4,11 @@ import { colors, width } from '../../config/styles';
 export default styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    // flexDirection:'row',
-    // marginVertical: 5,
-    // marginHorizontal: 0,
     paddingVertical:0,
-    // paddingHorizontal:10,
     backgroundColor: 'rgba(255,255,255,0.1)',
     borderColor: 'rgba(255,255,255,0.4)',
     borderWidth: 1,
-    height: 30,
+    height: 25,
     width: width-80,
     left: 40,
     top: 30,
@@ -24,5 +20,10 @@ export default styles = StyleSheet.create({
   buttonText: {
     color: colors.white,
     textAlign: 'center',
+  },
+  contactText: {
+    color: colors.white,
+    textAlign: 'center',
+    fontSize: 15,
   }
   });

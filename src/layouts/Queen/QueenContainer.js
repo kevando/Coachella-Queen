@@ -1,6 +1,7 @@
 
 import React, {Component} from 'react';
 import { Text, View, StyleSheet, Dimensions, ScrollView, Animated, StatusBar, TouchableOpacity } from 'react-native';
+import * as ScreenshotDetector from 'react-native-screenshot-detector';
 
 import Queen from './Queen';
 import * as Onboard from '../../components/Onboard';
@@ -17,6 +18,7 @@ class QueenContainer extends Component {
       offSet: new Animated.Value(0),
       sunOffSet: new Animated.Value(0),
       activePage: 0,
+      showPagination: true,
     }
   }
 
@@ -24,9 +26,19 @@ class QueenContainer extends Component {
     const { app, refreshSchedule, initializeAppData } = this.props;
 
     if(!app.initialized) {
-      // refreshSchedule(); // Load firebase data
+      refreshSchedule(); // Load firebase data
       initializeAppData(); // Set some app and user variables
     }
+  }
+  componentWillMount() {
+
+    // Subscribe callback to screenshots:
+    this.eventEmitter = ScreenshotDetector.subscribe(function() {
+      this._openModal(<Onboard.Screenshot />, 'Nice!');
+     });
+  }
+  componentWillUnmount() {
+    ScreenshotDetector.unsubscribe(this.eventEmitter);
   }
 
   componentWillReceiveProps(nextProps){

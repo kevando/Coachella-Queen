@@ -6,7 +6,6 @@ import {Icon} from 'native-base';
 import * as Animatable from 'react-native-animatable';
 import * as Onboard from '../../components/Onboard';
 var Analytics = require('react-native-firebase-analytics');
-import * as ScreenshotDetector from 'react-native-screenshot-detector';
 
 import ScheduleList from './ScheduleList';
 import Export from './Export';
@@ -28,36 +27,23 @@ class DashboardContainer extends Component {
   }
 
 
-
-
-
   componentWillMount() {
-    // if(this.props.app.initialized == true)
-    //   this._prepareList(this.props);
-
     this._prepareList(this.props);
-
-    // Subscribe callback to screenshots:
-    this.eventEmitter = ScreenshotDetector.subscribe(function() {
-      alert('screenshot taken!')
-     });
   }
+
   componentWillUpdate() {
     LayoutAnimation.easeInEaseOut();
-  }
-
-  componentWillUnmount() {
-    // Unsubscribe later (a good place would be componentWillUnmount)
-    ScreenshotDetector.unsubscribe(this.eventEmitter);
   }
 
   componentDidUpdate(){
     // Run checks and see if we should show the user an onboard message
 
-    if(this.state.showExport && this.props.app.onboarding.screenshot.show) {
-      this.props.onboardStepPassed('screenshot');
-      this.props.openModal(<Onboard.Screenshot />, 'Save Your Schedule');
-    }
+
+    // moving this not to be a modal
+    // if(this.state.showExport && this.props.app.onboarding.screenshot.show) {
+      // this.props.onboardStepPassed('screenshot');
+      // this.props.openModal(<Onboard.Screenshot />, 'Your Schedule');
+    // }
 
     const mySchedule = _.filter(this.props.smartSchedule,(event) => { return event.interest; })
 
@@ -70,38 +56,6 @@ class DashboardContainer extends Component {
 
   }
 
-  componentWillReceiveProps(nextProps) {
-
-    // fuck this
-    // refreshing the components every fucking time
-    // @todo change this
-    // this._prepareList(nextProps);
-
-    // if(nextProps.app.initialized == true && !this.state.hasData){
-    //   // alert('then we gotta show data!')
-    //   this._prepareList(nextProps);
-    //   // this.setState({hasData: true})
-    // }
-  }
-
-  // _prepareList_og(props) {
-  //   // this function refreshes the presentation data from redux,
-  //   // this is not really how it should work, i dont think
-  //
-  //
-  //   const daySchedule = getDaySchedule(props);
-  //   const myDaySchedule = getMyDaySchedule(props);
-  //   // console.log('daySchedule',daySchedule)
-  //
-  //   // Now set the array
-  //   this.setState({
-  //     dataSource: this.state.ds.cloneWithRows(daySchedule),
-  //     daySchedule,
-  //     hasData: true,
-  //     myDaySchedule,
-  //   });
-  //
-  // }
   _prepareList(props) {
 
     const daySchedule = getDaySchedule(props);
@@ -131,9 +85,11 @@ class DashboardContainer extends Component {
 
   _showExport() {
     this.setState({showExport: true});
+    this.props.togglePagination();
   }
   _showList() {
-    this.setState({showExport: false})
+    this.setState({showExport: false});
+    this.props.togglePagination();
   }
 
   renderViewScheduleButton(count) {

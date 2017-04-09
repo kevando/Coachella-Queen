@@ -10,16 +10,16 @@ import Landscape from './Landscape';
 class Queen extends Component {
 
   render() {
-    const { activePage, showModal, openModal, modalComponent, modalTitle, updateState, handleScroll, offSet, sunOffSet, app } = this.props;
+    const { showPagination, activePage, showModal, openModal, modalComponent, modalTitle, updateState, handleScroll, offSet, sunOffSet, app } = this.props;
 
     const Slides = [
-      // <Hello key="0" {...this.props} />,
+      <Hello key="0" {...this.props} />,
       // <Hello key="1" {...this.props} />,
       // <Hello key="2" {...this.props} />,
       // <Hello key="3" {...this.props} />,
-      <Dashboard day="Friday" key="1" openModal={openModal} />,
-      <Dashboard day="Saturday" key="2" openModal={openModal}/>,
-      <Dashboard day="Sunday" key="3" openModal={openModal}/>,
+      <Dashboard day="Friday" key="1" openModal={openModal} togglePagination={()=>updateState({showPagination: !showPagination})} />,
+      <Dashboard day="Saturday" key="2" openModal={openModal} togglePagination={()=>updateState({showPagination: !showPagination})} />,
+      <Dashboard day="Sunday" key="3" openModal={openModal} togglePagination={()=>updateState({showPagination: !showPagination})} />,
     ]
 
     const scrollViewConfig = {
@@ -47,7 +47,7 @@ class Queen extends Component {
           }
         </ScrollView>
 
-        { app.initialized &&
+        { app.initialized && showPagination &&
           <Animatable.View style={styles.footer} animation="zoomIn">
             <View style={[styles.pageCircle,getActivePage(activePage,0)]} />
             <View style={[styles.pageCircle,getActivePage(activePage,1)]} />
