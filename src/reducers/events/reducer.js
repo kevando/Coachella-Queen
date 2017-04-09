@@ -7,11 +7,13 @@ import {
   TOGGLE_EVENT,
   REFRESH_SCHEDULE,
   SET_INTEREST,
+  SET_WEEKEND_DATA
 } from './actionTypes';
 
 const initialState =
   {
-    coachellaSchedule: [],
+    coachellaSchedule1: [],
+    coachellaSchedule2: [],
     mySchedule: [],
     smartSchedule: [],
   };
@@ -24,11 +26,34 @@ export default function events(events = initialState, action = {}) {
     // Called from REFRESH_SCHEDULE
 
     case SET_SCHEDULE_DATA:
-    Analytics.logEvent('SET_SCHEDULE_DATA');
-      return {
-        ...events,
-        coachellaSchedule: action.events,
-        smartSchedule: action.events,
+      if(action.weekend == 1) {
+        return {
+          ...events,
+          coachellaSchedule1: action.events,
+        }
+      }
+      if(action.weekend == 2) {
+        return {
+          ...events,
+          coachellaSchedule2: action.events,
+        }
+      }
+
+    // -------------------------------------------
+    // Called from REFRESH_SCHEDULE
+
+    case SET_WEEKEND_DATA:
+      if(action.weekend == 1) {
+        return {
+          ...events,
+          smartSchedule: events.coachellaSchedule1,
+        }
+      }
+      if(action.weekend == 2) {
+        return {
+          ...events,
+          smartSchedule: events.coachellaSchedule2,
+        }
       }
 
     // -------------------------------------------

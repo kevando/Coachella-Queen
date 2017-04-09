@@ -1,9 +1,9 @@
 import moment from 'moment';
 
-export function getDaySchedule({ coachellaSchedule, day, mySchedule }) {
+export function getDaySchedule({ smartSchedule, day, mySchedule }) {
 
 
-  var daySchedule = _.filter(coachellaSchedule,({start}) => { return moment(start).format('dddd') == day})
+  var daySchedule = _.filter(smartSchedule,({start}) => { return moment(start).format('dddd') == day})
 
   // find all the events already part of the user's mySchedule array
   var combinedSchedules = _.map(daySchedule,function(event){

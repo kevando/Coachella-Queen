@@ -55,6 +55,7 @@ class HelloContainer extends Component {
   _onWeekendPress(weekend) {
     this.props.setWeekend(weekend);
     this.props.initApp();
+    this.props.setWeekendData(weekend);
     this.props.onboardStepPassed('wiggle'); // this can happen multiple times
   }
 

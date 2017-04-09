@@ -7,7 +7,7 @@ const firebaseConfig = {
   // storageBucket: "<your-storage-bucket>",
 };
 const firebaseApp = firebase.initializeApp(firebaseConfig);
-const scheduleRef = firebaseApp.database().ref('v1/schedule');
+const scheduleRef = firebaseApp.database().ref('v2');
 
 export {
   scheduleRef,

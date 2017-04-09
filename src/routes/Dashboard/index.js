@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {
   return {
     // schedule: state.events.schedule,
     mySchedule: state.events.mySchedule,
-    coachellaSchedule: state.events.coachellaSchedule,
+    // coachellaSchedule: state.events.coachellaSchedule,
     smartSchedule: state.events.smartSchedule,
     app: state.app,
   };
