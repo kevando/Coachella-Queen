@@ -63,6 +63,7 @@
 		8A7532EB9D834C49B6B72911 /* Arial Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 393D45FEB91A42FE933150B5 /* Arial Black.ttf */; };
 		8F1FF5C474FF4EA7B1A44ED0 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA27BE0FBAA841DAB295DD07 /* libBVLinearGradient.a */; };
 		937785BDBB88433F97FB7975 /* Skia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A702D40A9A6741B6B67A7E38 /* Skia.ttf */; };
+		957EF9B3159448D182570F7E /* libRNFIRMessaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23F6EA1F9A20448BB332CE7F /* libRNFIRMessaging.a */; };
 		9897F8F7E04D41B98E17EC0C /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BD3A59C047B45048C3CD3A7 /* Rubik-Black.ttf */; };
 		999520E45EBB4976B2502C1F /* Andale Mono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15B79C4FD2364AF2AF980688 /* Andale Mono.ttf */; };
 		9B9F5F0B3C7F433E913401E3 /* Georgia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C0A48C83467474C833008A0 /* Georgia.ttf */; };
@@ -181,6 +182,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNShare;
+		};
+		0AE1490B1E99C9F800C6321E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F35920AC25144D1A898F1205 /* RNFIRMessaging.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNFIRMessaging;
 		};
 		139105C01AF99BAD00B5F7CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -345,6 +353,7 @@
 		0A9A1EAF1E7B9FC000140C4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "CoachellaQueen/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0AE148D51E99B83700C6321E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		0AE148D71E99B84200C6321E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		0AE148D91E99C91B00C6321E /* CoachellaQueen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = CoachellaQueen.entitlements; path = CoachellaQueen/CoachellaQueen.entitlements; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* CoachellaQueen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoachellaQueen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -359,6 +368,7 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		15B79C4FD2364AF2AF980688 /* Andale Mono.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Andale Mono.ttf"; path = "../node_modules/native-base/Fonts/Andale Mono.ttf"; sourceTree = "<group>"; };
 		1B0198C6291F4389A09EFBBC /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/native-base/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		23F6EA1F9A20448BB332CE7F /* libRNFIRMessaging.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFIRMessaging.a; sourceTree = "<group>"; };
 		282B25FB570E4D0EA08B4827 /* libRNShare.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNShare.a; sourceTree = "<group>"; };
 		2B21BC85577447CE8186A71A /* libRNScreenshotDetector.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNScreenshotDetector.a; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* CoachellaQueen-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoachellaQueen-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -407,6 +417,7 @@
 		EA57AF8D8CDD47588AC75396 /* Courier New.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Courier New.ttf"; path = "../node_modules/native-base/Fonts/Courier New.ttf"; sourceTree = "<group>"; };
 		ECD3FAAF184F43B88CFD95C7 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/native-base/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		F2EFD76D05384BAEA68E1A5D /* SF-UI-Text-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF-UI-Text-Regular.otf"; path = "../node_modules/native-base/Fonts/SF-UI-Text-Regular.otf"; sourceTree = "<group>"; };
+		F35920AC25144D1A898F1205 /* RNFIRMessaging.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFIRMessaging.xcodeproj; path = "../node_modules/react-native-fcm/ios/RNFIRMessaging.xcodeproj"; sourceTree = "<group>"; };
 		FF7B928B116E48178C8C1FDD /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -444,6 +455,7 @@
 				D695175F879E4AC382479C16 /* libRNMixpanel.a in Frameworks */,
 				1E559A7D639E4E0CA2C03F98 /* libRNScreenshotDetector.a in Frameworks */,
 				214359B89BB24CBF8AD0DC90 /* libRNShare.a in Frameworks */,
+				957EF9B3159448D182570F7E /* libRNFIRMessaging.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +600,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		0AE148EC1E99C9F800C6321E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0AE1490C1E99C9F800C6321E /* libRNFIRMessaging.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		139105B71AF99BAD00B5F7CC /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -609,6 +629,7 @@
 		13B07FAE1A68108700A75B9A /* CoachellaQueen */ = {
 			isa = PBXGroup;
 			children = (
+				0AE148D91E99C91B00C6321E /* CoachellaQueen.entitlements */,
 				0A9A1EAF1E7B9FC000140C4D /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -723,6 +744,7 @@
 				3B3AFFB042CA4DC6AF413D4E /* RNMixpanel.xcodeproj */,
 				300B049ECC764C55BAFD38BD /* RNScreenshotDetector.xcodeproj */,
 				D9817ACF7833431FA3B363E4 /* RNShare.xcodeproj */,
+				F35920AC25144D1A898F1205 /* RNFIRMessaging.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -866,6 +888,14 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = E34JX9GA2A;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -945,6 +975,10 @@
 				{
 					ProductGroup = 0A9A1E5F1E7B9D5800140C4D /* Products */;
 					ProjectRef = 84D88060F2AD43D7AFCBAA73 /* RNFIRAnalytics.xcodeproj */;
+				},
+				{
+					ProductGroup = 0AE148EC1E99C9F800C6321E /* Products */;
+					ProjectRef = F35920AC25144D1A898F1205 /* RNFIRMessaging.xcodeproj */;
 				},
 				{
 					ProductGroup = 0A98D0BE1E7F988B00C4140E /* Products */;
@@ -1063,6 +1097,13 @@
 			fileType = archive.ar;
 			path = libRNShare.a;
 			remoteRef = 0AE148D31E99B77D00C6321E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0AE1490C1E99C9F800C6321E /* libRNFIRMessaging.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNFIRMessaging.a;
+			remoteRef = 0AE1490B1E99C9F800C6321E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		139105C11AF99BAD00B5F7CC /* libRCTSettings.a */ = {
@@ -1431,12 +1472,14 @@
 					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 					"$(SRCROOT)/../node_modules/react-native-screenshot-detector/ios/RNScreenshotDetector/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
 				);
 				INFOPLIST_FILE = CoachellaQueenTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1463,12 +1506,14 @@
 					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 					"$(SRCROOT)/../node_modules/react-native-screenshot-detector/ios/RNScreenshotDetector/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
 				);
 				INFOPLIST_FILE = CoachellaQueenTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1487,6 +1532,7 @@
 			baseConfigurationReference = E01379656B36AFEA3D29A343 /* Pods-CoachellaQueen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CoachellaQueen/CoachellaQueen.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = E34JX9GA2A;
@@ -1498,6 +1544,7 @@
 					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 					"$(SRCROOT)/../node_modules/react-native-screenshot-detector/ios/RNScreenshotDetector/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
 				);
 				INFOPLIST_FILE = CoachellaQueen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1517,6 +1564,7 @@
 			baseConfigurationReference = 0961ACFBD41EECC45C762930 /* Pods-CoachellaQueen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CoachellaQueen/CoachellaQueen.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = E34JX9GA2A;
 				HEADER_SEARCH_PATHS = (
@@ -1527,6 +1575,7 @@
 					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 					"$(SRCROOT)/../node_modules/react-native-screenshot-detector/ios/RNScreenshotDetector/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
 				);
 				INFOPLIST_FILE = CoachellaQueen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1561,11 +1610,13 @@
 					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 					"$(SRCROOT)/../node_modules/react-native-screenshot-detector/ios/RNScreenshotDetector/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
 				);
 				INFOPLIST_FILE = "CoachellaQueen-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1602,11 +1653,13 @@
 					"$(SRCROOT)/../node_modules/react-native-mixpanel/RNMixpanel",
 					"$(SRCROOT)/../node_modules/react-native-screenshot-detector/ios/RNScreenshotDetector/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
 				);
 				INFOPLIST_FILE = "CoachellaQueen-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1641,6 +1694,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.CoachellaQueen-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1665,6 +1719,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
