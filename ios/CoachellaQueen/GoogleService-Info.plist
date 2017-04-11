@@ -7,34 +7,34 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>1014750109042-vddhmb1g3ft49q0iqdihq2dlj90ha82i.apps.googleusercontent.com</string>
+	<string>260245695256-0hhov49su4217gc6lu7rl1i7q9givres.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1014750109042-vddhmb1g3ft49q0iqdihq2dlj90ha82i</string>
+	<string>com.googleusercontent.apps.260245695256-0hhov49su4217gc6lu7rl1i7q9givres</string>
 	<key>API_KEY</key>
-	<string>AIzaSyD88ENRRhkUw7d5HCioOgB4W57N-201caU</string>
+	<string>AIzaSyCiUnivoTfETAlfO3DLwZhf1vrp4IGVX-8</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1014750109042</string>
+	<string>260245695256</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.coachellaqueen.test</string>
+	<string>com.kevaid.festqueen</string>
 	<key>PROJECT_ID</key>
-	<string>coachella-queen</string>
+	<string>fest-queen</string>
 	<key>STORAGE_BUCKET</key>
-	<string>coachella-queen.appspot.com</string>
+	<string>fest-queen.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
 	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false/>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
 	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1014750109042:ios:2d17319d7e9f4a68</string>
+	<string>1:260245695256:ios:67e8969c5583c7af</string>
 	<key>DATABASE_URL</key>
-	<string>https://coachella-queen.firebaseio.com</string>
+	<string>https://fest-queen.firebaseio.com</string>
 </dict>
 </plist>

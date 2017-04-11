@@ -107,21 +107,15 @@ class EventListItem extends React.Component {
           </Animatable.View>
           </TouchableOpacity>
           <Animatable.View ref="optionsRef" style={styles.right}>
-            <View style={styles.optionContainer}>
-              <TouchableOpacity onPress={this._onOptionPress.bind(this,'yes')} >
-                <Text style={{fontSize: 25}}><Emoji name={EMOJIS['yes']} /></Text>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.optionContainer}>
-              <TouchableOpacity onPress={this._onOptionPress.bind(this,'maybe')} >
-                <Text style={{fontSize: 25}}><Emoji name={EMOJIS['maybe']} /></Text>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.optionContainer}>
-            <TouchableOpacity onPress={this._onOptionPress.bind(this,'no')} >
+            <TouchableOpacity style={styles.optionContainer} onPress={this._onOptionPress.bind(this,'yes')} >
+              <Text style={{fontSize: 25}}><Emoji name={EMOJIS['yes']} /></Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.optionContainer} onPress={this._onOptionPress.bind(this,'maybe')} >
+              <Text style={{fontSize: 25}}><Emoji name={EMOJIS['maybe']} /></Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.optionContainer} onPress={this._onOptionPress.bind(this,'no')} >
               <Text style={{fontSize: 25}}><Emoji name={EMOJIS['no']} /></Text>
             </TouchableOpacity>
-            </View>
           </Animatable.View>
         </View>
     );

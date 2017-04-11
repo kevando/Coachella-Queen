@@ -3,6 +3,8 @@ package com.festqueen;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.evollu.react.fcm.FIRMessagingPackage;
+import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 import cl.json.RNSharePackage;
 import com.kevinejohn.RNMixpanel.RNMixpanel;
 import com.BV.LinearGradient.LinearGradientPackage;
@@ -28,6 +30,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new FIRMessagingPackage(),
+            new ReactNativePushNotificationPackage(),
             new RNSharePackage(),
             new RNMixpanel(),
             new LinearGradientPackage(),

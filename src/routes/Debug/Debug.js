@@ -20,15 +20,6 @@ const Debug = (props) => {
           </Right>
         </ListItem>
 
-        <ListItem>
-          <Body>
-            <Text style={styles.text}>Username</Text>
-          </Body>
-          <Right>
-            <Text style={styles.text}>Unknown</Text>
-          </Right>
-        </ListItem>
-
         <ListItem icon>
           <Body>
             <Text style={styles.text}>Feedback</Text>

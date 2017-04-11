@@ -38,6 +38,7 @@ export default styles = StyleSheet.create({
     right: 0,
     justifyContent: 'center',
     alignItems: 'center',
+    height: 50,
   },
   container: {
     flex: 1,
@@ -48,13 +49,11 @@ export default styles = StyleSheet.create({
     paddingHorizontal:10,
     borderColor: 'rgba(100,100,100,0.1)',
     borderBottomWidth: 1,
-    height: 50,
   },
   band: {
     fontSize: 14,
     fontWeight: '500',
     color: colors.white,
-    // fontFamily: 'Monaco',
   },
   stage: {
     color: colors.white,
@@ -63,18 +62,15 @@ export default styles = StyleSheet.create({
   },
   time: {
     textAlign: 'right',
-    // marginTop: -30,
     backgroundColor: 'transparent',
     fontSize: 14,
     color: colors.white,
-    // paddingV: 15,
   },
   optionContainer: {
-    borderColor: 'black',
-    // borderWidth: 1,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    height: 50,
   },
   optionText: {
     color: colors.white,
