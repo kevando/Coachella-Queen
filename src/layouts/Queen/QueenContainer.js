@@ -1,7 +1,8 @@
 
 import React, {Component} from 'react';
-import { Text, View, StyleSheet, Dimensions, ScrollView, Animated, StatusBar, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Dimensions, ScrollView, Animated, StatusBar, TouchableOpacity, AlertIOS } from 'react-native';
 import * as ScreenshotDetector from 'react-native-screenshot-detector';
+import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from 'react-native-fcm';
 
 import Queen from './Queen';
 import * as Onboard from '../../components/Onboard';
@@ -33,31 +34,40 @@ class QueenContainer extends Component {
   componentWillMount() {
 
     // Subscribe callback to screenshots:
-    this.eventEmitter = ScreenshotDetector.subscribe(function() {
-      this._openModal(<Onboard.Screenshot />, 'Nice!');
-     });
+    this.eventEmitter = ScreenshotDetector.subscribe(() => {
+
+      if(this.props.app.onboarding.permissions.show) {
+        this.props.onboardStepPassed('permissions');
+        // const openPerms = this._openPermissionSettings.bind(this
+        AlertIOS.alert(
+          'Schedule Saved!',
+          'Set this photo as your lock screen or enable notifcations to receive a reminder when the show starts',
+          [
+            {text: 'Enable Notifications', onPress: () => this._openPermissionSettings(), style: 'cancel'},
+            {text: 'Okay', onPress: () => console.log('Install Pressed')},
+          ],
+        );
+      }
+    });
   }
+
   componentWillUnmount() {
     ScreenshotDetector.unsubscribe(this.eventEmitter);
   }
 
-  componentWillReceiveProps(nextProps){
-    // why is this here?
-    // if(nextProps.app.initialized == false)
-      // this.props.refreshSchedule();
-
-    if(nextProps.app.weekend){
-      // alert('weekend set')
-
-    }
-
-  }
   componentDidUpdate(){
     if(this.state.activePage == 1 && this.props.app.onboarding.welcome.show) {
       this.props.onboardStepPassed('welcome');
       this._openModal(<Onboard.Hello />, 'Welcome');
     }
+  }
 
+  _openPermissionSettings() {
+    FCM.requestPermissions(); // for iOS
+    FCM.getFCMToken().then(token => {
+        console.log(token)
+        // store fcm token in your server
+    });
   }
 
   _openModal(modalComponent, modalTitle = 'Default Title') {
@@ -65,16 +75,13 @@ class QueenContainer extends Component {
   }
 
   _handleScroll = (e) => {
-    const offset = -1 * e.nativeEvent.contentOffset.x / 3;
+    const offset = -1 * e.nativeEvent.contentOffset.x / 4;
     Animated.timing(this.state.offSet, {
       toValue: offset,
     }).start();
 
 
-    const sunoffset = -1 * e.nativeEvent.contentOffset.x / 1.5;
-    Animated.timing(this.state.sunOffSet, {
-      toValue: sunoffset,
-    }).start();
+
 
 
     this.setState({activePage:e.nativeEvent.contentOffset.x/width})

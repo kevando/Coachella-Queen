@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, ScrollView, Animated, StatusBar, TouchableOpaci
 import * as Animatable from 'react-native-animatable';
 
 import styles, { getActivePage, width } from './styles';
-import { Hello, Dashboard, Debug } from '../../routes';
+import { Hello, Dashboard, Debug, Recovery } from '../../routes';
 import Modal from '../../components/Modal';
 import Landscape from './Landscape';
 
@@ -20,6 +20,7 @@ class Queen extends Component {
       <Dashboard day="Friday" key="1" openModal={openModal} togglePagination={()=>updateState({showPagination: !showPagination})} />,
       <Dashboard day="Saturday" key="2" openModal={openModal} togglePagination={()=>updateState({showPagination: !showPagination})} />,
       <Dashboard day="Sunday" key="3" openModal={openModal} togglePagination={()=>updateState({showPagination: !showPagination})} />,
+      <Recovery key="4" {...this.props} />,
     ]
 
     const scrollViewConfig = {
